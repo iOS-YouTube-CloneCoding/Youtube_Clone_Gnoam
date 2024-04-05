@@ -8,10 +8,9 @@
 import UIKit
 
 class LoginViewController: UIViewController {
-    private var _authenticationUIView: AuthenticationUIView
+    private var authenticationUIView: AuthenticationUIView = AuthenticationUIView()
     
-    init(view authenticationUIView: AuthenticationUIView) {
-        self._authenticationUIView = authenticationUIView
+    init() {
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -27,9 +26,12 @@ class LoginViewController: UIViewController {
         setTapNextButton()
         setTapMakeAccountButton()
     }
-    
+}
+
+extension LoginViewController: BaseViewController {
     private func setTapNextButton() {
-        _authenticationUIView.nextButton.addTarget(
+        
+        authenticationUIView.nextButton.addTarget(
             self,
             action: #selector(setTapButton),
             for: .touchUpInside
@@ -37,7 +39,7 @@ class LoginViewController: UIViewController {
     }
     
     private func setTapMakeAccountButton() {
-        _authenticationUIView.addAuthenticationButton.addTarget(
+        authenticationUIView.addAuthenticationButton.addTarget(
             self,
             action: #selector(setTapAccountButton),
             for: .touchUpInside
@@ -45,86 +47,84 @@ class LoginViewController: UIViewController {
     }
     
     @objc func setTapButton() {
-        let doneAuthenticationViewController = DoneAuthenticationViewController(view: _authenticationUIView)
+        let doneAuthenticationViewController = DoneAuthenticationViewController()
         navigationController?.pushViewController(doneAuthenticationViewController, animated: true)
     }
     
     @objc func setTapAccountButton() {
-        let nextViewController = SigninViewController(view: _authenticationUIView)
+        let nextViewController = SigninViewController()
         navigationController?.pushViewController(nextViewController, animated: true)
     }
-}
-
-extension LoginViewController: BaseViewController {
+    
     func addView() {
-        view.addSubview(_authenticationUIView.googleImage)
-        view.addSubview(_authenticationUIView.titleLabel)
-        view.addSubview(_authenticationUIView.subTitleLabel)
-        view.addSubview(_authenticationUIView.nextButton)
-        view.addSubview(_authenticationUIView.nameTextField)
-        view.addSubview(_authenticationUIView.emailORPhoneTextField)
-        view.addSubview(_authenticationUIView.passwordTextField)
-        view.addSubview(_authenticationUIView.addAuthenticationButton)
+        view.addSubview(authenticationUIView.googleImage)
+        view.addSubview(authenticationUIView.titleLabel)
+        view.addSubview(authenticationUIView.subTitleLabel)
+        view.addSubview(authenticationUIView.nextButton)
+        view.addSubview(authenticationUIView.nameTextField)
+        view.addSubview(authenticationUIView.emailORPhoneTextField)
+        view.addSubview(authenticationUIView.passwordTextField)
+        view.addSubview(authenticationUIView.addAuthenticationButton)
     }
     
     func setLayout() {
         // Google ImageVIew
         NSLayoutConstraint.activate([
-            _authenticationUIView.googleImage.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 128),
-            _authenticationUIView.googleImage.topAnchor.constraint(equalTo: view.topAnchor, constant: 110),
-            _authenticationUIView.googleImage.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -662),
-            _authenticationUIView.googleImage.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -128)
+            authenticationUIView.googleImage.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 128),
+            authenticationUIView.googleImage.topAnchor.constraint(equalTo: view.topAnchor, constant: 110),
+            authenticationUIView.googleImage.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -662),
+            authenticationUIView.googleImage.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -128)
         ])
         
         // TitleLabel
         NSLayoutConstraint.activate([
-            _authenticationUIView.titleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 157),
-            _authenticationUIView.titleLabel.topAnchor.constraint(equalTo: _authenticationUIView.googleImage.bottomAnchor, constant: 23),
-            _authenticationUIView.titleLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -157)
+            authenticationUIView.titleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 157),
+            authenticationUIView.titleLabel.topAnchor.constraint(equalTo: authenticationUIView.googleImage.bottomAnchor, constant: 23),
+            authenticationUIView.titleLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -157)
         ])
         
         // subTitleLabel
         NSLayoutConstraint.activate([
-            _authenticationUIView.subTitleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 44),
-            _authenticationUIView.subTitleLabel.topAnchor.constraint(equalTo: _authenticationUIView.titleLabel.bottomAnchor, constant: 14),
-            _authenticationUIView.subTitleLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -44)
+            authenticationUIView.subTitleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 44),
+            authenticationUIView.subTitleLabel.topAnchor.constraint(equalTo: authenticationUIView.titleLabel.bottomAnchor, constant: 14),
+            authenticationUIView.subTitleLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -44)
         ])
         
         // UITextField nameTextFields
         NSLayoutConstraint.activate([
-            _authenticationUIView.nameTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 22),
-            _authenticationUIView.nameTextField.topAnchor.constraint(equalTo: _authenticationUIView.titleLabel.bottomAnchor, constant: 128),
-            _authenticationUIView.nameTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -22)
+            authenticationUIView.nameTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 22),
+            authenticationUIView.nameTextField.topAnchor.constraint(equalTo: authenticationUIView.titleLabel.bottomAnchor, constant: 128),
+            authenticationUIView.nameTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -22)
         ])
         
         // UITextField emailORPhoneTextField
         NSLayoutConstraint.activate([
-            _authenticationUIView.emailORPhoneTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 22),
-            _authenticationUIView.emailORPhoneTextField.topAnchor.constraint(equalTo: _authenticationUIView.nameTextField.bottomAnchor, constant: 17),
-            _authenticationUIView.emailORPhoneTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -22)
+            authenticationUIView.emailORPhoneTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 22),
+            authenticationUIView.emailORPhoneTextField.topAnchor.constraint(equalTo: authenticationUIView.nameTextField.bottomAnchor, constant: 17),
+            authenticationUIView.emailORPhoneTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -22)
         ])
         
         // UITextField passwordTextField
         NSLayoutConstraint.activate([
-            _authenticationUIView.passwordTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 22),
-            _authenticationUIView.passwordTextField.topAnchor.constraint(equalTo: _authenticationUIView.emailORPhoneTextField.bottomAnchor, constant: 17),
-            _authenticationUIView.passwordTextField.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -309),
-            _authenticationUIView.passwordTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -22)
+            authenticationUIView.passwordTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 22),
+            authenticationUIView.passwordTextField.topAnchor.constraint(equalTo: authenticationUIView.emailORPhoneTextField.bottomAnchor, constant: 17),
+            authenticationUIView.passwordTextField.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -309),
+            authenticationUIView.passwordTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -22)
         ])
 
         // addAuthenticationButton set
         NSLayoutConstraint.activate([
-            _authenticationUIView.addAuthenticationButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 22),
-            _authenticationUIView.addAuthenticationButton.topAnchor.constraint(equalTo: _authenticationUIView.nextButton.topAnchor, constant: 10),
-            _authenticationUIView.addAuthenticationButton.bottomAnchor.constraint(equalTo: _authenticationUIView.nextButton.bottomAnchor, constant: -10)
+            authenticationUIView.addAuthenticationButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 22),
+            authenticationUIView.addAuthenticationButton.topAnchor.constraint(equalTo: authenticationUIView.nextButton.topAnchor, constant: 10),
+            authenticationUIView.addAuthenticationButton.bottomAnchor.constraint(equalTo: authenticationUIView.nextButton.bottomAnchor, constant: -10)
         ])
         
         // button set
         NSLayoutConstraint.activate([
-            _authenticationUIView.nextButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 279),
-            _authenticationUIView.nextButton.topAnchor.constraint(equalTo: _authenticationUIView.passwordTextField.bottomAnchor, constant: 64),
-            _authenticationUIView.nextButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -203),
-            _authenticationUIView.nextButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -22)
+            authenticationUIView.nextButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 279),
+            authenticationUIView.nextButton.topAnchor.constraint(equalTo: authenticationUIView.passwordTextField.bottomAnchor, constant: 64),
+            authenticationUIView.nextButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -203),
+            authenticationUIView.nextButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -22)
         ])
     }
 }

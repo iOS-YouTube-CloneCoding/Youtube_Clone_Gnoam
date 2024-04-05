@@ -7,7 +7,7 @@
 
 import UIKit
 
-class AuthenticationUIView {
+class AuthenticationUIView: UIView {
     let googleImage: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "googleLogo")

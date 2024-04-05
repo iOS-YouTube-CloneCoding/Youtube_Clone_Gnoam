@@ -8,10 +8,9 @@
 import UIKit
 
 class DoneAuthenticationViewController: UIViewController {
-    private var _authenticationUIView: AuthenticationUIView
+    private var authenticationUIView: AuthenticationUIView = AuthenticationUIView()
     
-    init(view authenticationUIView: AuthenticationUIView) {
-        self._authenticationUIView = authenticationUIView
+    init() {
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -27,12 +26,11 @@ class DoneAuthenticationViewController: UIViewController {
         setLayout()
         setTapNextButton()
     }
-    
 }
 
 extension DoneAuthenticationViewController: BaseViewController {
     private func setTapNextButton() {
-        _authenticationUIView.nextButton.addTarget(
+        authenticationUIView.nextButton.addTarget(
             self,
             action: #selector(setTapButton),
             for: .touchDown
@@ -45,51 +43,51 @@ extension DoneAuthenticationViewController: BaseViewController {
     }
     
     private func customSubView() {
-        _authenticationUIView.titleLabel.numberOfLines = 2
-        _authenticationUIView.titleLabel.text = """
+        authenticationUIView.titleLabel.numberOfLines = 2
+        authenticationUIView.titleLabel.text = """
             노형우님
             환영합니다!
         """
-        _authenticationUIView.nextButton.setTitle("확인", for: .normal)
-        _authenticationUIView.addAuthenticationButton.setTitle("다른 계정으로 로그인하기", for: .normal)
+        authenticationUIView.nextButton.setTitle("확인", for: .normal)
+        authenticationUIView.addAuthenticationButton.setTitle("다른 계정으로 로그인하기", for: .normal)
     }
     
     func addView() {
-        view.addSubview(_authenticationUIView.googleImage)
-        view.addSubview(_authenticationUIView.titleLabel)
-        view.addSubview(_authenticationUIView.nextButton)
-        view.addSubview(_authenticationUIView.addAuthenticationButton)
+        view.addSubview(authenticationUIView.googleImage)
+        view.addSubview(authenticationUIView.titleLabel)
+        view.addSubview(authenticationUIView.nextButton)
+        view.addSubview(authenticationUIView.addAuthenticationButton)
     }
     
     func setLayout() {
         // Google ImageView
         NSLayoutConstraint.activate([
-            _authenticationUIView.googleImage.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 128),
-            _authenticationUIView.googleImage.topAnchor.constraint(equalTo: view.topAnchor, constant: 248),
-            _authenticationUIView.googleImage.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -524),
-            _authenticationUIView.googleImage.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -128)
+            authenticationUIView.googleImage.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 128),
+            authenticationUIView.googleImage.topAnchor.constraint(equalTo: view.topAnchor, constant: 248),
+            authenticationUIView.googleImage.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -524),
+            authenticationUIView.googleImage.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -128)
         ])
         
         // TitleLabel
         NSLayoutConstraint.activate([
-            _authenticationUIView.titleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 123),
-            _authenticationUIView.titleLabel.topAnchor.constraint(equalTo: _authenticationUIView.googleImage.bottomAnchor, constant: 23),
-            _authenticationUIView.titleLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -123)
+            authenticationUIView.titleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 123),
+            authenticationUIView.titleLabel.topAnchor.constraint(equalTo: authenticationUIView.googleImage.bottomAnchor, constant: 23),
+            authenticationUIView.titleLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -123)
         ])
         
         // button set
         NSLayoutConstraint.activate([
-            _authenticationUIView.nextButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 22),
-            _authenticationUIView.nextButton.topAnchor.constraint(equalTo: _authenticationUIView.titleLabel.bottomAnchor, constant: 53),
-            _authenticationUIView.nextButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -22)
+            authenticationUIView.nextButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 22),
+            authenticationUIView.nextButton.topAnchor.constraint(equalTo: authenticationUIView.titleLabel.bottomAnchor, constant: 53),
+            authenticationUIView.nextButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -22)
         ])
         
         // addAuthenticationButton set
         NSLayoutConstraint.activate([
-            _authenticationUIView.addAuthenticationButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 112),
-            _authenticationUIView.addAuthenticationButton.topAnchor.constraint(equalTo: _authenticationUIView.nextButton.bottomAnchor, constant: 23),
-            _authenticationUIView.addAuthenticationButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -283),
-            _authenticationUIView.addAuthenticationButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -112)
+            authenticationUIView.addAuthenticationButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 112),
+            authenticationUIView.addAuthenticationButton.topAnchor.constraint(equalTo: authenticationUIView.nextButton.bottomAnchor, constant: 23),
+            authenticationUIView.addAuthenticationButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -283),
+            authenticationUIView.addAuthenticationButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -112)
         ])
     }
 }

@@ -20,7 +20,7 @@ class MainViewController: UITabBarController {
         super.viewDidLoad()
         view.backgroundColor = .white
         
-        let homeViewController = HomeViewController()
+        let homeViewController = MainViewController()
         let shortViewController = ShortViewController()
         let addViewController = AddViewController()
         let subscribeViewController = SubscribeViewController()
