@@ -1,14 +1,14 @@
 //
-//  ViewController.swift
+//  SigninViewController.swift
 //  assignmentYoutube
 //
-//  Created by Roh on 3/16/24.
+//  Created by Roh on 3/18/24.
 //
 
 import UIKit
 
-class LoginViewController: UIViewController {
-    private var authenticationUIView: AuthenticationUIView = AuthenticationUIView()
+class SigninViewController: UIViewController {
+    private var authenticationUIView: LoginUIView = LoginUIView()
     
     init() {
         super.init(nibName: nil, bundle: nil)
@@ -22,27 +22,17 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         setUI()
         addView()
+        customSubView()
         setLayout()
-        setTapNextButton()
-        setTapMakeAccountButton()
     }
 }
 
-extension LoginViewController: BaseViewController {
+extension SigninViewController: BaseViewController {
     private func setTapNextButton() {
-        
         authenticationUIView.nextButton.addTarget(
             self,
             action: #selector(setTapButton),
-            for: .touchUpInside
-        )
-    }
-    
-    private func setTapMakeAccountButton() {
-        authenticationUIView.addAuthenticationButton.addTarget(
-            self,
-            action: #selector(setTapAccountButton),
-            for: .touchUpInside
+            for: .touchDown
         )
     }
     
@@ -51,20 +41,17 @@ extension LoginViewController: BaseViewController {
         navigationController?.pushViewController(doneAuthenticationViewController, animated: true)
     }
     
-    @objc func setTapAccountButton() {
-        let nextViewController = SigninViewController()
-        navigationController?.pushViewController(nextViewController, animated: true)
-    }
-    
     func addView() {
         view.addSubview(authenticationUIView.googleImage)
         view.addSubview(authenticationUIView.titleLabel)
-        view.addSubview(authenticationUIView.subTitleLabel)
         view.addSubview(authenticationUIView.nextButton)
         view.addSubview(authenticationUIView.nameTextField)
         view.addSubview(authenticationUIView.emailORPhoneTextField)
         view.addSubview(authenticationUIView.passwordTextField)
-        view.addSubview(authenticationUIView.addAuthenticationButton)
+    }
+    
+    private func customSubView() {
+        authenticationUIView.titleLabel.text = "회원가입"
     }
     
     func setLayout() {
@@ -78,17 +65,17 @@ extension LoginViewController: BaseViewController {
         
         // TitleLabel
         NSLayoutConstraint.activate([
-            authenticationUIView.titleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 157),
+            authenticationUIView.titleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 147),
             authenticationUIView.titleLabel.topAnchor.constraint(equalTo: authenticationUIView.googleImage.bottomAnchor, constant: 23),
-            authenticationUIView.titleLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -157)
+            authenticationUIView.titleLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -147)
         ])
         
-        // subTitleLabel
-        NSLayoutConstraint.activate([
-            authenticationUIView.subTitleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 44),
-            authenticationUIView.subTitleLabel.topAnchor.constraint(equalTo: authenticationUIView.titleLabel.bottomAnchor, constant: 14),
-            authenticationUIView.subTitleLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -44)
-        ])
+//        // subTitleLabel
+//        NSLayoutConstraint.activate([
+//            _authenticationUIView.subTitleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 44),
+//            _authenticationUIView.subTitleLabel.topAnchor.constraint(equalTo: _authenticationUIView.titleLabel.bottomAnchor, constant: 14),
+//            _authenticationUIView.subTitleLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -44)
+//        ])
         
         // UITextField nameTextFields
         NSLayoutConstraint.activate([
@@ -108,23 +95,24 @@ extension LoginViewController: BaseViewController {
         NSLayoutConstraint.activate([
             authenticationUIView.passwordTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 22),
             authenticationUIView.passwordTextField.topAnchor.constraint(equalTo: authenticationUIView.emailORPhoneTextField.bottomAnchor, constant: 17),
-            authenticationUIView.passwordTextField.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -309),
+//            _authenticationUIView.passwordTextField.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -309),
             authenticationUIView.passwordTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -22)
         ])
 
-        // addAuthenticationButton set
-        NSLayoutConstraint.activate([
-            authenticationUIView.addAuthenticationButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 22),
-            authenticationUIView.addAuthenticationButton.topAnchor.constraint(equalTo: authenticationUIView.nextButton.topAnchor, constant: 10),
-            authenticationUIView.addAuthenticationButton.bottomAnchor.constraint(equalTo: authenticationUIView.nextButton.bottomAnchor, constant: -10)
-        ])
+//        // addAuthenticationButton set
+//        NSLayoutConstraint.activate([
+//            _authenticationUIView.addAuthenticationButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 22),
+//            _authenticationUIView.addAuthenticationButton.topAnchor.constraint(equalTo: _authenticationUIView.nextButton.topAnchor, constant: 10),
+//            _authenticationUIView.addAuthenticationButton.bottomAnchor.constraint(equalTo: _authenticationUIView.nextButton.bottomAnchor, constant: -10)
+//        ])
         
         // button set
         NSLayoutConstraint.activate([
-            authenticationUIView.nextButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 279),
+            authenticationUIView.nextButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 22),
             authenticationUIView.nextButton.topAnchor.constraint(equalTo: authenticationUIView.passwordTextField.bottomAnchor, constant: 64),
             authenticationUIView.nextButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -203),
             authenticationUIView.nextButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -22)
         ])
     }
+
 }

@@ -23,12 +23,14 @@ class AuthenticationTextField: UITextField {
     private func setDefaultStyle() {
         // UI 관련
         self.borderStyle = .roundedRect
-        self.frame.size.height = 48
-        self.frame.size.width = 331
+//        self.frame.size.height = 48
+//        self.frame.size.width = 331
         
         self.autocorrectionType = .no                               // 자동 수정
         self.spellCheckingType = .no                                // 맞춤법 검사
         self.autocapitalizationType = .none                         // 자동 대문자 활성화 여부
+        
+        self.addLeftPadding(14)
         
         self.placeholder = "내용 입력"                                // 플레이스 홀더
         self.clearButtonMode = .always                              // 입력 내용을 한번에 지우는 x버튼(오른쪽?)
@@ -39,9 +41,6 @@ class AuthenticationTextField: UITextField {
         self.returnKeyType = .done                                  // 키보드 엔터키 타입
         self.keyboardType = UIKeyboardType.emailAddress
         
-//        self.becomeFirstResponder()                                 // 화면에서 첫번째로 반응(포커스 시킴)
-//        self.resignFirstResponder()                                 // 첫번째 반응을 중지
-                
         self.translatesAutoresizingMaskIntoConstraints = false
     }
     

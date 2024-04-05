@@ -8,7 +8,7 @@
 import UIKit
 
 class DoneAuthenticationViewController: UIViewController {
-    private var authenticationUIView: AuthenticationUIView = AuthenticationUIView()
+    private var authenticationUIView: LoginUIView = LoginUIView()
     
     init() {
         super.init(nibName: nil, bundle: nil)

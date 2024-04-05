@@ -9,6 +9,7 @@ import UIKit
 
 protocol BaseViewController: UIViewController {
     func setUI()
+    func setConfigure()
     func addView()
     func setLayout()
 }
@@ -16,5 +17,9 @@ protocol BaseViewController: UIViewController {
 extension BaseViewController {
     func setUI() {
         view.backgroundColor = .white
+    }
+    
+    func setConfigure() {
+        
     }
 }
