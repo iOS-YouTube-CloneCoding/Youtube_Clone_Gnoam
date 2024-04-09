@@ -7,9 +7,9 @@
 
 import UIKit
 
-class LoginViewController: UIViewController {
+final class LoginViewController: UIViewController {
     private var uiView: LoginUIView = LoginUIView()
-    var textFields: [UITextField]!
+    var textFields: [UITextField]?
     
     init() {
         super.init(nibName: nil, bundle: nil)
@@ -31,17 +31,13 @@ class LoginViewController: UIViewController {
         setLayout()
         setTapNextButton()
         setTapMakeAccountButton()
-        
-        
-        
-
     }
 }
 
 extension LoginViewController: BaseViewController {
     func setConfigure() {
         textFields = [uiView.nameTextField, uiView.emailORPhoneTextField, uiView.passwordTextField]
-        textFields.forEach { textField in
+        textFields?.forEach { textField in
             textField.delegate = self
         }
     }
@@ -92,13 +88,13 @@ extension LoginViewController: TextFieldReturnDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         let nextIndex = textField.tag + 1
         
-        if nextIndex == textFields.count {
+        if nextIndex == textFields?.count {
             textField.resignFirstResponder()
             return true
         }
         
         textField.resignFirstResponder()
-        textFields[nextIndex].becomeFirstResponder()
+        textFields?[nextIndex].becomeFirstResponder()
         
         return true
     }

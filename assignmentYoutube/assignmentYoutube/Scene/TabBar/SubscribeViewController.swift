@@ -7,6 +7,6 @@
 
 import UIKit
 
-class SubscribeViewController: UIViewController {
+final class SubscribeViewController: UIViewController {
     
 }

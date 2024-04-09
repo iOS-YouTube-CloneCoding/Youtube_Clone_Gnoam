@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MainViewController: UITabBarController {
+final class MainViewController: UITabBarController {
     init() {
         super.init(nibName: nil, bundle: nil)
     }

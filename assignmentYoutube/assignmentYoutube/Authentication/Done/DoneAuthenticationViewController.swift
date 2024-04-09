@@ -7,7 +7,7 @@
 
 import UIKit
 
-class DoneAuthenticationViewController: UIViewController {
+final class DoneAuthenticationViewController: UIViewController {
     private var authenticationUIView: LoginUIView = LoginUIView()
     
     init() {

@@ -7,6 +7,6 @@
 
 import UIKit
 
-class ShortViewController: UIViewController {
+final class ShortViewController: UIViewController {
     
 }

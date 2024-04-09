@@ -7,7 +7,7 @@
 
 import UIKit
 
-class AddViewController: UIViewController {
+final class AddViewController: UIViewController {
     override func viewDidLoad() {
          print("Test AddVIewController")
     }

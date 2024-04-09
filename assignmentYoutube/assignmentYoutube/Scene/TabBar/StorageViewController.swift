@@ -7,6 +7,6 @@
 
 import UIKit
 
-class StorageViewController: UIViewController {
+final class StorageViewController: UIViewController {
     
 }
