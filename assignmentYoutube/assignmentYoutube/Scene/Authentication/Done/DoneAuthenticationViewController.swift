@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class DoneAuthenticationViewController: UIViewController {
+final class DoneAuthenticationViewController: BaseViewController {
     private var authenticationUIView: LoginUIView = LoginUIView()
     
     init() {
@@ -20,46 +20,14 @@ final class DoneAuthenticationViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setUI()
+//        setUI()
         addView()
         customSubView()
-        setLayout()
+//        setLayout()
         setTapNextButton()
     }
-}
-
-extension DoneAuthenticationViewController: BaseViewController {
-    private func setTapNextButton() {
-        authenticationUIView.nextButton.addTarget(
-            self,
-            action: #selector(setTapButton),
-            for: .touchDown
-        )
-    }
     
-    @objc func setTapButton() {
-        let nextViewController = MainViewController()
-        navigationController?.pushViewController(nextViewController, animated: true)
-    }
-    
-    private func customSubView() {
-        authenticationUIView.titleLabel.numberOfLines = 2
-        authenticationUIView.titleLabel.text = """
-            노형우님
-            환영합니다!
-        """
-        authenticationUIView.nextButton.setTitle("확인", for: .normal)
-        authenticationUIView.addAuthenticationButton.setTitle("다른 계정으로 로그인하기", for: .normal)
-    }
-    
-    func addView() {
-        view.addSubview(authenticationUIView.googleImage)
-        view.addSubview(authenticationUIView.titleLabel)
-        view.addSubview(authenticationUIView.nextButton)
-        view.addSubview(authenticationUIView.addAuthenticationButton)
-    }
-    
-    func setLayout() {
+    override func setLayout() {
         // Google ImageView
         NSLayoutConstraint.activate([
             authenticationUIView.googleImage.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 128),
@@ -89,5 +57,38 @@ extension DoneAuthenticationViewController: BaseViewController {
             authenticationUIView.addAuthenticationButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -283),
             authenticationUIView.addAuthenticationButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -112)
         ])
+
+    }
+}
+
+extension DoneAuthenticationViewController {
+    private func setTapNextButton() {
+        authenticationUIView.nextButton.addTarget(
+            self,
+            action: #selector(setTapButton),
+            for: .touchDown
+        )
+    }
+    
+    @objc func setTapButton() {
+        let nextViewController = MainViewController()
+        navigationController?.pushViewController(nextViewController, animated: true)
+    }
+    
+    private func customSubView() {
+        authenticationUIView.titleLabel.numberOfLines = 2
+        authenticationUIView.titleLabel.text = """
+            노형우님
+            환영합니다!
+        """
+        authenticationUIView.nextButton.setTitle("확인", for: .normal)
+        authenticationUIView.addAuthenticationButton.setTitle("다른 계정으로 로그인하기", for: .normal)
+    }
+    
+    func addView() {
+        view.addSubview(authenticationUIView.googleImage)
+        view.addSubview(authenticationUIView.titleLabel)
+        view.addSubview(authenticationUIView.nextButton)
+        view.addSubview(authenticationUIView.addAuthenticationButton)
     }
 }

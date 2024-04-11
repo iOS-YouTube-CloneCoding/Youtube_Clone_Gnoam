@@ -7,9 +7,9 @@
 
 import UIKit
 
-final class LoginViewController: UIViewController {
+final class LoginViewController: BaseViewController {
     private var uiView: LoginUIView = LoginUIView()
-    var textFields: [UITextField]?
+    private var textFields: [UITextField]?
     
     init() {
         super.init(nibName: nil, bundle: nil)
@@ -25,23 +25,28 @@ final class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setUI()
-        setConfigure()
-        addView()
-        setLayout()
+    }
+    
+    override func setLayout() {
+        uiView.addSubviews([
+            uiView.googleImage, uiView.titleLabel, uiView.subTitleLabel,
+            uiView.containerView, uiView.nextButton, uiView.addAuthenticationButton
+        ])
+        uiView.setLayout()
+    }
+    
+    override func setStyle() {
+        textFields = [uiView.nameTextField, uiView.emailORPhoneTextField, uiView.passwordTextField]
+        textFields?.forEach { textField in
+            textField.delegate = self
+        }
+        
         setTapNextButton()
         setTapMakeAccountButton()
     }
 }
 
-extension LoginViewController: BaseViewController {
-    func setConfigure() {
-        textFields = [uiView.nameTextField, uiView.emailORPhoneTextField, uiView.passwordTextField]
-        textFields?.forEach { textField in
-            textField.delegate = self
-        }
-    }
-    
+extension LoginViewController {
     private func setTapNextButton() {
         uiView.nextButton.addTarget(
             self,
@@ -66,21 +71,6 @@ extension LoginViewController: BaseViewController {
     @objc func setTapAccountButton() {
         let nextViewController = SigninViewController()
         navigationController?.pushViewController(nextViewController, animated: true)
-    }
-    
-    func addView() {
-        uiView.addSubview(uiView.googleImage)
-        uiView.addSubview(uiView.titleLabel)
-        uiView.addSubview(uiView.subTitleLabel)
-        uiView.addSubview(uiView.nextButton)
-        uiView.addSubview(uiView.nameTextField)
-        uiView.addSubview(uiView.emailORPhoneTextField)
-        uiView.addSubview(uiView.passwordTextField)
-        uiView.addSubview(uiView.addAuthenticationButton)
-    }
-    
-    func setLayout() {
-        uiView.setLayout()
     }
 }
 

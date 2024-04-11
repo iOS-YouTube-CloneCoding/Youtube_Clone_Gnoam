@@ -7,19 +7,34 @@
 
 import UIKit
 
-protocol BaseViewController: UIViewController {
-    func setUI()
-    func setConfigure()
-    func addView()
-    func setLayout()
-}
+class BaseViewController: UIViewController {
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        super.init(nibName: nil, bundle: nil)
+    }
 
-extension BaseViewController {
-    func setUI() {
+    @available(*, unavailable)
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setBackgroundColor()
+        setStyle()
+        setLayout()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: true)
+    }
+    
+    func setBackgroundColor() {
         view.backgroundColor = .white
     }
     
-    func setConfigure() {
-        
-    }
+    func setStyle() {}
+    
+    func setLayout() {}
 }
+

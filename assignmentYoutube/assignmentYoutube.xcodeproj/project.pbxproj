@@ -7,11 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CC1358782BC2B28700EBC48E /* NSLayoutConstraint+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1358772BC2B28700EBC48E /* NSLayoutConstraint+Extension.swift */; };
 		CC41D53B2BA6BFFB00939197 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC41D53A2BA6BFFB00939197 /* UIColor+Extension.swift */; };
 		CC41D53F2BA6CAAB00939197 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC41D53E2BA6CAAB00939197 /* UIView+Extension.swift */; };
 		CC41D5412BA6CD8000939197 /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC41D5402BA6CD8000939197 /* UIFont+Extension.swift */; };
 		CC7926A72BC05C1C0002DDE7 /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7926A62BC05C1C0002DDE7 /* UIButton+Extension.swift */; };
 		CC7926AA2BC063050002DDE7 /* TextFieldReturnDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7926A92BC063050002DDE7 /* TextFieldReturnDelegate.swift */; };
+		CC7B3DA92BC678BE00BBD43A /* YoutubeStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7B3DA82BC678BE00BBD43A /* YoutubeStackView.swift */; };
+		CC7B3DAB2BC67D4900BBD43A /* UIStackView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7B3DAA2BC67D4900BBD43A /* UIStackView+Extension.swift */; };
 		CC8BC55C2BA71B7E00848FE2 /* LoginUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC8BC55B2BA71B7E00848FE2 /* LoginUIView.swift */; };
 		CC8BC5602BA71F3400848FE2 /* AuthenticationLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC8BC55F2BA71F3400848FE2 /* AuthenticationLabel.swift */; };
 		CC8BC5632BA7223C00848FE2 /* CGFloat+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC8BC5622BA7223C00848FE2 /* CGFloat+Extension.swift */; };
@@ -39,11 +42,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CC1358772BC2B28700EBC48E /* NSLayoutConstraint+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSLayoutConstraint+Extension.swift"; sourceTree = "<group>"; };
 		CC41D53A2BA6BFFB00939197 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		CC41D53E2BA6CAAB00939197 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		CC41D5402BA6CD8000939197 /* UIFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
 		CC7926A62BC05C1C0002DDE7 /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
 		CC7926A92BC063050002DDE7 /* TextFieldReturnDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldReturnDelegate.swift; sourceTree = "<group>"; };
+		CC7B3DA82BC678BE00BBD43A /* YoutubeStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutubeStackView.swift; sourceTree = "<group>"; };
+		CC7B3DAA2BC67D4900BBD43A /* UIStackView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Extension.swift"; sourceTree = "<group>"; };
 		CC8BC55B2BA71B7E00848FE2 /* LoginUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUIView.swift; sourceTree = "<group>"; };
 		CC8BC55F2BA71F3400848FE2 /* AuthenticationLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationLabel.swift; sourceTree = "<group>"; };
 		CC8BC5622BA7223C00848FE2 /* CGFloat+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGFloat+Extension.swift"; sourceTree = "<group>"; };
@@ -88,8 +94,10 @@
 			children = (
 				CC7926A82BC062440002DDE7 /* Protocol */,
 				CC41D53A2BA6BFFB00939197 /* UIColor+Extension.swift */,
+				CC7B3DAA2BC67D4900BBD43A /* UIStackView+Extension.swift */,
 				CC41D53E2BA6CAAB00939197 /* UIView+Extension.swift */,
 				CC41D5402BA6CD8000939197 /* UIFont+Extension.swift */,
+				CC1358772BC2B28700EBC48E /* NSLayoutConstraint+Extension.swift */,
 				CC8BC5622BA7223C00848FE2 /* CGFloat+Extension.swift */,
 				CCAC2DC42BBFC9840063EAA0 /* UITextField+Extension.swift */,
 				CC7926A62BC05C1C0002DDE7 /* UIButton+Extension.swift */,
@@ -109,6 +117,7 @@
 		CC41D53D2BA6C4F900939197 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				CCAC2DC62BBFE47B0063EAA0 /* Authentication */,
 				CC907A1A2BA977FB004D58EA /* TabBar */,
 				CC907A152BA84A70004D58EA /* Main */,
 				CC907A102BA7C7ED004D58EA /* Base */,
@@ -202,7 +211,6 @@
 			children = (
 				CC8BC5642BA74D8000848FE2 /* Resources */,
 				CC41D53D2BA6C4F900939197 /* Scene */,
-				CCAC2DC62BBFE47B0063EAA0 /* Authentication */,
 				CC41D53C2BA6C4DF00939197 /* App */,
 				CC41D5392BA6BFE000939197 /* Global */,
 				CC9B90EC2BA59FA1004FA698 /* UIComponent */,
@@ -226,6 +234,7 @@
 			isa = PBXGroup;
 			children = (
 				CC8BC5612BA71F3B00848FE2 /* Authentication */,
+				CC7B3DA82BC678BE00BBD43A /* YoutubeStackView.swift */,
 			);
 			path = UIComponent;
 			sourceTree = "<group>";
@@ -335,6 +344,7 @@
 				CC907A202BA9787E004D58EA /* AddViewController.swift in Sources */,
 				CC7926A72BC05C1C0002DDE7 /* UIButton+Extension.swift in Sources */,
 				CC907A1E2BA9786D004D58EA /* ShortViewController.swift in Sources */,
+				CC7B3DA92BC678BE00BBD43A /* YoutubeStackView.swift in Sources */,
 				CC41D5412BA6CD8000939197 /* UIFont+Extension.swift in Sources */,
 				CC907A142BA801D9004D58EA /* DoneAuthenticationViewController.swift in Sources */,
 				CC8BC5602BA71F3400848FE2 /* AuthenticationLabel.swift in Sources */,
@@ -351,6 +361,8 @@
 				CC41D53F2BA6CAAB00939197 /* UIView+Extension.swift in Sources */,
 				CC8BC55C2BA71B7E00848FE2 /* LoginUIView.swift in Sources */,
 				CC907A242BA9F1C1004D58EA /* StorageViewController.swift in Sources */,
+				CC1358782BC2B28700EBC48E /* NSLayoutConstraint+Extension.swift in Sources */,
+				CC7B3DAB2BC67D4900BBD43A /* UIStackView+Extension.swift in Sources */,
 				CC9B90D72BA58863004FA698 /* SceneDelegate.swift in Sources */,
 				CC7926AA2BC063050002DDE7 /* TextFieldReturnDelegate.swift in Sources */,
 			);

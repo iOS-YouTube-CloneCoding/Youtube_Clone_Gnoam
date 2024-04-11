@@ -21,7 +21,6 @@ class AuthenticationLabel: UILabel {
     }
     
     private func setDefaultStyle() {
-//        self.font = .PretendardB(size: 22)
         self.textAlignment = .center
         self.textColor = defaultTextColor
         self.translatesAutoresizingMaskIntoConstraints = false

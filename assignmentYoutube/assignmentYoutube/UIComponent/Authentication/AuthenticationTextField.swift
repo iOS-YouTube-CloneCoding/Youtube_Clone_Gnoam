@@ -8,7 +8,6 @@
 import UIKit
 
 class AuthenticationTextField: UITextField {
-//    private var defaultTextColor: UIColor = .black
     
     init() {
         super.init(frame: .zero)
@@ -21,11 +20,7 @@ class AuthenticationTextField: UITextField {
     }
     
     private func setDefaultStyle() {
-        // UI 관련
         self.borderStyle = .roundedRect
-//        self.frame.size.height = 48
-//        self.frame.size.width = 331
-        
         self.autocorrectionType = .no                               // 자동 수정
         self.spellCheckingType = .no                                // 맞춤법 검사
         self.autocapitalizationType = .none                         // 자동 대문자 활성화 여부
@@ -40,12 +35,10 @@ class AuthenticationTextField: UITextField {
         // 키보드 관련
         self.returnKeyType = .done                                  // 키보드 엔터키 타입
         self.keyboardType = UIKeyboardType.emailAddress
-        
         self.translatesAutoresizingMaskIntoConstraints = false
     }
     
-    
-    func setPlaceholderWithStyle(placeholder: String, size: CGFloat, weight: FontWeight = .regualr) {
+    private func setPlaceholderWithStyle(placeholder: String, size: CGFloat, weight: FontWeight = .regualr) {
         let font: UIFont?
         
         switch weight {
