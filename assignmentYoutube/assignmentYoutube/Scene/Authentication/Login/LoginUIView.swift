@@ -100,6 +100,10 @@ final class LoginUIView: UIView {
         return button
     }()
     
+    var isAllFieldsFilled: Bool {
+        return !nameTextField.text!.isEmpty && !emailORPhoneTextField.text!.isEmpty && !passwordTextField.text!.isEmpty
+    }
+    
     func setLayout() {
         containerView.addArrangedSubViews([
             nameTextField,
@@ -129,7 +133,7 @@ final class LoginUIView: UIView {
         NSLayoutConstraint.activate([
             containerView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 22),
             containerView.topAnchor.constraint(equalTo: subTitleLabel.bottomAnchor, constant: 68),
-            containerView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 204),
+            containerView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -309),
             containerView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -22)
         ])
         

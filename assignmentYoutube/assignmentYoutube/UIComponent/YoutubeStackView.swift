@@ -25,5 +25,6 @@ class YoutubeStackView: UIStackView {
         self.spacing = 17
         self.translatesAutoresizingMaskIntoConstraints = false
     }
-
+    
+    
 }

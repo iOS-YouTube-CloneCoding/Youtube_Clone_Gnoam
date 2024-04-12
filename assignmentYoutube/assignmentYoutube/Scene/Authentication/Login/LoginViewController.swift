@@ -25,6 +25,7 @@ final class LoginViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        NotificationCenter.default.addObserver(self, selector: #selector(textFieldDidChange(_:)), name: UITextField.textDidChangeNotification, object: nil)
     }
     
     override func setLayout() {
@@ -71,6 +72,14 @@ extension LoginViewController {
     @objc func setTapAccountButton() {
         let nextViewController = SigninViewController()
         navigationController?.pushViewController(nextViewController, animated: true)
+    }
+    
+    @objc func textFieldDidChange(_ textField: UITextField) {
+        if uiView.isAllFieldsFilled
+            uiView.nextButton.isButtonEnable(state: true)
+        } else {
+            uiView.nextButton.isButtonEnable(state: false)
+        }
     }
 }
 

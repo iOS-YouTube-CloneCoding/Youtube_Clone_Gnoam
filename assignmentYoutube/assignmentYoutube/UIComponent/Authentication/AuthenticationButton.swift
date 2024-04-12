@@ -31,7 +31,6 @@ class AuthenticationButton: UIButton {
         self.makeRounded(cornerRadius: 6)
         self.titleLabel?.font = .PretendardB(size: 18)
         self.backgroundColor = defaultBackgroundColor
-//        self.tintColor = defaultBackgroundColor
         self.setTitleColor(normalTitleColor, for: .normal)
         self.translatesAutoresizingMaskIntoConstraints = false
     }
