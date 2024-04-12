@@ -8,7 +8,7 @@
 import UIKit
 
 final class DoneAuthenticationViewController: BaseViewController {
-    private var authenticationUIView: LoginUIView = LoginUIView()
+    private var uiView: DoneAuthenticationUIView = DoneAuthenticationUIView()
     
     init() {
         super.init(nibName: nil, bundle: nil)
@@ -18,52 +18,26 @@ final class DoneAuthenticationViewController: BaseViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
+    override func loadView() {
+        self.view = uiView
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-//        setUI()
-        addView()
-        customSubView()
-//        setLayout()
-        setTapNextButton()
     }
     
     override func setLayout() {
-        // Google ImageView
-        NSLayoutConstraint.activate([
-            authenticationUIView.googleImage.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 128),
-            authenticationUIView.googleImage.topAnchor.constraint(equalTo: view.topAnchor, constant: 248),
-            authenticationUIView.googleImage.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -524),
-            authenticationUIView.googleImage.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -128)
+        uiView.addSubviews([
+            uiView.googleImage, uiView.titleLabel,
+            uiView.nextButton, uiView.addAuthenticationButton
         ])
-        
-        // TitleLabel
-        NSLayoutConstraint.activate([
-            authenticationUIView.titleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 123),
-            authenticationUIView.titleLabel.topAnchor.constraint(equalTo: authenticationUIView.googleImage.bottomAnchor, constant: 23),
-            authenticationUIView.titleLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -123)
-        ])
-        
-        // button set
-        NSLayoutConstraint.activate([
-            authenticationUIView.nextButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 22),
-            authenticationUIView.nextButton.topAnchor.constraint(equalTo: authenticationUIView.titleLabel.bottomAnchor, constant: 53),
-            authenticationUIView.nextButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -22)
-        ])
-        
-        // addAuthenticationButton set
-        NSLayoutConstraint.activate([
-            authenticationUIView.addAuthenticationButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 112),
-            authenticationUIView.addAuthenticationButton.topAnchor.constraint(equalTo: authenticationUIView.nextButton.bottomAnchor, constant: 23),
-            authenticationUIView.addAuthenticationButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -283),
-            authenticationUIView.addAuthenticationButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -112)
-        ])
-
+        uiView.setLayout()
     }
 }
 
 extension DoneAuthenticationViewController {
     private func setTapNextButton() {
-        authenticationUIView.nextButton.addTarget(
+        uiView.nextButton.addTarget(
             self,
             action: #selector(setTapButton),
             for: .touchDown
@@ -76,19 +50,13 @@ extension DoneAuthenticationViewController {
     }
     
     private func customSubView() {
-        authenticationUIView.titleLabel.numberOfLines = 2
-        authenticationUIView.titleLabel.text = """
-            노형우님
-            환영합니다!
-        """
-        authenticationUIView.nextButton.setTitle("확인", for: .normal)
-        authenticationUIView.addAuthenticationButton.setTitle("다른 계정으로 로그인하기", for: .normal)
-    }
-    
-    func addView() {
-        view.addSubview(authenticationUIView.googleImage)
-        view.addSubview(authenticationUIView.titleLabel)
-        view.addSubview(authenticationUIView.nextButton)
-        view.addSubview(authenticationUIView.addAuthenticationButton)
+        uiView.titleLabel.numberOfLines = 2
+        uiView.titleLabel.text = """
+        노형우님
+        환영합니다!
+    """
+        uiView.nextButton.setTitle("확인", for: .normal)
+        uiView.addAuthenticationButton.setTitle("다른 계정으로 로그인하기", for: .normal)
     }
 }
+

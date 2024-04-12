@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		CC1358782BC2B28700EBC48E /* NSLayoutConstraint+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1358772BC2B28700EBC48E /* NSLayoutConstraint+Extension.swift */; };
+		CC3391802BC8FE7400C68949 /* DoneAuthenticationUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC33917F2BC8FE7400C68949 /* DoneAuthenticationUIView.swift */; };
 		CC41D53B2BA6BFFB00939197 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC41D53A2BA6BFFB00939197 /* UIColor+Extension.swift */; };
 		CC41D53F2BA6CAAB00939197 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC41D53E2BA6CAAB00939197 /* UIView+Extension.swift */; };
 		CC41D5412BA6CD8000939197 /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC41D5402BA6CD8000939197 /* UIFont+Extension.swift */; };
@@ -43,6 +44,7 @@
 
 /* Begin PBXFileReference section */
 		CC1358772BC2B28700EBC48E /* NSLayoutConstraint+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSLayoutConstraint+Extension.swift"; sourceTree = "<group>"; };
+		CC33917F2BC8FE7400C68949 /* DoneAuthenticationUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoneAuthenticationUIView.swift; sourceTree = "<group>"; };
 		CC41D53A2BA6BFFB00939197 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		CC41D53E2BA6CAAB00939197 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		CC41D5402BA6CD8000939197 /* UIFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
@@ -261,6 +263,7 @@
 			isa = PBXGroup;
 			children = (
 				CC907A132BA801D9004D58EA /* DoneAuthenticationViewController.swift */,
+				CC33917F2BC8FE7400C68949 /* DoneAuthenticationUIView.swift */,
 			);
 			path = Done;
 			sourceTree = "<group>";
@@ -342,6 +345,7 @@
 				CC907A122BA7C80D004D58EA /* BaseViewController.swift in Sources */,
 				CC907A0D2BA7BE85004D58EA /* AuthenticationTextField.swift in Sources */,
 				CC907A202BA9787E004D58EA /* AddViewController.swift in Sources */,
+				CC3391802BC8FE7400C68949 /* DoneAuthenticationUIView.swift in Sources */,
 				CC7926A72BC05C1C0002DDE7 /* UIButton+Extension.swift in Sources */,
 				CC907A1E2BA9786D004D58EA /* ShortViewController.swift in Sources */,
 				CC7B3DA92BC678BE00BBD43A /* YoutubeStackView.swift in Sources */,

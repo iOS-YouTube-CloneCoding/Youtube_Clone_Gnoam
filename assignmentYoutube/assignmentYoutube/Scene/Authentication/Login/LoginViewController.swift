@@ -25,7 +25,6 @@ final class LoginViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        NotificationCenter.default.addObserver(self, selector: #selector(textFieldDidChange(_:)), name: UITextField.textDidChangeNotification, object: nil)
     }
     
     override func setLayout() {
@@ -42,12 +41,17 @@ final class LoginViewController: BaseViewController {
             textField.delegate = self
         }
         
+        setUserLoginInfo()
         setTapNextButton()
         setTapMakeAccountButton()
     }
 }
 
 extension LoginViewController {
+    private func setUserLoginInfo() {
+        NotificationCenter.default.addObserver(self, selector: #selector(textFieldDidChange(_:)), name: UITextField.textDidChangeNotification, object: nil)
+    }
+    
     private func setTapNextButton() {
         uiView.nextButton.addTarget(
             self,
@@ -75,7 +79,7 @@ extension LoginViewController {
     }
     
     @objc func textFieldDidChange(_ textField: UITextField) {
-        if uiView.isAllFieldsFilled
+        if uiView.isAllFieldsFilled {
             uiView.nextButton.isButtonEnable(state: true)
         } else {
             uiView.nextButton.isButtonEnable(state: false)
