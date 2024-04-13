@@ -1,5 +1,5 @@
 //
-//  DoneAuthentication.swift
+//  DoneAuthenticationViewController.swift
 //  assignmentYoutube
 //
 //  Created by Roh on 3/18/24.
@@ -47,16 +47,6 @@ extension DoneAuthenticationViewController {
     @objc func setTapButton() {
         let nextViewController = MainViewController()
         navigationController?.pushViewController(nextViewController, animated: true)
-    }
-    
-    private func customSubView() {
-        uiView.titleLabel.numberOfLines = 2
-        uiView.titleLabel.text = """
-        노형우님
-        환영합니다!
-    """
-        uiView.nextButton.setTitle("확인", for: .normal)
-        uiView.addAuthenticationButton.setTitle("다른 계정으로 로그인하기", for: .normal)
     }
 }
 

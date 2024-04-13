@@ -7,8 +7,8 @@
 
 import UIKit
 
-final class LoginViewController: BaseViewController {
-    private var uiView: LoginUIView = LoginUIView()
+final class SigninViewController: BaseViewController {
+    private var uiView: SiginUIView = SiginUIView()
     private var textFields: [UITextField]?
     
     init() {
@@ -47,7 +47,7 @@ final class LoginViewController: BaseViewController {
     }
 }
 
-extension LoginViewController {
+extension SigninViewController {
     private func setUserLoginInfo() {
         NotificationCenter.default.addObserver(self, selector: #selector(textFieldDidChange(_:)), name: UITextField.textDidChangeNotification, object: nil)
     }
@@ -74,7 +74,7 @@ extension LoginViewController {
     }
     
     @objc func setTapAccountButton() {
-        let nextViewController = SigninViewController()
+        let nextViewController = SignupViewController()
         navigationController?.pushViewController(nextViewController, animated: true)
     }
     
@@ -87,7 +87,7 @@ extension LoginViewController {
     }
 }
 
-extension LoginViewController: TextFieldReturnDelegate {
+extension SigninViewController: TextFieldReturnDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         let nextIndex = textField.tag + 1
         

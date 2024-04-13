@@ -7,8 +7,8 @@
 
 import UIKit
 
-final class SigninViewController: BaseViewController {
-    private var authenticationUIView: LoginUIView = LoginUIView()
+final class SignupViewController: BaseViewController {
+    private var authenticationUIView: SiginUIView = SiginUIView()
     
     init() {
         super.init(nibName: nil, bundle: nil)
@@ -67,7 +67,7 @@ final class SigninViewController: BaseViewController {
 
 }
 
-extension SigninViewController {
+extension SignupViewController {
     private func setTapNextButton() {
         authenticationUIView.nextButton.addTarget(
             self,

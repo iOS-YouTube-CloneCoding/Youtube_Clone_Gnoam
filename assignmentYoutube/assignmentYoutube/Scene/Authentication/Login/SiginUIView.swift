@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class LoginUIView: UIView {
+final class SiginUIView: UIView {
     let containerView: UIStackView = {
         let stackView = YoutubeStackView()
         return stackView
