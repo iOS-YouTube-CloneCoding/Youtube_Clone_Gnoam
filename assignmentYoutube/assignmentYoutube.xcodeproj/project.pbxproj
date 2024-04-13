@@ -16,7 +16,7 @@
 		CC7926AA2BC063050002DDE7 /* TextFieldReturnDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7926A92BC063050002DDE7 /* TextFieldReturnDelegate.swift */; };
 		CC7B3DA92BC678BE00BBD43A /* YoutubeStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7B3DA82BC678BE00BBD43A /* YoutubeStackView.swift */; };
 		CC7B3DAB2BC67D4900BBD43A /* UIStackView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7B3DAA2BC67D4900BBD43A /* UIStackView+Extension.swift */; };
-		CC8BC55C2BA71B7E00848FE2 /* LoginUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC8BC55B2BA71B7E00848FE2 /* LoginUIView.swift */; };
+		CC8BC55C2BA71B7E00848FE2 /* SiginUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC8BC55B2BA71B7E00848FE2 /* SiginUIView.swift */; };
 		CC8BC5602BA71F3400848FE2 /* AuthenticationLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC8BC55F2BA71F3400848FE2 /* AuthenticationLabel.swift */; };
 		CC8BC5632BA7223C00848FE2 /* CGFloat+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC8BC5622BA7223C00848FE2 /* CGFloat+Extension.swift */; };
 		CC907A082BA756B5004D58EA /* Pretendard-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = CC8BC5662BA74E0100848FE2 /* Pretendard-Bold.otf */; };
@@ -24,7 +24,7 @@
 		CC907A0A2BA756BB004D58EA /* Pretendard-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = CC8BC5672BA74E0100848FE2 /* Pretendard-Regular.otf */; };
 		CC907A0B2BA756BD004D58EA /* Pretendard-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = CC8BC5682BA74E0100848FE2 /* Pretendard-SemiBold.otf */; };
 		CC907A0D2BA7BE85004D58EA /* AuthenticationTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC907A0C2BA7BE85004D58EA /* AuthenticationTextField.swift */; };
-		CC907A0F2BA7C797004D58EA /* SigninViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC907A0E2BA7C797004D58EA /* SigninViewController.swift */; };
+		CC907A0F2BA7C797004D58EA /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC907A0E2BA7C797004D58EA /* SignupViewController.swift */; };
 		CC907A122BA7C80D004D58EA /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC907A112BA7C80D004D58EA /* BaseViewController.swift */; };
 		CC907A142BA801D9004D58EA /* DoneAuthenticationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC907A132BA801D9004D58EA /* DoneAuthenticationViewController.swift */; };
 		CC907A172BA84A82004D58EA /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC907A162BA84A82004D58EA /* MainViewController.swift */; };
@@ -33,9 +33,10 @@
 		CC907A202BA9787E004D58EA /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC907A1F2BA9787E004D58EA /* AddViewController.swift */; };
 		CC907A222BA979AE004D58EA /* SubscribeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC907A212BA979AE004D58EA /* SubscribeViewController.swift */; };
 		CC907A242BA9F1C1004D58EA /* StorageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC907A232BA9F1C1004D58EA /* StorageViewController.swift */; };
+		CC972C552BCB4EE9007F3C9B /* ModuleFactoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC972C542BCB4EE9007F3C9B /* ModuleFactoryProtocol.swift */; };
 		CC9B90D52BA58863004FA698 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9B90D42BA58863004FA698 /* AppDelegate.swift */; };
 		CC9B90D72BA58863004FA698 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9B90D62BA58863004FA698 /* SceneDelegate.swift */; };
-		CC9B90D92BA58863004FA698 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9B90D82BA58863004FA698 /* LoginViewController.swift */; };
+		CC9B90D92BA58863004FA698 /* SigninViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9B90D82BA58863004FA698 /* SigninViewController.swift */; };
 		CC9B90DE2BA58865004FA698 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC9B90DD2BA58865004FA698 /* Assets.xcassets */; };
 		CC9B90E12BA58865004FA698 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC9B90DF2BA58865004FA698 /* LaunchScreen.storyboard */; };
 		CC9B90EE2BA59FF6004FA698 /* AuthenticationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9B90ED2BA59FF6004FA698 /* AuthenticationButton.swift */; };
@@ -52,7 +53,7 @@
 		CC7926A92BC063050002DDE7 /* TextFieldReturnDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldReturnDelegate.swift; sourceTree = "<group>"; };
 		CC7B3DA82BC678BE00BBD43A /* YoutubeStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutubeStackView.swift; sourceTree = "<group>"; };
 		CC7B3DAA2BC67D4900BBD43A /* UIStackView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Extension.swift"; sourceTree = "<group>"; };
-		CC8BC55B2BA71B7E00848FE2 /* LoginUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUIView.swift; sourceTree = "<group>"; };
+		CC8BC55B2BA71B7E00848FE2 /* SiginUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiginUIView.swift; sourceTree = "<group>"; };
 		CC8BC55F2BA71F3400848FE2 /* AuthenticationLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationLabel.swift; sourceTree = "<group>"; };
 		CC8BC5622BA7223C00848FE2 /* CGFloat+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGFloat+Extension.swift"; sourceTree = "<group>"; };
 		CC8BC5662BA74E0100848FE2 /* Pretendard-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Bold.otf"; sourceTree = "<group>"; };
@@ -60,7 +61,7 @@
 		CC8BC5682BA74E0100848FE2 /* Pretendard-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-SemiBold.otf"; sourceTree = "<group>"; };
 		CC8BC5692BA74E0100848FE2 /* Pretendard-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Medium.otf"; sourceTree = "<group>"; };
 		CC907A0C2BA7BE85004D58EA /* AuthenticationTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationTextField.swift; sourceTree = "<group>"; };
-		CC907A0E2BA7C797004D58EA /* SigninViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninViewController.swift; sourceTree = "<group>"; };
+		CC907A0E2BA7C797004D58EA /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		CC907A112BA7C80D004D58EA /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		CC907A132BA801D9004D58EA /* DoneAuthenticationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoneAuthenticationViewController.swift; sourceTree = "<group>"; };
 		CC907A162BA84A82004D58EA /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -69,10 +70,11 @@
 		CC907A1F2BA9787E004D58EA /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 		CC907A212BA979AE004D58EA /* SubscribeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscribeViewController.swift; sourceTree = "<group>"; };
 		CC907A232BA9F1C1004D58EA /* StorageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageViewController.swift; sourceTree = "<group>"; };
+		CC972C542BCB4EE9007F3C9B /* ModuleFactoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleFactoryProtocol.swift; sourceTree = "<group>"; };
 		CC9B90D12BA58863004FA698 /* assignmentYoutube.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = assignmentYoutube.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC9B90D42BA58863004FA698 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CC9B90D62BA58863004FA698 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		CC9B90D82BA58863004FA698 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		CC9B90D82BA58863004FA698 /* SigninViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninViewController.swift; sourceTree = "<group>"; };
 		CC9B90DD2BA58865004FA698 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CC9B90E02BA58865004FA698 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CC9B90E22BA58865004FA698 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 			isa = PBXGroup;
 			children = (
 				CC7926A92BC063050002DDE7 /* TextFieldReturnDelegate.swift */,
+				CC972C542BCB4EE9007F3C9B /* ModuleFactoryProtocol.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -226,8 +229,8 @@
 		CC9B90E82BA58AA0004FA698 /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				CC9B90D82BA58863004FA698 /* LoginViewController.swift */,
-				CC8BC55B2BA71B7E00848FE2 /* LoginUIView.swift */,
+				CC9B90D82BA58863004FA698 /* SigninViewController.swift */,
+				CC8BC55B2BA71B7E00848FE2 /* SiginUIView.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -254,7 +257,7 @@
 		CCAC2DC72BBFE4FA0063EAA0 /* SignIn */ = {
 			isa = PBXGroup;
 			children = (
-				CC907A0E2BA7C797004D58EA /* SigninViewController.swift */,
+				CC907A0E2BA7C797004D58EA /* SignupViewController.swift */,
 			);
 			path = SignIn;
 			sourceTree = "<group>";
@@ -356,14 +359,15 @@
 				CC41D53B2BA6BFFB00939197 /* UIColor+Extension.swift in Sources */,
 				CCAC2DC52BBFC9840063EAA0 /* UITextField+Extension.swift in Sources */,
 				CC8BC5632BA7223C00848FE2 /* CGFloat+Extension.swift in Sources */,
-				CC9B90D92BA58863004FA698 /* LoginViewController.swift in Sources */,
+				CC9B90D92BA58863004FA698 /* SigninViewController.swift in Sources */,
 				CC907A172BA84A82004D58EA /* MainViewController.swift in Sources */,
 				CC9B90D52BA58863004FA698 /* AppDelegate.swift in Sources */,
 				CC907A1C2BA9783C004D58EA /* HomeViewController.swift in Sources */,
+				CC972C552BCB4EE9007F3C9B /* ModuleFactoryProtocol.swift in Sources */,
 				CC907A222BA979AE004D58EA /* SubscribeViewController.swift in Sources */,
-				CC907A0F2BA7C797004D58EA /* SigninViewController.swift in Sources */,
+				CC907A0F2BA7C797004D58EA /* SignupViewController.swift in Sources */,
 				CC41D53F2BA6CAAB00939197 /* UIView+Extension.swift in Sources */,
-				CC8BC55C2BA71B7E00848FE2 /* LoginUIView.swift in Sources */,
+				CC8BC55C2BA71B7E00848FE2 /* SiginUIView.swift in Sources */,
 				CC907A242BA9F1C1004D58EA /* StorageViewController.swift in Sources */,
 				CC1358782BC2B28700EBC48E /* NSLayoutConstraint+Extension.swift in Sources */,
 				CC7B3DAB2BC67D4900BBD43A /* UIStackView+Extension.swift in Sources */,

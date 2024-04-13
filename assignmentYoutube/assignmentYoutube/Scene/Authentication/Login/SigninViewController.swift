@@ -69,8 +69,9 @@ extension SigninViewController {
     }
     
     @objc func setTapButton() {
-        let doneAuthenticationViewController = DoneAuthenticationViewController()
-        navigationController?.pushViewController(doneAuthenticationViewController, animated: true)
+//        let doneAuthenticationViewController = DoneAuthenticationViewController()
+        let vc = ModuleFactory.resolve().instantiateSignupCompleteVC()
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     @objc func setTapAccountButton() {
