@@ -34,6 +34,7 @@
 		CC907A222BA979AE004D58EA /* SubscribeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC907A212BA979AE004D58EA /* SubscribeViewController.swift */; };
 		CC907A242BA9F1C1004D58EA /* StorageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC907A232BA9F1C1004D58EA /* StorageViewController.swift */; };
 		CC972C552BCB4EE9007F3C9B /* ModuleFactoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC972C542BCB4EE9007F3C9B /* ModuleFactoryProtocol.swift */; };
+		CC972C572BCC9087007F3C9B /* SignupUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC972C562BCC9087007F3C9B /* SignupUIView.swift */; };
 		CC9B90D52BA58863004FA698 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9B90D42BA58863004FA698 /* AppDelegate.swift */; };
 		CC9B90D72BA58863004FA698 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9B90D62BA58863004FA698 /* SceneDelegate.swift */; };
 		CC9B90D92BA58863004FA698 /* SigninViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9B90D82BA58863004FA698 /* SigninViewController.swift */; };
@@ -71,6 +72,7 @@
 		CC907A212BA979AE004D58EA /* SubscribeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscribeViewController.swift; sourceTree = "<group>"; };
 		CC907A232BA9F1C1004D58EA /* StorageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageViewController.swift; sourceTree = "<group>"; };
 		CC972C542BCB4EE9007F3C9B /* ModuleFactoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleFactoryProtocol.swift; sourceTree = "<group>"; };
+		CC972C562BCC9087007F3C9B /* SignupUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupUIView.swift; sourceTree = "<group>"; };
 		CC9B90D12BA58863004FA698 /* assignmentYoutube.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = assignmentYoutube.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC9B90D42BA58863004FA698 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CC9B90D62BA58863004FA698 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -258,6 +260,7 @@
 			isa = PBXGroup;
 			children = (
 				CC907A0E2BA7C797004D58EA /* SignupViewController.swift */,
+				CC972C562BCC9087007F3C9B /* SignupUIView.swift */,
 			);
 			path = SignIn;
 			sourceTree = "<group>";
@@ -351,6 +354,7 @@
 				CC3391802BC8FE7400C68949 /* DoneAuthenticationUIView.swift in Sources */,
 				CC7926A72BC05C1C0002DDE7 /* UIButton+Extension.swift in Sources */,
 				CC907A1E2BA9786D004D58EA /* ShortViewController.swift in Sources */,
+				CC972C572BCC9087007F3C9B /* SignupUIView.swift in Sources */,
 				CC7B3DA92BC678BE00BBD43A /* YoutubeStackView.swift in Sources */,
 				CC41D5412BA6CD8000939197 /* UIFont+Extension.swift in Sources */,
 				CC907A142BA801D9004D58EA /* DoneAuthenticationViewController.swift in Sources */,

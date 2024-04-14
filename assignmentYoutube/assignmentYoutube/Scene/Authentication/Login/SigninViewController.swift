@@ -10,6 +10,7 @@ import UIKit
 final class SigninViewController: BaseViewController {
     private var uiView: SiginUIView = SiginUIView()
     private var textFields: [UITextField]?
+    private let factory = ModuleFactory.resolve()
     
     init() {
         super.init(nibName: nil, bundle: nil)
@@ -69,14 +70,13 @@ extension SigninViewController {
     }
     
     @objc func setTapButton() {
-//        let doneAuthenticationViewController = DoneAuthenticationViewController()
-        let vc = ModuleFactory.resolve().instantiateSignupCompleteVC()
-        navigationController?.pushViewController(vc, animated: true)
+        let viewController = self.factory.instantiateSignupCompleteVC()
+        present(viewController, animated: true, completion: nil)
     }
     
     @objc func setTapAccountButton() {
-        let nextViewController = SignupViewController()
-        navigationController?.pushViewController(nextViewController, animated: true)
+        let viewController = self.factory.instantiateSignupVC()
+        navigationController?.pushViewController(viewController, animated: true)
     }
     
     @objc func textFieldDidChange(_ textField: UITextField) {

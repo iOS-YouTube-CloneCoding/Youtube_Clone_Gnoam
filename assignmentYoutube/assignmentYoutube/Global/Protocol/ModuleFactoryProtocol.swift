@@ -6,7 +6,7 @@
 //
 
 protocol ModuleFactoryProtocol {
-    func instantiateSigninVC() -> SigninViewController
+    func instantiateSignupVC() -> SignupViewController
     func instantiateSignupCompleteVC() -> DoneAuthenticationViewController
 }
 
@@ -17,8 +17,8 @@ class ModuleFactory: ModuleFactoryProtocol {
 }
 
 extension ModuleFactory {
-    func instantiateSigninVC() -> SigninViewController {
-        return SigninViewController.init()
+    func instantiateSignupVC() -> SignupViewController {
+        return SignupViewController.init()
     }
     
     func instantiateSignupCompleteVC() -> DoneAuthenticationViewController {
