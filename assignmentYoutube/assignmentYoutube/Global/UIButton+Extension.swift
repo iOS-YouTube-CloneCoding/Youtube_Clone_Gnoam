@@ -17,4 +17,13 @@ extension UIButton {
         }
         self.isEnabled = state
     }
+    
+    func isCheckBoxEnable(state: Bool) {
+        if state {
+            self.backgroundColor = .systemBlue
+        }
+        else {
+            self.backgroundColor = .gray
+        }
+    }
 }

@@ -8,6 +8,10 @@
 import UIKit
 
 extension UITextField {
+    func isSecureEnable(state: Bool) {
+        self.isSecureTextEntry = state
+    }
+    
     func addLeftPadding(_ amount: CGFloat) {
         let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: amount, height: self.frame.size.height))
         self.leftView = paddingView

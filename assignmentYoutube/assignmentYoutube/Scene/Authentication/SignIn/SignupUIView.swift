@@ -48,6 +48,7 @@ final class SignupUIView: UIView {
     
     let passwordTextField: UITextField = {
         var textField = AuthenticationTextField()
+        textField.isSecureEnable(state: true)
         textField.tag = 2
         textField.placeholder = "비밀번호 입력"
         return textField
@@ -83,6 +84,15 @@ final class SignupUIView: UIView {
     
     let checkBoxButton: UIButton = {
         var button = AuthenticationButton()
+        button.backgroundColor = .clear
+        
+        if let image = UIImage(named: "checkBoxSquare") {
+            button.setImage(image, for: .normal)
+        }
+        
+        button.contentMode = .scaleAspectFit
+        button.isCheckBoxEnable(state: false)
+        button.makeRounded(cornerRadius: 0)
         return button
     }()
     
@@ -107,6 +117,7 @@ final class SignupUIView: UIView {
         NSLayoutConstraint.activate([
             titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 147),
             titleLabel.topAnchor.constraint(equalTo: googleImage.bottomAnchor, constant: 23),
+            titleLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -615),
             titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -147)
         ])
         
@@ -120,18 +131,19 @@ final class SignupUIView: UIView {
         NSLayoutConstraint.activate([
             checkBoxButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 21),
             checkBoxButton.topAnchor.constraint(equalTo: showPasswordLabel.topAnchor, constant: 3),
-            checkBoxButton.bottomAnchor.constraint(equalTo: showPasswordLabel.bottomAnchor, constant: -2),
-            checkBoxButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -11)
+            checkBoxButton.bottomAnchor.constraint(equalTo: showPasswordLabel.bottomAnchor, constant: -2)
         ])
         
         NSLayoutConstraint.activate([
+            showPasswordLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 48),
             showPasswordLabel.topAnchor.constraint(equalTo: containerView.bottomAnchor, constant: 14),
+            showPasswordLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -274),
             showPasswordLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -252)
         ])
         
         NSLayoutConstraint.activate([
             nextButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 22),
-            nextButton.topAnchor.constraint(equalTo: showPasswordLabel.bottomAnchor, constant: 29),
+            nextButton.topAnchor.constraint(equalTo: topAnchor, constant: 567),
             nextButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -203),
             nextButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -22)
         ])

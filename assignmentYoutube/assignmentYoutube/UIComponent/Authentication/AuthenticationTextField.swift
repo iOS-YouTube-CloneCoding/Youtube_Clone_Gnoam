@@ -32,10 +32,10 @@ class AuthenticationTextField: UITextField {
         self.clearsOnBeginEditing = false                           // 편집시 기존 텍스트 필드값 제거
         self.font = .PretendardR(size: 15)                          // 레귤러 15
         
-        
         // 키보드 관련
         self.returnKeyType = .done                                  // 키보드 엔터키 타입
         self.keyboardType = UIKeyboardType.emailAddress
+        self.isSecureTextEntry = false                               // 일반적으로 보여지게
         self.translatesAutoresizingMaskIntoConstraints = false
     }
     
