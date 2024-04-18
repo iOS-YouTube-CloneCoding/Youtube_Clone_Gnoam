@@ -42,6 +42,7 @@
 		CC9B90E12BA58865004FA698 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC9B90DF2BA58865004FA698 /* LaunchScreen.storyboard */; };
 		CC9B90EE2BA59FF6004FA698 /* AuthenticationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9B90ED2BA59FF6004FA698 /* AuthenticationButton.swift */; };
 		CCAC2DC52BBFC9840063EAA0 /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAC2DC42BBFC9840063EAA0 /* UITextField+Extension.swift */; };
+		CCCBAADA2BD0F84900D4EBEA /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCBAAD92BD0F84900D4EBEA /* Observable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -82,6 +83,7 @@
 		CC9B90E22BA58865004FA698 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CC9B90ED2BA59FF6004FA698 /* AuthenticationButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationButton.swift; sourceTree = "<group>"; };
 		CCAC2DC42BBFC9840063EAA0 /* UITextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
+		CCCBAAD92BD0F84900D4EBEA /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +138,7 @@
 			children = (
 				CC7926A92BC063050002DDE7 /* TextFieldReturnDelegate.swift */,
 				CC972C542BCB4EE9007F3C9B /* ModuleFactoryProtocol.swift */,
+				CCCBAAD92BD0F84900D4EBEA /* Observable.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -228,13 +231,13 @@
 			path = assignmentYoutube;
 			sourceTree = "<group>";
 		};
-		CC9B90E82BA58AA0004FA698 /* Login */ = {
+		CC9B90E82BA58AA0004FA698 /* Signin */ = {
 			isa = PBXGroup;
 			children = (
 				CC9B90D82BA58863004FA698 /* SigninViewController.swift */,
 				CC8BC55B2BA71B7E00848FE2 /* SiginUIView.swift */,
 			);
-			path = Login;
+			path = Signin;
 			sourceTree = "<group>";
 		};
 		CC9B90EC2BA59FA1004FA698 /* UIComponent */ = {
@@ -250,19 +253,19 @@
 			isa = PBXGroup;
 			children = (
 				CCAC2DC82BBFE51C0063EAA0 /* Done */,
-				CCAC2DC72BBFE4FA0063EAA0 /* SignIn */,
-				CC9B90E82BA58AA0004FA698 /* Login */,
+				CCAC2DC72BBFE4FA0063EAA0 /* Signup */,
+				CC9B90E82BA58AA0004FA698 /* Signin */,
 			);
 			path = Authentication;
 			sourceTree = "<group>";
 		};
-		CCAC2DC72BBFE4FA0063EAA0 /* SignIn */ = {
+		CCAC2DC72BBFE4FA0063EAA0 /* Signup */ = {
 			isa = PBXGroup;
 			children = (
 				CC907A0E2BA7C797004D58EA /* SignupViewController.swift */,
 				CC972C562BCC9087007F3C9B /* SignupUIView.swift */,
 			);
-			path = SignIn;
+			path = Signup;
 			sourceTree = "<group>";
 		};
 		CCAC2DC82BBFE51C0063EAA0 /* Done */ = {
@@ -364,6 +367,7 @@
 				CCAC2DC52BBFC9840063EAA0 /* UITextField+Extension.swift in Sources */,
 				CC8BC5632BA7223C00848FE2 /* CGFloat+Extension.swift in Sources */,
 				CC9B90D92BA58863004FA698 /* SigninViewController.swift in Sources */,
+				CCCBAADA2BD0F84900D4EBEA /* Observable.swift in Sources */,
 				CC907A172BA84A82004D58EA /* MainViewController.swift in Sources */,
 				CC9B90D52BA58863004FA698 /* AppDelegate.swift in Sources */,
 				CC907A1C2BA9783C004D58EA /* HomeViewController.swift in Sources */,

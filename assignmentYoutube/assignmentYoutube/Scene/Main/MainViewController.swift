@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class MainViewController: UITabBarController {
+final class MainViewController: BaseViewController {
     init() {
         super.init(nibName: nil, bundle: nil)
     }
@@ -18,7 +18,6 @@ final class MainViewController: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
         
         let homeViewController = MainViewController()
         let shortViewController = ShortViewController()
@@ -58,6 +57,8 @@ final class MainViewController: UITabBarController {
         navigationSubscribe.navigationBar.prefersLargeTitles = true
         navigationStorage.navigationBar.prefersLargeTitles  = true
         
-        setViewControllers([navigationHome, navigationShort, navigationAdd, navigationSubscribe, navigationStorage], animated: false)
+        
+        let tabBarController = UITabBarController()
+        tabBarController.setViewControllers([navigationHome, navigationShort, navigationAdd, navigationSubscribe, navigationStorage], animated: false)
     }
 }

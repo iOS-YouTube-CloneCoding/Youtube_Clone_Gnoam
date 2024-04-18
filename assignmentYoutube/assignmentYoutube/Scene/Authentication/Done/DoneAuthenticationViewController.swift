@@ -9,9 +9,12 @@ import UIKit
 
 final class DoneAuthenticationViewController: BaseViewController {
     private var uiView: DoneAuthenticationUIView = DoneAuthenticationUIView()
+    private let factory = ModuleFactory.resolve()
+    var finishAction: Observable<Void>?
     
-    init() {
+    init(observer: Observable<Void>) {
         super.init(nibName: nil, bundle: nil)
+        finishAction = observer
     }
     
     required init?(coder: NSCoder) {
@@ -24,6 +27,7 @@ final class DoneAuthenticationViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
     }
     
     override func setLayout() {
@@ -32,6 +36,10 @@ final class DoneAuthenticationViewController: BaseViewController {
             uiView.nextButton, uiView.addAuthenticationButton
         ])
         uiView.setLayout()
+    }
+    
+    override func setStyle() {
+        setTapNextButton()
     }
 }
 
@@ -45,8 +53,10 @@ extension DoneAuthenticationViewController {
     }
     
     @objc func setTapButton() {
-        let nextViewController = MainViewController()
-        navigationController?.pushViewController(nextViewController, animated: true)
+        self.dismiss(animated: true)
+        if let doneLogin = finishAction {
+            doneLogin.value = ()
+        }
     }
 }
 

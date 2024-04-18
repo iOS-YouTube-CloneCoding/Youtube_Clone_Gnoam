@@ -11,6 +11,7 @@ final class SigninViewController: BaseViewController {
     private var uiView: SiginUIView = SiginUIView()
     private var textFields: [UITextField]?
     private let factory = ModuleFactory.resolve()
+    private var finishAction: Observable<Void> = Observable(())
     
     init() {
         super.init(nibName: nil, bundle: nil)
@@ -49,6 +50,13 @@ final class SigninViewController: BaseViewController {
 }
 
 extension SigninViewController {
+    private func doneLogin() {
+        finishAction.subscribe { [self] in
+            let mainViewController = self.factory.instantiateMainVC()
+            navigationController?.pushViewController(mainViewController, animated: true)
+        }
+    }
+    
     private func setUserLoginInfo() {
         NotificationCenter.default.addObserver(self, selector: #selector(textFieldDidChange(_:)), name: UITextField.textDidChangeNotification, object: nil)
     }
@@ -70,7 +78,8 @@ extension SigninViewController {
     }
     
     @objc func setTapButton() {
-        let viewController = self.factory.instantiateSignupCompleteVC()
+        doneLogin()
+        let viewController = self.factory.instantiateSignupCompleteVC(observer: finishAction)
         present(viewController, animated: true, completion: nil)
     }
     

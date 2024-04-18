@@ -11,6 +11,7 @@ final class SignupViewController: BaseViewController {
     private var uiView: SignupUIView = SignupUIView()
     private var textFields: [UITextField]?
     private let factory = ModuleFactory.resolve()
+    var finishAction: Observable<Void>?
     
     var tgCheckBoxState: Bool = false
     
@@ -54,6 +55,14 @@ final class SignupViewController: BaseViewController {
 }
 
 extension SignupViewController {
+    private func finishLogin(_ observer: Observable<Void>) -> Observable<Void> {
+        observer.subscribe { [self] in
+            let mainViewController = factory.instantiateMainVC()
+            navigationController?.pushViewController(mainViewController, animated: true)
+        }
+        return observer
+    }
+    
     private func setUserLoginInfo() {
         NotificationCenter.default.addObserver(self, selector: #selector(textFieldDidChange(_:)), name: UITextField.textDidChangeNotification, object: nil)
     }
@@ -76,8 +85,8 @@ extension SignupViewController {
     
     @objc func setTapButton() {
         
-        let doneAuthenticationViewController = DoneAuthenticationViewController()
-        navigationController?.pushViewController(doneAuthenticationViewController, animated: true)
+//        let doneViewController = self.factory.instantiateSignupCompleteVC()
+//        present(doneViewController, animated: true, completion: nil)
     }
     
     @objc func setTapCheckButton() {
