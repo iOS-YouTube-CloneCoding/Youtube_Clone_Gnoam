@@ -30,3 +30,8 @@ Temporary Items
 ### macOS Patch ###
 # iCloud generated files
 *.icloud
+
+
+.xcuserdata
+.xcshareddata
+assignmentYoutube/assignmentYoutube.xcodeproj/project.xcworkspace/xcuserdata/roh.xcuserdatad/UserInterfaceState.xcuserstate
