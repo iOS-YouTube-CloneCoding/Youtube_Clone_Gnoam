@@ -108,10 +108,11 @@ final class SignupUIView: UIView {
         ])
         
         NSLayoutConstraint.activate([
-            googleImage.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 128),
+            googleImage.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 130),
             googleImage.topAnchor.constraint(equalTo: topAnchor, constant: 110),
-            googleImage.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -662),
-            googleImage.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -128)
+//            googleImage.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -662),
+            googleImage.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+            googleImage.widthAnchor.constraint(equalTo: googleImage.heightAnchor, multiplier: 3.0)
         ])
         
         NSLayoutConstraint.activate([
@@ -138,15 +139,13 @@ final class SignupUIView: UIView {
             showPasswordLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 48),
             showPasswordLabel.topAnchor.constraint(equalTo: containerView.bottomAnchor, constant: 14),
             showPasswordLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -274),
-            showPasswordLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -252)
         ])
         
         NSLayoutConstraint.activate([
             nextButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 22),
-            nextButton.topAnchor.constraint(equalTo: topAnchor, constant: 567),
-            nextButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -203),
-            nextButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -22)
+            nextButton.topAnchor.constraint(equalTo: showPasswordLabel.bottomAnchor, constant: 29),
+            nextButton.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+            nextButton.widthAnchor.constraint(equalTo: nextButton.heightAnchor, multiplier: 7.8)
         ])
     }
 }
-

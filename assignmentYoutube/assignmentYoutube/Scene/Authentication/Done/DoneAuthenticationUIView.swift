@@ -58,8 +58,8 @@ final class DoneAuthenticationUIView: UIView {
         NSLayoutConstraint.activate([
             googleImage.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 128),
             googleImage.topAnchor.constraint(equalTo: topAnchor, constant: 248),
-            googleImage.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -524),
-            googleImage.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -128)
+            googleImage.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+            googleImage.widthAnchor.constraint(equalTo: googleImage.heightAnchor, multiplier: 3.0)
         ])
         
         NSLayoutConstraint.activate([
@@ -82,4 +82,5 @@ final class DoneAuthenticationUIView: UIView {
         ])
     }
 }
+
 
