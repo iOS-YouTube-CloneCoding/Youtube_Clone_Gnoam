@@ -21,7 +21,6 @@ final class Observable<T> {
     }
     
     func subscribe(_ closure: @escaping (T) -> Void) {
-        closure(value)
         self.listener = closure
     }
 }
