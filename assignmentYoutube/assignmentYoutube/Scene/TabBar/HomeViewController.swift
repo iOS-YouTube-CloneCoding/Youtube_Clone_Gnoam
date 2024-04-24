@@ -7,10 +7,9 @@
 
 import UIKit
 
-final class HomeViewController: UIViewController {
+final class HomeViewController: BaseViewController {
     init() {
         super.init(nibName: nil, bundle: nil)
-        print("HomeViewController-------1")
     }
     
     required init?(coder: NSCoder) {

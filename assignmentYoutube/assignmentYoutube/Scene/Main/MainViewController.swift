@@ -59,8 +59,7 @@ final class MainViewController: UITabBarController {
         navigationSubscribe.navigationBar.prefersLargeTitles = true
         navigationStorage.navigationBar.prefersLargeTitles  = true
         
-        let tabBarController = UITabBarController()
-        tabBarController.setViewControllers([navigationHome, navigationShort, navigationAdd, navigationSubscribe, navigationStorage], animated: false)
+        self.setViewControllers([navigationHome, navigationShort, navigationAdd, navigationSubscribe, navigationStorage], animated: false)
         
     }
 }
