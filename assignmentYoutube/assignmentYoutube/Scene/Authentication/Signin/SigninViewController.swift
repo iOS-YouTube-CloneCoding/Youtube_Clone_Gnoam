@@ -112,7 +112,3 @@ extension SigninViewController: TextFieldReturnDelegate {
         return true
     }
 }
-
-#Preview {
-    SigninViewController()
-}

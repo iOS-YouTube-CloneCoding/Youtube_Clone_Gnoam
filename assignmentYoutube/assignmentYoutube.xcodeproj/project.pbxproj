@@ -42,6 +42,7 @@
 		CC9B90E12BA58865004FA698 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC9B90DF2BA58865004FA698 /* LaunchScreen.storyboard */; };
 		CC9B90EE2BA59FF6004FA698 /* AuthenticationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9B90ED2BA59FF6004FA698 /* AuthenticationButton.swift */; };
 		CCAC2DC52BBFC9840063EAA0 /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAC2DC42BBFC9840063EAA0 /* UITextField+Extension.swift */; };
+		CCBE30DC2BDA0A230076DBDC /* YoutubeTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBE30DB2BDA0A230076DBDC /* YoutubeTabBar.swift */; };
 		CCCBAADA2BD0F84900D4EBEA /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCBAAD92BD0F84900D4EBEA /* Observable.swift */; };
 /* End PBXBuildFile section */
 
@@ -83,6 +84,7 @@
 		CC9B90E22BA58865004FA698 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CC9B90ED2BA59FF6004FA698 /* AuthenticationButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationButton.swift; sourceTree = "<group>"; };
 		CCAC2DC42BBFC9840063EAA0 /* UITextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
+		CCBE30DB2BDA0A230076DBDC /* YoutubeTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutubeTabBar.swift; sourceTree = "<group>"; };
 		CCCBAAD92BD0F84900D4EBEA /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -219,6 +221,7 @@
 		CC9B90D32BA58863004FA698 /* assignmentYoutube */ = {
 			isa = PBXGroup;
 			children = (
+				CCBE30DD2BDA0B210076DBDC /* Module */,
 				CC8BC5642BA74D8000848FE2 /* Resources */,
 				CC41D53D2BA6C4F900939197 /* Scene */,
 				CC41D53C2BA6C4DF00939197 /* App */,
@@ -275,6 +278,14 @@
 				CC33917F2BC8FE7400C68949 /* DoneAuthenticationUIView.swift */,
 			);
 			path = Done;
+			sourceTree = "<group>";
+		};
+		CCBE30DD2BDA0B210076DBDC /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				CCBE30DB2BDA0A230076DBDC /* YoutubeTabBar.swift */,
+			);
+			path = Module;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -373,6 +384,7 @@
 				CC907A1C2BA9783C004D58EA /* HomeViewController.swift in Sources */,
 				CC972C552BCB4EE9007F3C9B /* ModuleFactoryProtocol.swift in Sources */,
 				CC907A222BA979AE004D58EA /* SubscribeViewController.swift in Sources */,
+				CCBE30DC2BDA0A230076DBDC /* YoutubeTabBar.swift in Sources */,
 				CC907A0F2BA7C797004D58EA /* SignupViewController.swift in Sources */,
 				CC41D53F2BA6CAAB00939197 /* UIView+Extension.swift in Sources */,
 				CC8BC55C2BA71B7E00848FE2 /* SiginUIView.swift in Sources */,

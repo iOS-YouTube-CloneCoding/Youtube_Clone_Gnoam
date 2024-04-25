@@ -9,6 +9,13 @@ protocol ModuleFactoryProtocol {
     func instantiateSignupVC() -> SignupViewController
     func instantiateSignupCompleteVC(observer: Observable<Void>) -> DoneAuthenticationViewController
     func instantiateMainVC() -> MainViewController
+    
+    // MARK: - TabBar
+    func instantiateHomeVC() -> HomeViewController
+    func instantiateShortVC() -> ShortViewController
+    func instantiateAddVC() -> AddViewController
+    func instantiateSubscribeVC() -> SubscribeViewController
+    func instantiateStorageVC() -> StorageViewController
 }
 
 class ModuleFactory: ModuleFactoryProtocol {
@@ -28,6 +35,28 @@ extension ModuleFactory {
     
     func instantiateMainVC() -> MainViewController {
         return MainViewController.init()
+    }
+    
+    
+    // MARK: - TabBar
+    func instantiateHomeVC() -> HomeViewController {
+        return HomeViewController.init()
+    }
+    
+    func instantiateShortVC() -> ShortViewController {
+        return ShortViewController.init()
+    }
+    
+    func instantiateAddVC() -> AddViewController {
+        return AddViewController.init()
+    }
+    
+    func instantiateSubscribeVC() -> SubscribeViewController {
+        return SubscribeViewController.init()
+    }
+    
+    func instantiateStorageVC() -> StorageViewController {
+        return StorageViewController.init()
     }
 }
 
