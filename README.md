@@ -7,4 +7,4 @@
 <br>
 
 ## STEP1
-[1차 과제 리드미]()
+[1차 과제 리드미](https://hail-authority-984.notion.site/1-Read-me-4015656232ed413085f05e063bb5daee?pvs=4)
