@@ -39,20 +39,36 @@ final class DoneAuthenticationViewController: BaseViewController {
     }
     
     override func setStyle() {
-        setTapNextButton()
+        setTapCheckButton()
+        setTapOtherLoginButton()
     }
 }
 
 extension DoneAuthenticationViewController {
-    private func setTapNextButton() {
+    private func setTapCheckButton() {
         uiView.nextButton.addTarget(
             self,
-            action: #selector(setTapButton),
+            action: #selector(setTapCheck),
             for: .touchDown
         )
     }
     
-    @objc func setTapButton() {
+    private func setTapOtherLoginButton() {
+        uiView.addAuthenticationButton.addTarget(
+            self,
+            action: #selector(setTapOtherLogin),
+            for: .touchDown
+        )
+    }
+    
+    @objc func setTapCheck() {
+        self.dismiss(animated: true)
+        if let doneLogin = finishAction {
+            doneLogin.value = ()
+        }
+    }
+    
+    @objc func setTapOtherLogin() {
         self.dismiss(animated: true)
         if let doneLogin = finishAction {
             doneLogin.value = ()
