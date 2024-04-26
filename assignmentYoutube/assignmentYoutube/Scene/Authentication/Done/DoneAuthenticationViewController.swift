@@ -17,6 +17,10 @@ final class DoneAuthenticationViewController: BaseViewController {
         finishAction = observer
     }
     
+    deinit {
+        print("DoneAuthenticationViewController deinit")
+    }
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

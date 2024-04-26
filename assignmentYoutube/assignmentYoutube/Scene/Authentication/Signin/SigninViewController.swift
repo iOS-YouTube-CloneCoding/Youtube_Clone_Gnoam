@@ -53,7 +53,8 @@ extension SigninViewController {
     private func doneLogin() {
         finishAction.subscribe { [self] in
             let mainViewController = self.factory.instantiateMainVC()
-            navigationController?.pushViewController(mainViewController, animated: true)
+            mainViewController.modalPresentationStyle = .fullScreen
+            self.present(mainViewController, animated: true, completion: nil)
         }
     }
     
