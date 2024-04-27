@@ -85,7 +85,7 @@ extension SignupViewController {
     
     @objc func setTapButton() {
         doneLogin()
-        let viewController = self.factory.instantiateSignupCompleteVC(observer: finishAction)
+        let viewController = self.factory.instantiateSignupCompleteVC(observer: [finishAction])
         present(viewController, animated: true, completion: nil)
     }
     

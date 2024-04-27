@@ -7,7 +7,7 @@
 
 protocol ModuleFactoryProtocol {
     func instantiateSignupVC() -> SignupViewController
-    func instantiateSignupCompleteVC(observer: Observable<Void>) -> DoneAuthenticationViewController
+    func instantiateSignupCompleteVC(observer: [Observable<Void>]) -> DoneAuthenticationViewController
     func instantiateMainVC() -> MainViewController
     
     // MARK: - TabBar
@@ -29,7 +29,7 @@ extension ModuleFactory {
         return SignupViewController.init()
     }
     
-    func instantiateSignupCompleteVC(observer: Observable<Void>) -> DoneAuthenticationViewController {
+    func instantiateSignupCompleteVC(observer: [Observable<Void>]) -> DoneAuthenticationViewController {
         return DoneAuthenticationViewController.init(observer: observer)
     }
     

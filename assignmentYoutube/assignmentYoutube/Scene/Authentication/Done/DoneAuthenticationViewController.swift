@@ -10,15 +10,11 @@ import UIKit
 final class DoneAuthenticationViewController: BaseViewController {
     private var uiView: DoneAuthenticationUIView = DoneAuthenticationUIView()
     private let factory = ModuleFactory.resolve()
-    var finishAction: Observable<Void>?
+    var action: [Observable<Void>]!
     
-    init(observer: Observable<Void>) {
+    init(observer: [Observable<Void>]) {
         super.init(nibName: nil, bundle: nil)
-        finishAction = observer
-    }
-    
-    deinit {
-        print("DoneAuthenticationViewController deinit")
+        action = observer
     }
     
     required init?(coder: NSCoder) {
@@ -67,15 +63,11 @@ extension DoneAuthenticationViewController {
     
     @objc func setTapCheck() {
         self.dismiss(animated: true)
-        if let doneLogin = finishAction {
-            doneLogin.value = ()
-        }
+        action[0].value = ()
     }
     
     @objc func setTapOtherLogin() {
         self.dismiss(animated: true)
-        if let doneLogin = finishAction {
-            doneLogin.value = ()
-        }
+        action[1].value = ()
     }
 }
