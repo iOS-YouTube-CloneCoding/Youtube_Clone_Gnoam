@@ -8,3 +8,7 @@
 
 ## STEP1
 [1차 과제 리드미](https://hail-authority-984.notion.site/1-Read-me-4015656232ed413085f05e063bb5daee?pvs=4)
+
+
+## STEP2
+[2차 과제 리드미](https://hail-authority-984.notion.site/2-Read-me-64b4ae447c564755bc72488ae9613b07?pvs=4)
