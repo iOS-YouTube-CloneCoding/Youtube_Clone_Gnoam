@@ -114,7 +114,6 @@ final class SiginUIView: UIView {
         NSLayoutConstraint.activate([
             googleImage.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 130),
             googleImage.topAnchor.constraint(equalTo: topAnchor, constant: 110),
-//            googleImage.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -662),
             googleImage.centerXAnchor.constraint(equalTo: self.centerXAnchor),
             googleImage.widthAnchor.constraint(equalTo: googleImage.heightAnchor, multiplier: 3.0)
         ])

@@ -33,7 +33,7 @@
 		CC907A202BA9787E004D58EA /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC907A1F2BA9787E004D58EA /* AddViewController.swift */; };
 		CC907A222BA979AE004D58EA /* SubscribeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC907A212BA979AE004D58EA /* SubscribeViewController.swift */; };
 		CC907A242BA9F1C1004D58EA /* StorageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC907A232BA9F1C1004D58EA /* StorageViewController.swift */; };
-		CC972C552BCB4EE9007F3C9B /* ModuleFactoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC972C542BCB4EE9007F3C9B /* ModuleFactoryProtocol.swift */; };
+		CC972C552BCB4EE9007F3C9B /* ModuleFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC972C542BCB4EE9007F3C9B /* ModuleFactory.swift */; };
 		CC972C572BCC9087007F3C9B /* SignupUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC972C562BCC9087007F3C9B /* SignupUIView.swift */; };
 		CC9B90D52BA58863004FA698 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9B90D42BA58863004FA698 /* AppDelegate.swift */; };
 		CC9B90D72BA58863004FA698 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9B90D62BA58863004FA698 /* SceneDelegate.swift */; };
@@ -73,7 +73,7 @@
 		CC907A1F2BA9787E004D58EA /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 		CC907A212BA979AE004D58EA /* SubscribeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscribeViewController.swift; sourceTree = "<group>"; };
 		CC907A232BA9F1C1004D58EA /* StorageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageViewController.swift; sourceTree = "<group>"; };
-		CC972C542BCB4EE9007F3C9B /* ModuleFactoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleFactoryProtocol.swift; sourceTree = "<group>"; };
+		CC972C542BCB4EE9007F3C9B /* ModuleFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleFactory.swift; sourceTree = "<group>"; };
 		CC972C562BCC9087007F3C9B /* SignupUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupUIView.swift; sourceTree = "<group>"; };
 		CC9B90D12BA58863004FA698 /* assignmentYoutube.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = assignmentYoutube.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC9B90D42BA58863004FA698 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -139,7 +139,7 @@
 			isa = PBXGroup;
 			children = (
 				CC7926A92BC063050002DDE7 /* TextFieldReturnDelegate.swift */,
-				CC972C542BCB4EE9007F3C9B /* ModuleFactoryProtocol.swift */,
+				CC972C542BCB4EE9007F3C9B /* ModuleFactory.swift */,
 				CCCBAAD92BD0F84900D4EBEA /* Observable.swift */,
 			);
 			path = Protocol;
@@ -382,7 +382,7 @@
 				CC907A172BA84A82004D58EA /* MainViewController.swift in Sources */,
 				CC9B90D52BA58863004FA698 /* AppDelegate.swift in Sources */,
 				CC907A1C2BA9783C004D58EA /* HomeViewController.swift in Sources */,
-				CC972C552BCB4EE9007F3C9B /* ModuleFactoryProtocol.swift in Sources */,
+				CC972C552BCB4EE9007F3C9B /* ModuleFactory.swift in Sources */,
 				CC907A222BA979AE004D58EA /* SubscribeViewController.swift in Sources */,
 				CCBE30DC2BDA0A230076DBDC /* YoutubeTabBar.swift in Sources */,
 				CC907A0F2BA7C797004D58EA /* SignupViewController.swift in Sources */,
