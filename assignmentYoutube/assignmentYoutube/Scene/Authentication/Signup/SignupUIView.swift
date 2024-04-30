@@ -21,7 +21,7 @@ final class SignupUIView: UIView {
     }()
     
     let titleLabel: UILabel = {
-        var label = AuthenticationLabel()
+        let label = AuthenticationLabel()
         
         label.setTextWithStyle(
             text: "회원가입",
@@ -33,21 +33,21 @@ final class SignupUIView: UIView {
     }()
     
     let nameTextField: UITextField = {
-        var textField = AuthenticationTextField()
+        let textField = AuthenticationTextField()
         textField.tag = 0
         textField.placeholder = "이름을 입력해주세요."
         return textField
     }()
     
     let emailORPhoneTextField: UITextField = {
-        var textField = AuthenticationTextField()
+        let textField = AuthenticationTextField()
         textField.tag = 1
         textField.placeholder = "이메일 또는 휴대전화"
         return textField
     }()
     
     let passwordTextField: UITextField = {
-        var textField = AuthenticationTextField()
+        let textField = AuthenticationTextField()
         textField.isSecureEnable(state: true)
         textField.tag = 2
         textField.placeholder = "비밀번호 입력"
@@ -55,7 +55,7 @@ final class SignupUIView: UIView {
     }()
     
     let nextButton: UIButton = {
-        var button = AuthenticationButton()
+        let button = AuthenticationButton()
         button.isButtonEnable(state: false)
         
         button.setTitleWithStyle(
@@ -68,7 +68,7 @@ final class SignupUIView: UIView {
     }()
     
     let showPasswordLabel: UILabel = {
-        var label = AuthenticationLabel()
+        let label = AuthenticationLabel()
         label.numberOfLines = 2
         
         label.setTextWithStyle(
@@ -83,7 +83,7 @@ final class SignupUIView: UIView {
     }()
     
     let checkBoxButton: UIButton = {
-        var button = AuthenticationButton()
+        let button = AuthenticationButton()
         button.backgroundColor = .clear
         
         if let image = UIImage(named: "checkBoxSquare") {

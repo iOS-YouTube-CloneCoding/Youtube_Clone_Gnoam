@@ -16,7 +16,7 @@ final class DoneAuthenticationUIView: UIView {
     }()
     
     let titleLabel: UILabel = {
-        var label = AuthenticationLabel()
+        let label = AuthenticationLabel()
         label.numberOfLines = 2
         label.setTextWithStyle(
             text: "OOO님\n환영합니다!",
