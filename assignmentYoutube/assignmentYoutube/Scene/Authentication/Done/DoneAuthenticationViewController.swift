@@ -63,6 +63,7 @@ extension DoneAuthenticationViewController {
     
     @objc func setTapCheck() {
         self.dismiss(animated: true)
+        UserDefaults.setLoggedIn()
         action[0].value = ()
     }
     
