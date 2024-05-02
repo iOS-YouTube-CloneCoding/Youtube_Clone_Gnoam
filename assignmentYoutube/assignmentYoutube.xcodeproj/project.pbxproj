@@ -135,6 +135,62 @@
 			path = Scene;
 			sourceTree = "<group>";
 		};
+		CC6BB4E72BE35703009919E4 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				CC6BB4ED2BE35776009919E4 /* Body */,
+				CC6BB4EC2BE3574E009919E4 /* Header */,
+				CC907A1B2BA9783C004D58EA /* HomeViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		CC6BB4E82BE3570F009919E4 /* Short */ = {
+			isa = PBXGroup;
+			children = (
+				CC907A1D2BA9786D004D58EA /* ShortViewController.swift */,
+			);
+			path = Short;
+			sourceTree = "<group>";
+		};
+		CC6BB4E92BE35716009919E4 /* AddView */ = {
+			isa = PBXGroup;
+			children = (
+				CC907A1F2BA9787E004D58EA /* AddViewController.swift */,
+			);
+			path = AddView;
+			sourceTree = "<group>";
+		};
+		CC6BB4EA2BE3571E009919E4 /* Subscribe */ = {
+			isa = PBXGroup;
+			children = (
+				CC907A212BA979AE004D58EA /* SubscribeViewController.swift */,
+			);
+			path = Subscribe;
+			sourceTree = "<group>";
+		};
+		CC6BB4EB2BE35725009919E4 /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				CC907A232BA9F1C1004D58EA /* StorageViewController.swift */,
+			);
+			path = Storage;
+			sourceTree = "<group>";
+		};
+		CC6BB4EC2BE3574E009919E4 /* Header */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Header;
+			sourceTree = "<group>";
+		};
+		CC6BB4ED2BE35776009919E4 /* Body */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Body;
+			sourceTree = "<group>";
+		};
 		CC7926A82BC062440002DDE7 /* Protocol */ = {
 			isa = PBXGroup;
 			children = (
@@ -193,11 +249,11 @@
 		CC907A1A2BA977FB004D58EA /* TabBar */ = {
 			isa = PBXGroup;
 			children = (
-				CC907A1B2BA9783C004D58EA /* HomeViewController.swift */,
-				CC907A1D2BA9786D004D58EA /* ShortViewController.swift */,
-				CC907A1F2BA9787E004D58EA /* AddViewController.swift */,
-				CC907A212BA979AE004D58EA /* SubscribeViewController.swift */,
-				CC907A232BA9F1C1004D58EA /* StorageViewController.swift */,
+				CC6BB4EB2BE35725009919E4 /* Storage */,
+				CC6BB4EA2BE3571E009919E4 /* Subscribe */,
+				CC6BB4E92BE35716009919E4 /* AddView */,
+				CC6BB4E82BE3570F009919E4 /* Short */,
+				CC6BB4E72BE35703009919E4 /* Home */,
 			);
 			path = TabBar;
 			sourceTree = "<group>";
