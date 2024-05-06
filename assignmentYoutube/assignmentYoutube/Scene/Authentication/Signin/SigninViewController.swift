@@ -57,11 +57,6 @@ extension SigninViewController {
             mainViewController.modalPresentationStyle = .fullScreen
             self.present(mainViewController, animated: true, completion: nil)
         }
-        
-        moveSignupAction.subscribe { [self] in
-            let signupViewController = self.factory.instantiateSignupVC()
-            navigationController?.pushViewController(signupViewController, animated: true)
-        }
     }
     
     private func setUserLoginInfo() {
@@ -86,7 +81,7 @@ extension SigninViewController {
     
     @objc func setTapButton() {
         doneLogin()
-        let viewController = self.factory.instantiateSignupCompleteVC(observer: [finishAction, moveSignupAction])
+        let viewController = self.factory.instantiateSignupCompleteVC(observer: [finishAction])
         present(viewController, animated: true, completion: nil)
     }
     

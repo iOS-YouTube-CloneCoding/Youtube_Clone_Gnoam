@@ -69,6 +69,9 @@ extension DoneAuthenticationViewController {
     
     @objc func setTapOtherLogin() {
         self.dismiss(animated: true)
+        if action.count < 2 {
+            return
+        }
         action[1].value = ()
     }
 }
