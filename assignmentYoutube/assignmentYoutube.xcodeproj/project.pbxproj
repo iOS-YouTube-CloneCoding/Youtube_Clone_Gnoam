@@ -7,8 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CC0A4CF02BEEEBDE001ECB31 /* HomeKeyWordCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0A4CEF2BEEEBDE001ECB31 /* HomeKeyWordCVC.swift */; };
 		CC1358782BC2B28700EBC48E /* NSLayoutConstraint+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1358772BC2B28700EBC48E /* NSLayoutConstraint+Extension.swift */; };
 		CC3391802BC8FE7400C68949 /* DoneAuthenticationUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC33917F2BC8FE7400C68949 /* DoneAuthenticationUIView.swift */; };
+		CC3EA1E32BE9C6B10030D242 /* HomeChannelCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3EA1E22BE9C6B10030D242 /* HomeChannelCVC.swift */; };
+		CC3EA1E52BEB062C0030D242 /* HomeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3EA1E42BEB062C0030D242 /* HomeHeaderView.swift */; };
+		CC3EA1E72BEB29150030D242 /* NavigationBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3EA1E62BEB29150030D242 /* NavigationBarView.swift */; };
 		CC41D53B2BA6BFFB00939197 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC41D53A2BA6BFFB00939197 /* UIColor+Extension.swift */; };
 		CC41D53F2BA6CAAB00939197 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC41D53E2BA6CAAB00939197 /* UIView+Extension.swift */; };
 		CC41D5412BA6CD8000939197 /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC41D5402BA6CD8000939197 /* UIFont+Extension.swift */; };
@@ -48,8 +52,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CC0A4CEF2BEEEBDE001ECB31 /* HomeKeyWordCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeKeyWordCVC.swift; sourceTree = "<group>"; };
 		CC1358772BC2B28700EBC48E /* NSLayoutConstraint+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSLayoutConstraint+Extension.swift"; sourceTree = "<group>"; };
 		CC33917F2BC8FE7400C68949 /* DoneAuthenticationUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoneAuthenticationUIView.swift; sourceTree = "<group>"; };
+		CC3EA1E22BE9C6B10030D242 /* HomeChannelCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeChannelCVC.swift; sourceTree = "<group>"; };
+		CC3EA1E42BEB062C0030D242 /* HomeHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHeaderView.swift; sourceTree = "<group>"; };
+		CC3EA1E62BEB29150030D242 /* NavigationBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarView.swift; sourceTree = "<group>"; };
 		CC41D53A2BA6BFFB00939197 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		CC41D53E2BA6CAAB00939197 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		CC41D5402BA6CD8000939197 /* UIFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
@@ -101,6 +109,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CC3EA1E82BEC63220030D242 /* NavigationBar */ = {
+			isa = PBXGroup;
+			children = (
+				CC3EA1E62BEB29150030D242 /* NavigationBarView.swift */,
+			);
+			path = NavigationBar;
+			sourceTree = "<group>";
+		};
 		CC41D5392BA6BFE000939197 /* Global */ = {
 			isa = PBXGroup;
 			children = (
@@ -130,8 +146,7 @@
 		CC41D53D2BA6C4F900939197 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
-				CCAC2DC62BBFE47B0063EAA0 /* Authentication */,
-				CC907A1A2BA977FB004D58EA /* TabBar */,
+				CCAC2DC62BBFE47B0063EAA0 /* Login */,
 				CC907A152BA84A70004D58EA /* Main */,
 				CC907A102BA7C7ED004D58EA /* Base */,
 			);
@@ -183,6 +198,9 @@
 		CC6BB4EC2BE3574E009919E4 /* Header */ = {
 			isa = PBXGroup;
 			children = (
+				CC3EA1E22BE9C6B10030D242 /* HomeChannelCVC.swift */,
+				CC3EA1E42BEB062C0030D242 /* HomeHeaderView.swift */,
+				CC0A4CEF2BEEEBDE001ECB31 /* HomeKeyWordCVC.swift */,
 			);
 			path = Header;
 			sourceTree = "<group>";
@@ -244,21 +262,15 @@
 		CC907A152BA84A70004D58EA /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				CC907A162BA84A82004D58EA /* MainViewController.swift */,
-			);
-			path = Main;
-			sourceTree = "<group>";
-		};
-		CC907A1A2BA977FB004D58EA /* TabBar */ = {
-			isa = PBXGroup;
-			children = (
+				CC3EA1E82BEC63220030D242 /* NavigationBar */,
 				CC6BB4EB2BE35725009919E4 /* Storage */,
 				CC6BB4EA2BE3571E009919E4 /* Subscribe */,
 				CC6BB4E92BE35716009919E4 /* AddView */,
 				CC6BB4E82BE3570F009919E4 /* Short */,
 				CC6BB4E72BE35703009919E4 /* Home */,
+				CC907A162BA84A82004D58EA /* MainViewController.swift */,
 			);
-			path = TabBar;
+			path = Main;
 			sourceTree = "<group>";
 		};
 		CC9B90C82BA58863004FA698 = {
@@ -311,14 +323,14 @@
 			path = UIComponent;
 			sourceTree = "<group>";
 		};
-		CCAC2DC62BBFE47B0063EAA0 /* Authentication */ = {
+		CCAC2DC62BBFE47B0063EAA0 /* Login */ = {
 			isa = PBXGroup;
 			children = (
 				CCAC2DC82BBFE51C0063EAA0 /* Done */,
 				CCAC2DC72BBFE4FA0063EAA0 /* Signup */,
 				CC9B90E82BA58AA0004FA698 /* Signin */,
 			);
-			path = Authentication;
+			path = Login;
 			sourceTree = "<group>";
 		};
 		CCAC2DC72BBFE4FA0063EAA0 /* Signup */ = {
@@ -429,7 +441,9 @@
 				CC7926A72BC05C1C0002DDE7 /* UIButton+Extension.swift in Sources */,
 				CC907A1E2BA9786D004D58EA /* ShortViewController.swift in Sources */,
 				CC972C572BCC9087007F3C9B /* SignupUIView.swift in Sources */,
+				CC3EA1E52BEB062C0030D242 /* HomeHeaderView.swift in Sources */,
 				CC7B3DA92BC678BE00BBD43A /* YoutubeStackView.swift in Sources */,
+				CC3EA1E32BE9C6B10030D242 /* HomeChannelCVC.swift in Sources */,
 				CC41D5412BA6CD8000939197 /* UIFont+Extension.swift in Sources */,
 				CC907A142BA801D9004D58EA /* DoneAuthenticationViewController.swift in Sources */,
 				CC8BC5602BA71F3400848FE2 /* AuthenticationLabel.swift in Sources */,
@@ -438,6 +452,7 @@
 				CCAC2DC52BBFC9840063EAA0 /* UITextField+Extension.swift in Sources */,
 				CC8BC5632BA7223C00848FE2 /* CGFloat+Extension.swift in Sources */,
 				CC9B90D92BA58863004FA698 /* SigninViewController.swift in Sources */,
+				CC3EA1E72BEB29150030D242 /* NavigationBarView.swift in Sources */,
 				CCCBAADA2BD0F84900D4EBEA /* Observable.swift in Sources */,
 				CC907A172BA84A82004D58EA /* MainViewController.swift in Sources */,
 				CC9B90D52BA58863004FA698 /* AppDelegate.swift in Sources */,
@@ -451,6 +466,7 @@
 				CC907A242BA9F1C1004D58EA /* StorageViewController.swift in Sources */,
 				CC1358782BC2B28700EBC48E /* NSLayoutConstraint+Extension.swift in Sources */,
 				CC7B3DAB2BC67D4900BBD43A /* UIStackView+Extension.swift in Sources */,
+				CC0A4CF02BEEEBDE001ECB31 /* HomeKeyWordCVC.swift in Sources */,
 				CC9B90D72BA58863004FA698 /* SceneDelegate.swift in Sources */,
 				CC7926AA2BC063050002DDE7 /* TextFieldReturnDelegate.swift in Sources */,
 			);

@@ -1,30 +1,30 @@
 //
-//  HomeKeyWordCVC.swift
+//  CollectionView.swift
 //  assignmentYoutube
 //
-//  Created by Roh on 5/11/24.
+//  Created by Roh on 5/7/24.
 //
 
 import UIKit
 
-class HomeKeyWordCVC: UICollectionViewCell {
-    private let subTitleImage: UIImageView = {
+final class HomeChannelCVC: UICollectionViewCell {
+    private let channelImage: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.image = UIImage(named: "homeHeaderSample2")
+        imageView.image = UIImage(named: "homeHeaderSample1")
         return imageView
     }()
     
-    private let subTitleLabel: UILabel = {
+    private let channelLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = .systemFont(ofSize: 20)
-        label.text = "bye"
+        label.text = "hello"
         return label
     }()
     
     private lazy var subTitleItemStackView: UIStackView = {
-        let stackView = UIStackView(arrangedSubviews: [subTitleImage, subTitleLabel])
+        let stackView = UIStackView(arrangedSubviews: [channelImage, channelLabel])
         stackView.axis = .vertical
         stackView.spacing = 1
         stackView.alignment = .center
@@ -49,11 +49,11 @@ class HomeKeyWordCVC: UICollectionViewCell {
     func setLayout() {
         subTitleItemStackView.translatesAutoresizingMaskIntoConstraints = false
         
-        NSLayoutConstraint.activate([
+//        NSLayoutConstraint.activate([
 //            subTitleItemStackView.topAnchor.constraint(equalTo: topAnchor, constant: 10),
 //            subTitleItemStackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 40),
 //            subTitleItemStackView.widthAnchor.constraint(equalToConstant: frame.width / 5),
 //            subTitleItemStackView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10)
-        ])
+//        ])
     }
 }

@@ -7,13 +7,23 @@
 
 import UIKit
 
-final class HomeTitleView: UIView {
+final class NavigationBarView: UIView {
+    let titleImage: UIBarButtonItem = {
+        let button = UIBarButtonItem(
+            image: UIImage(named: "navigationBarTitle")?.withRenderingMode(.alwaysOriginal),
+            style: .plain,
+            target: NavigationBarView.self,
+            action: #selector(setTapConnectDeviceButton(_:))
+        )
+        return button
+    }()
+    
     let connectDeviceButton: UIBarButtonItem = {
         let button = UIBarButtonItem(
-            title: "connectDeviceButton",
+            image: UIImage(named: "connectDevice")?.withRenderingMode(.alwaysOriginal),
             style: .plain,
-            target: HomeTitleView.self,
-            action: #selector(setTapAlarmButton(_:))
+            target: NavigationBarView.self,
+            action: #selector(setTapConnectDeviceButton(_:))
         )
         button.tag = 0
         return button
@@ -21,9 +31,9 @@ final class HomeTitleView: UIView {
     
     let alarmButton: UIBarButtonItem = {
         let button = UIBarButtonItem(
-            title: "alarmButton",
+            image: UIImage(named: "Alarm")?.withRenderingMode(.alwaysOriginal),
             style: .plain,
-            target: HomeTitleView.self,
+            target: NavigationBarView.self,
             action: #selector(setTapAlarmButton(_:))
         )
         button.tag = 1
@@ -32,18 +42,14 @@ final class HomeTitleView: UIView {
     
     let searchButton: UIBarButtonItem = {
         let button = UIBarButtonItem(
-            title: "connectDeviceButton",
+            image: UIImage(named: "Search")?.withRenderingMode(.alwaysOriginal),
             style: .plain,
-            target: HomeTitleView.self,
-            action: #selector(setTapAlarmButton(_:))
+            target: NavigationBarView.self,
+            action: #selector(setTapSearchButton(_:))
         )
         button.tag = 2
         return button
     }()
-    
-    func setLayout() {
-        
-    }
     
     @objc private func setTapConnectDeviceButton(_ sender: Any) {
         

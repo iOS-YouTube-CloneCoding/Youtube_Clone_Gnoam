@@ -8,7 +8,9 @@
 import UIKit
 
 final class MainViewController: UITabBarController {
+    private let navigationBarView: NavigationBarView = NavigationBarView()
     private let factory = ModuleFactory.resolve()
+    
     private lazy var tabBarVC = [
         "Home" : factory.instantiateHomeVC(),
         "Short" : factory.instantiateShortVC(),
@@ -27,6 +29,20 @@ final class MainViewController: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setNavigationBar()
+        setTabBar()
+    }
+    
+    private func setNavigationBar() {
+        navigationItem.leftBarButtonItem = navigationBarView.titleImage
+        navigationItem.rightBarButtonItems = [
+            navigationBarView.searchButton,
+            navigationBarView.connectDeviceButton,
+            navigationBarView.alarmButton
+        ]
+    }
+    
+    private func setTabBar() {
         var navigationVCs: [UINavigationController] = []
         
         YoutubeTabBar.allCases.forEach { tabInfo in
@@ -47,3 +63,7 @@ final class MainViewController: UITabBarController {
         self.setViewControllers(navigationVCs, animated: true)
     }
 }
+
+//#Preview {
+//    MainViewController()
+//}
