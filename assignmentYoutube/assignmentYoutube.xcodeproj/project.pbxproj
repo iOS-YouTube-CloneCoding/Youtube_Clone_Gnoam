@@ -11,7 +11,7 @@
 		CC1358782BC2B28700EBC48E /* NSLayoutConstraint+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1358772BC2B28700EBC48E /* NSLayoutConstraint+Extension.swift */; };
 		CC3391802BC8FE7400C68949 /* DoneAuthenticationUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC33917F2BC8FE7400C68949 /* DoneAuthenticationUIView.swift */; };
 		CC3EA1E32BE9C6B10030D242 /* HomeChannelCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3EA1E22BE9C6B10030D242 /* HomeChannelCVC.swift */; };
-		CC3EA1E52BEB062C0030D242 /* HomeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3EA1E42BEB062C0030D242 /* HomeHeaderView.swift */; };
+		CC3EA1E52BEB062C0030D242 /* HomeVideoCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3EA1E42BEB062C0030D242 /* HomeVideoCVC.swift */; };
 		CC3EA1E72BEB29150030D242 /* NavigationBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3EA1E62BEB29150030D242 /* NavigationBarView.swift */; };
 		CC41D53B2BA6BFFB00939197 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC41D53A2BA6BFFB00939197 /* UIColor+Extension.swift */; };
 		CC41D53F2BA6CAAB00939197 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC41D53E2BA6CAAB00939197 /* UIView+Extension.swift */; };
@@ -49,6 +49,7 @@
 		CCAC2DC52BBFC9840063EAA0 /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAC2DC42BBFC9840063EAA0 /* UITextField+Extension.swift */; };
 		CCBE30DC2BDA0A230076DBDC /* YoutubeTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBE30DB2BDA0A230076DBDC /* YoutubeTabBar.swift */; };
 		CCCBAADA2BD0F84900D4EBEA /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCBAAD92BD0F84900D4EBEA /* Observable.swift */; };
+		CCEB1F9A2BF1A2F100411B15 /* HomeViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCEB1F992BF1A2F100411B15 /* HomeViewController+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,7 +57,7 @@
 		CC1358772BC2B28700EBC48E /* NSLayoutConstraint+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSLayoutConstraint+Extension.swift"; sourceTree = "<group>"; };
 		CC33917F2BC8FE7400C68949 /* DoneAuthenticationUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoneAuthenticationUIView.swift; sourceTree = "<group>"; };
 		CC3EA1E22BE9C6B10030D242 /* HomeChannelCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeChannelCVC.swift; sourceTree = "<group>"; };
-		CC3EA1E42BEB062C0030D242 /* HomeHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHeaderView.swift; sourceTree = "<group>"; };
+		CC3EA1E42BEB062C0030D242 /* HomeVideoCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVideoCVC.swift; sourceTree = "<group>"; };
 		CC3EA1E62BEB29150030D242 /* NavigationBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarView.swift; sourceTree = "<group>"; };
 		CC41D53A2BA6BFFB00939197 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		CC41D53E2BA6CAAB00939197 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
@@ -96,6 +97,7 @@
 		CCAC2DC42BBFC9840063EAA0 /* UITextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
 		CCBE30DB2BDA0A230076DBDC /* YoutubeTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutubeTabBar.swift; sourceTree = "<group>"; };
 		CCCBAAD92BD0F84900D4EBEA /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
+		CCEB1F992BF1A2F100411B15 /* HomeViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeViewController+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,9 +158,9 @@
 		CC6BB4E72BE35703009919E4 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				CC6BB4ED2BE35776009919E4 /* Body */,
-				CC6BB4EC2BE3574E009919E4 /* Header */,
+				CC6BB4EC2BE3574E009919E4 /* HomeCVC */,
 				CC907A1B2BA9783C004D58EA /* HomeViewController.swift */,
+				CCEB1F992BF1A2F100411B15 /* HomeViewController+Extension.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -195,21 +197,14 @@
 			path = Storage;
 			sourceTree = "<group>";
 		};
-		CC6BB4EC2BE3574E009919E4 /* Header */ = {
+		CC6BB4EC2BE3574E009919E4 /* HomeCVC */ = {
 			isa = PBXGroup;
 			children = (
 				CC3EA1E22BE9C6B10030D242 /* HomeChannelCVC.swift */,
-				CC3EA1E42BEB062C0030D242 /* HomeHeaderView.swift */,
+				CC3EA1E42BEB062C0030D242 /* HomeVideoCVC.swift */,
 				CC0A4CEF2BEEEBDE001ECB31 /* HomeKeyWordCVC.swift */,
 			);
-			path = Header;
-			sourceTree = "<group>";
-		};
-		CC6BB4ED2BE35776009919E4 /* Body */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Body;
+			path = HomeCVC;
 			sourceTree = "<group>";
 		};
 		CC7926A82BC062440002DDE7 /* Protocol */ = {
@@ -441,7 +436,7 @@
 				CC7926A72BC05C1C0002DDE7 /* UIButton+Extension.swift in Sources */,
 				CC907A1E2BA9786D004D58EA /* ShortViewController.swift in Sources */,
 				CC972C572BCC9087007F3C9B /* SignupUIView.swift in Sources */,
-				CC3EA1E52BEB062C0030D242 /* HomeHeaderView.swift in Sources */,
+				CC3EA1E52BEB062C0030D242 /* HomeVideoCVC.swift in Sources */,
 				CC7B3DA92BC678BE00BBD43A /* YoutubeStackView.swift in Sources */,
 				CC3EA1E32BE9C6B10030D242 /* HomeChannelCVC.swift in Sources */,
 				CC41D5412BA6CD8000939197 /* UIFont+Extension.swift in Sources */,
@@ -463,6 +458,7 @@
 				CC907A0F2BA7C797004D58EA /* SignupViewController.swift in Sources */,
 				CC41D53F2BA6CAAB00939197 /* UIView+Extension.swift in Sources */,
 				CC8BC55C2BA71B7E00848FE2 /* SiginUIView.swift in Sources */,
+				CCEB1F9A2BF1A2F100411B15 /* HomeViewController+Extension.swift in Sources */,
 				CC907A242BA9F1C1004D58EA /* StorageViewController.swift in Sources */,
 				CC1358782BC2B28700EBC48E /* NSLayoutConstraint+Extension.swift in Sources */,
 				CC7B3DAB2BC67D4900BBD43A /* UIStackView+Extension.swift in Sources */,

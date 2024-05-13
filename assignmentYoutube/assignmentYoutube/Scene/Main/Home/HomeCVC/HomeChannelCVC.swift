@@ -26,7 +26,7 @@ final class HomeChannelCVC: UICollectionViewCell {
     private lazy var subTitleItemStackView: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [channelImage, channelLabel])
         stackView.axis = .vertical
-        stackView.spacing = 1
+        stackView.spacing = -10
         stackView.alignment = .center
         stackView.distribution = .fillEqually
         return stackView
@@ -44,16 +44,20 @@ final class HomeChannelCVC: UICollectionViewCell {
     
     func addView() {
         addSubview(subTitleItemStackView)
+        backgroundColor = .red
     }
     
     func setLayout() {
         subTitleItemStackView.translatesAutoresizingMaskIntoConstraints = false
-        
-//        NSLayoutConstraint.activate([
-//            subTitleItemStackView.topAnchor.constraint(equalTo: topAnchor, constant: 10),
-//            subTitleItemStackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 40),
-//            subTitleItemStackView.widthAnchor.constraint(equalToConstant: frame.width / 5),
-//            subTitleItemStackView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10)
-//        ])
+        NSLayoutConstraint.activate([
+            subTitleItemStackView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            subTitleItemStackView.topAnchor.constraint(equalTo: topAnchor),
+            subTitleItemStackView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 10),
+            subTitleItemStackView.trailingAnchor.constraint(equalTo: trailingAnchor),
+        ])
     }
+}
+
+#Preview {
+    HomeChannelCVC()
 }

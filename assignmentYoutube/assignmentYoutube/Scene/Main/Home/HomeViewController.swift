@@ -7,59 +7,12 @@
 
 import UIKit
 
-enum HomeSection {
-    case channel
-    case keyword
-    case video
-}
-
 final class HomeViewController: BaseViewController {
-    private func getHomeSection() -> NSCollectionLayoutSection {
-        let itemSize = NSCollectionLayoutSize(
-            widthDimension: .fractionalWidth(1.0),
-            heightDimension: .fractionalHeight(1.0)
-        )
-        let item = NSCollectionLayoutItem(layoutSize: itemSize)
-        item.contentInsets = NSDirectionalEdgeInsets(top: 8, leading: 8, bottom: 8, trailing: 8)
-        
-        let groupSize = NSCollectionLayoutSize(
-            widthDimension: .fractionalWidth(0.35),
-            heightDimension: .fractionalHeight(1.0)
-        )
-        
-        let group = NSCollectionLayoutGroup.horizontal(
-            layoutSize: groupSize,
-            repeatingSubitem: item,
-            count: 3
-        )
-        let section = NSCollectionLayoutSection(group: group)
-        section.orthogonalScrollingBehavior = .groupPaging
-        
-//        section.contentInsets = .init(top: 60, leading: 0, bottom: 30, trailing: 0)
-//                section.boundarySupplementaryItems = [
-//                    NSCollectionLayoutBoundarySupplementaryItem(
-//                        layoutSize: .init(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(30)),
-//                        elementKind: UICollectionView.elementKindSectionHeader,
-//                        alignment: .top
-//                    )
-//                ]
-        return section
-    }
-    
-    private func getLayout() -> UICollectionViewLayout {
-        return UICollectionViewCompositionalLayout { sectionIndex, env -> NSCollectionLayoutSection? in
-            switch self.homeSource[sectionIndex] {
-            case .channel:
-                return self.getHomeSection()
-            case .keyword:
-                return self.getHomeSection()
-            case .video:
-                return self.getHomeSection()
-            }
-        }
-    }
-    
-    private var homeSource: [HomeSection] = [HomeSection.channel, HomeSection.keyword, HomeSection.video]
+    private var homeSource: [HomeSection] = [
+        HomeSection.channel,
+        HomeSection.keyword,
+        HomeSection.video
+    ]
     
     private lazy var headerCollectionView: UICollectionView = {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: self.getLayout())
@@ -80,33 +33,122 @@ final class HomeViewController: BaseViewController {
     }
     
     override func setLayout() {
-        view.addSubviews([
-            headerCollectionView
-        ])
-        setHeaderLayout()
-    }
-    
-    private func setHeaderLayout() {
+        view.addSubview(headerCollectionView)
         NSLayoutConstraint.activate([
             headerCollectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             headerCollectionView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             headerCollectionView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
             headerCollectionView.rightAnchor.constraint(equalTo: view.rightAnchor),
-//            headerCollectionView.widthAnchor.constraint(equalTo: headerCollectionView.heightAnchor, multiplier: 3.6)
         ])
     }
     
     override func setStyle() {
-//        headerCollectionView.register(HomeSubTitleCVC.self, forCellWithReuseIdentifier: String(describing: HomeSubTitleCVC.self))
         headerCollectionView.register(HomeChannelCVC.self, forCellWithReuseIdentifier: String(describing: HomeChannelCVC.self))
         headerCollectionView.register(HomeKeyWordCVC.self, forCellWithReuseIdentifier: String(describing: HomeKeyWordCVC.self))
+        headerCollectionView.register(HomeVideoCVC.self, forCellWithReuseIdentifier: String(describing: HomeVideoCVC.self))
         headerCollectionView.dataSource = self
     }
+    
+    private func getLayout() -> UICollectionViewLayout {
+        return UICollectionViewCompositionalLayout { sectionIndex, env -> NSCollectionLayoutSection? in
+            switch self.homeSource[sectionIndex] {
+            case .channel:
+                return self.getChannelSection()
+            case .keyword:
+                return self.getKeywordSection()
+            case .video:
+                return self.getVideoSection()
+            }
+        }
+    }
+    
+    func getChannelSection() -> NSCollectionLayoutSection {
+        let itemSize = NSCollectionLayoutSize(
+            widthDimension: .fractionalWidth(1.0),
+            heightDimension: .fractionalHeight(1.0)
+        )
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+        item.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 10)
+        
+        // 그룹 사이즈를 비율로 설정하는. 코드
+        let groupSize = NSCollectionLayoutSize(
+            widthDimension: .fractionalWidth(0.19),
+//            heightDimension: .absolute(104)
+            heightDimension: .fractionalHeight(0.17)
+        )
+        
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
+        
+        // Section
+        let section = NSCollectionLayoutSection(group: group)
+        section.orthogonalScrollingBehavior = .continuous
+        section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 16)
+        
+        return section
+    }
+    
+    func getKeywordSection() -> NSCollectionLayoutSection {
+        let itemSize = NSCollectionLayoutSize(
+            widthDimension: .fractionalWidth(1.0),
+            heightDimension: .fractionalHeight(1.0)
+        )
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+        item.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 10)
+        
+        // 그룹 사이즈를 비율로 설정하는. 코드
+        let groupSize = NSCollectionLayoutSize(
+            widthDimension: .fractionalWidth(0.14),
+            heightDimension: .fractionalHeight(0.05)
+        )
+        
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
+        
+        // Section
+        let section = NSCollectionLayoutSection(group: group)
+        section.orthogonalScrollingBehavior = .groupPaging
+        section.contentInsets = NSDirectionalEdgeInsets(top: 8, leading: 16, bottom: 0, trailing: 16)
+        
+        return section
+    }
+    
+    func getVideoSection() -> NSCollectionLayoutSection {
+        let itemSize = NSCollectionLayoutSize(
+            widthDimension: .fractionalWidth(1.0),
+            heightDimension: .fractionalHeight(1.0)
+        )
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+        item.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 10)
+        
+        // 그룹 사이즈를 비율로 설정하는. 코드
+        let groupSize = NSCollectionLayoutSize(
+            widthDimension: .fractionalWidth(1.0),
+            heightDimension: .fractionalHeight(0.78)
+        )
+        
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
+        
+        // Section
+        let section = NSCollectionLayoutSection(group: group)
+        section.contentInsets = NSDirectionalEdgeInsets(top: 8, leading: 0, bottom: 0, trailing: -16)
+        
+        return section
+    }
+
 }
 
 extension HomeViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 15
+        switch section {
+        case 0:
+            return 10
+        case 1:
+            return 10
+        case 2:
+            return 3
+            
+        default:
+            return 0
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -122,7 +164,7 @@ extension HomeViewController: UICollectionViewDataSource {
             }
             return cell
         case 2:
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: HomeKeyWordCVC.self), for: indexPath) as? HomeKeyWordCVC else {
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: HomeVideoCVC.self), for: indexPath) as? HomeVideoCVC else {
                 return UICollectionViewCell()
             }
             return cell
@@ -135,4 +177,8 @@ extension HomeViewController: UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return homeSource.count
     }
+}
+
+#Preview {
+    HomeViewController()
 }
