@@ -74,6 +74,16 @@ final class HomeVideoInfoUIView: UIView {
             videoMenuButton.topAnchor.constraint(equalTo: videoTitleLabel.topAnchor, constant: -5),
         ])
     }
+    
+    func configure(
+        videoProfileImage: String,
+        videoTitleLabel: String,
+        videoSubTitleLabel: String
+    ) {
+        self.videoProfileImage.image = UIImage(named: videoProfileImage)
+        self.videoTitleLabel.text = videoTitleLabel
+        self.videoSubTitleLabel.text = videoSubTitleLabel
+    }
 }
 
 

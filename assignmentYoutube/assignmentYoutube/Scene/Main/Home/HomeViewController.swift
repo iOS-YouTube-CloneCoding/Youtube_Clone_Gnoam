@@ -156,19 +156,27 @@ extension HomeViewController: UICollectionViewDataSource {
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: HomeChannelCVC.self), for: indexPath) as? HomeChannelCVC else {
                 return UICollectionViewCell()
             }
-            
+            cell.configure(image: homeSource[0].mockData[indexPath.row], name: "지구닷")
             return cell
         case 1:
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: HomeKeyWordCVC.self), for: indexPath) as? HomeKeyWordCVC else {
                 return UICollectionViewCell()
             }
+            
             return cell
         case 2:
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: HomeVideoCVC.self), for: indexPath) as? HomeVideoCVC else {
                 return UICollectionViewCell()
             }
+            cell.configure(
+                videoContentImage: homeSource[2].mockData[indexPath.row],
+                videoProfileImage: "homeChannelSample1",
+                videoTitleLabel: "videoTitleLabel",
+                videoSubTitleLabel: "videoSubTitleLabel"
+            )
             return cell
         default:
+            
             fatalError("unknown section")
         }
     }

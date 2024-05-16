@@ -55,6 +55,11 @@ final class HomeChannelCVC: UICollectionViewCell {
             subTitleItemStackView.trailingAnchor.constraint(equalTo: trailingAnchor),
         ])
     }
+    
+    func configure(image: String, name: String = "지구") {
+        channelImage.image = UIImage(named: image)
+        channelLabel.text = name
+    }
 }
 
 #Preview {

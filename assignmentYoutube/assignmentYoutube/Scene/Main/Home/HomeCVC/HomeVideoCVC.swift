@@ -63,6 +63,20 @@ final class HomeVideoCVC: UICollectionViewCell {
             videoItemStackView.trailingAnchor.constraint(equalTo: trailingAnchor),
         ])
     }
+    
+    func configure(
+        videoContentImage: String,
+        videoProfileImage: String,
+        videoTitleLabel: String,
+        videoSubTitleLabel: String
+    ) {
+        self.videoContentImage.image = UIImage(named: videoContentImage)
+        videoInfoContainerView.configure(
+            videoProfileImage: videoProfileImage,
+            videoTitleLabel: videoTitleLabel,
+            videoSubTitleLabel: videoSubTitleLabel
+        )
+    }
 }
 
 #Preview {
