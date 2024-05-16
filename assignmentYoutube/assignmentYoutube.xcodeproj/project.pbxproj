@@ -47,6 +47,7 @@
 		CC9B90E12BA58865004FA698 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC9B90DF2BA58865004FA698 /* LaunchScreen.storyboard */; };
 		CC9B90EE2BA59FF6004FA698 /* AuthenticationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9B90ED2BA59FF6004FA698 /* AuthenticationButton.swift */; };
 		CCAC2DC52BBFC9840063EAA0 /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAC2DC42BBFC9840063EAA0 /* UITextField+Extension.swift */; };
+		CCBD40CB2BF5C6A400D73167 /* HomeVideoInfoUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBD40CA2BF5C6A400D73167 /* HomeVideoInfoUIView.swift */; };
 		CCBE30DC2BDA0A230076DBDC /* YoutubeTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBE30DB2BDA0A230076DBDC /* YoutubeTabBar.swift */; };
 		CCCBAADA2BD0F84900D4EBEA /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCBAAD92BD0F84900D4EBEA /* Observable.swift */; };
 		CCEB1F9A2BF1A2F100411B15 /* HomeViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCEB1F992BF1A2F100411B15 /* HomeViewController+Extension.swift */; };
@@ -95,6 +96,7 @@
 		CC9B90E22BA58865004FA698 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CC9B90ED2BA59FF6004FA698 /* AuthenticationButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationButton.swift; sourceTree = "<group>"; };
 		CCAC2DC42BBFC9840063EAA0 /* UITextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
+		CCBD40CA2BF5C6A400D73167 /* HomeVideoInfoUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVideoInfoUIView.swift; sourceTree = "<group>"; };
 		CCBE30DB2BDA0A230076DBDC /* YoutubeTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutubeTabBar.swift; sourceTree = "<group>"; };
 		CCCBAAD92BD0F84900D4EBEA /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		CCEB1F992BF1A2F100411B15 /* HomeViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeViewController+Extension.swift"; sourceTree = "<group>"; };
@@ -203,6 +205,7 @@
 				CC3EA1E22BE9C6B10030D242 /* HomeChannelCVC.swift */,
 				CC3EA1E42BEB062C0030D242 /* HomeVideoCVC.swift */,
 				CC0A4CEF2BEEEBDE001ECB31 /* HomeKeyWordCVC.swift */,
+				CCBD40CA2BF5C6A400D73167 /* HomeVideoInfoUIView.swift */,
 			);
 			path = HomeCVC;
 			sourceTree = "<group>";
@@ -453,6 +456,7 @@
 				CC9B90D52BA58863004FA698 /* AppDelegate.swift in Sources */,
 				CC907A1C2BA9783C004D58EA /* HomeViewController.swift in Sources */,
 				CC972C552BCB4EE9007F3C9B /* ModuleFactory.swift in Sources */,
+				CCBD40CB2BF5C6A400D73167 /* HomeVideoInfoUIView.swift in Sources */,
 				CC907A222BA979AE004D58EA /* SubscribeViewController.swift in Sources */,
 				CCBE30DC2BDA0A230076DBDC /* YoutubeTabBar.swift in Sources */,
 				CC907A0F2BA7C797004D58EA /* SignupViewController.swift in Sources */,

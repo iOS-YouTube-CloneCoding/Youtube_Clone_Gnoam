@@ -8,27 +8,29 @@
 import UIKit
 
 final class HomeVideoCVC: UICollectionViewCell {
-    private let videoImage: UIImageView = {
+    private let videoContentImage: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.image = UIImage(named: "homeHeaderSample1")
+        imageView.image = UIImage(named: "homeVideoSample1")
         return imageView
     }()
     
-    private let videoLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = .systemFont(ofSize: 20)
-        label.text = "hello"
-        return label
+    
+    private lazy var videoInfoContainerView: HomeVideoInfoUIView = {
+        let container = HomeVideoInfoUIView()
+        container.translatesAutoresizingMaskIntoConstraints = false
+        return container
     }()
     
     private lazy var videoItemStackView: UIStackView = {
-        let stackView = UIStackView(arrangedSubviews: [videoImage, videoLabel])
+        // videoInfoContainer를 먼저 참조하여 초기화를 하는 코드
+        let _ = self.videoInfoContainerView
+        
+        let stackView = UIStackView(arrangedSubviews: [videoContentImage, videoInfoContainerView])
         stackView.axis = .vertical
         stackView.spacing = -10
-        stackView.alignment = .center
-        stackView.distribution = .fillEqually
+        stackView.distribution = .fill
+        
         return stackView
     }()
     
@@ -43,12 +45,17 @@ final class HomeVideoCVC: UICollectionViewCell {
     }
     
     func addView() {
+        videoInfoContainerView.addSubviews()
         addSubview(videoItemStackView)
-        backgroundColor = .blue
+        backgroundColor = .gray
     }
     
     func setLayout() {
         videoItemStackView.translatesAutoresizingMaskIntoConstraints = false
+        videoInfoContainerView.setLayout()
+        
+        videoContentImage.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 7/10).isActive = true
+        
         NSLayoutConstraint.activate([
             videoItemStackView.leadingAnchor.constraint(equalTo: leadingAnchor),
             videoItemStackView.topAnchor.constraint(equalTo: topAnchor),

@@ -11,7 +11,7 @@ final class HomeChannelCVC: UICollectionViewCell {
     private let channelImage: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.image = UIImage(named: "homeHeaderSample1")
+        imageView.image = UIImage(named: "homeChannelSample1")
         return imageView
     }()
     
@@ -28,7 +28,7 @@ final class HomeChannelCVC: UICollectionViewCell {
         stackView.axis = .vertical
         stackView.spacing = -10
         stackView.alignment = .center
-        stackView.distribution = .fillEqually
+        stackView.distribution = .fill
         return stackView
     }()
     
@@ -44,7 +44,6 @@ final class HomeChannelCVC: UICollectionViewCell {
     
     func addView() {
         addSubview(subTitleItemStackView)
-        backgroundColor = .red
     }
     
     func setLayout() {
