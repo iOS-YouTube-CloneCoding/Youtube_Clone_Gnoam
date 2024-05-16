@@ -7,6 +7,61 @@
 
 import UIKit
 
+struct channelDataType {
+    let image: String 
+    let title: String
+}
+
+struct KeywordDataType {
+    let title: String
+}
+
+struct VideoDataType {
+    let videoImage: String
+    let channelImage: String
+    let title: String
+    let subTitle: String
+}
+
+struct HomeSectionDataUseCase {
+    func getData(type: HomeSection) -> Any {
+        switch type {
+        case .channel:
+            let data = [
+                channelDataType(image: "homeChannelSample1", title: "지구닷"),
+                channelDataType(image: "homeChannelSample2", title: "KBS"),
+                channelDataType(image: "homeChannelSample3", title: "딩고프리"),
+                channelDataType(image: "homeChannelSample4", title: "갓제인"),
+                channelDataType(image: "homeChannelSample5", title: "갓홍"),
+                channelDataType(image: "homeChannelSample6", title: "갓형우"),
+                channelDataType(image: "homeChannelSample7", title: "때껄룩"),
+            ]
+            return data
+        case .keyword:
+            let data = [
+                KeywordDataType(title: "전체"),
+                KeywordDataType(title: "오늘"),
+                KeywordDataType(title: "동영상"),
+                KeywordDataType(title: "Shorts"),
+                KeywordDataType(title: "이어서 시청하기"),
+                KeywordDataType(title: "라이브"),
+                KeywordDataType(title: "게시물")
+            ]
+            return data
+        case .video:
+            let data = [
+                VideoDataType(videoImage: "homeVideoSample1", channelImage: "homeChannelSample6", title: "Sugarcoat", subTitle: "sehooninseoul ・조회수 23만회 ・ 3주 전  "),
+                VideoDataType(videoImage: "homeVideoSample2", channelImage: "homeChannelSample6", title: "우즈의 사랑노래", subTitle: "sehooninseoul ・조회수 17만회 ・ 3주 전  "),
+                VideoDataType(videoImage: "homeVideoSample3", channelImage: "homeChannelSample7", title: "Playlist 우리가 사랑하는 웨이브투어스의 노래모음 wave to earth ⋆｡⋆˚⋆｡˚", subTitle: "때껄룩TAKE A LOOK ・조회수 100만회 ・ 3주 전  "),
+                VideoDataType(videoImage: "homeVideoSample4", channelImage: "homeChannelSample3", title: "태버(Tabber) - 007 & Chi-Ka (Feat.DEAN) | 딘, 태버 [DF LIVE]", subTitle: "dingo freestyle ・조회수 100만회 ・ 4주 전  "),
+                VideoDataType(videoImage: "homeVideoSample5", channelImage: "homeChannelSample2", title: "새벽이 되면 생각나는 목소리, 딘 💘 유희열의 스케치북 무대 모음 💙", subTitle: "KBS부산 ・조회수 96만회 ・ 1년 전  "),
+                VideoDataType(videoImage: "homeVideoSample6", channelImage: "homeChannelSample2", title: "[1시간40분] 올타임 레전드, 크러쉬의 스케치북 무대 모음!", subTitle: "KBS부산 ・조회수 8.8만회 ・ 1년 전  "),
+            ]
+            return data
+        }
+    }
+}
+
 enum HomeSection {
     case channel
     case keyword
@@ -14,29 +69,40 @@ enum HomeSection {
 }
 
 extension HomeSection {
-    var mockData: [String] {
+    var getData: [Any] {
         switch self {
         case .channel:
-            let channelMockData = [
-                "homeChannelSample1", "homeChannelSample2", "homeChannelSample3", "homeChannelSample4", 
-                "homeChannelSample5", "homeChannelSample6", "homeChannelSample7"
+            let data = [
+                channelDataType(image: "homeChannelSample1", title: "지구닷"),
+                channelDataType(image: "homeChannelSample2", title: "KBS"),
+                channelDataType(image: "homeChannelSample3", title: "딩고프리"),
+                channelDataType(image: "homeChannelSample4", title: "갓제인"),
+                channelDataType(image: "homeChannelSample5", title: "갓홍"),
+                channelDataType(image: "homeChannelSample6", title: "갓형우"),
+                channelDataType(image: "homeChannelSample7", title: "때껄룩"),
             ]
-            return channelMockData
-            
+            return data
         case .keyword:
-            let keywordMockData = [
-                "전체", "오늘", "동영상", "Shorts",
-                "이어서 시청하기", "라이브", "게시물"
+            let data = [
+                KeywordDataType(title: "전체"),
+                KeywordDataType(title: "오늘"),
+                KeywordDataType(title: "동영상"),
+                KeywordDataType(title: "Shorts"),
+                KeywordDataType(title: "이어서 시청하기"),
+                KeywordDataType(title: "라이브"),
+                KeywordDataType(title: "게시물")
             ]
-            return keywordMockData
-            
+            return data
         case .video:
-            let videoMockData = [
-                "homeVideoSample1", "homeVideoSample2", "homeVideoSample3",
-                "homeVideoSample4", "homeVideoSample5", "homeVideoSample6",
+            let data = [
+                VideoDataType(videoImage: "homeVideoSample1", channelImage: "homeChannelSample6", title: "Sugarcoat", subTitle: "sehooninseoul ・조회수 23만회 ・ 3주 전  "),
+                VideoDataType(videoImage: "homeVideoSample2", channelImage: "homeChannelSample6", title: "우즈의 사랑노래", subTitle: "sehooninseoul ・조회수 17만회 ・ 3주 전  "),
+                VideoDataType(videoImage: "homeVideoSample3", channelImage: "homeChannelSample7", title: "Playlist 우리가 사랑하는 웨이브투어스의 노래모음 wave to earth ⋆｡⋆˚⋆｡˚", subTitle: "때껄룩TAKE A LOOK ・조회수 100만회 ・ 3주 전  "),
+                VideoDataType(videoImage: "homeVideoSample4", channelImage: "homeChannelSample3", title: "태버(Tabber) - 007 & Chi-Ka (Feat.DEAN) | 딘, 태버 [DF LIVE]", subTitle: "dingo freestyle ・조회수 100만회 ・ 4주 전  "),
+                VideoDataType(videoImage: "homeVideoSample5", channelImage: "homeChannelSample2", title: "새벽이 되면 생각나는 목소리, 딘 💘 유희열의 스케치북 무대 모음 💙", subTitle: "KBS부산 ・조회수 96만회 ・ 1년 전  "),
+                VideoDataType(videoImage: "homeVideoSample6", channelImage: "homeChannelSample2", title: "[1시간40분] 올타임 레전드, 크러쉬의 스케치북 무대 모음!", subTitle: "KBS부산 ・조회수 8.8만회 ・ 1년 전  "),
             ]
-            return videoMockData
-            
+            return data
         }
     }
 }

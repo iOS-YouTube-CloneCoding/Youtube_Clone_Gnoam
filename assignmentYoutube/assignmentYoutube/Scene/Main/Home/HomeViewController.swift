@@ -140,11 +140,11 @@ extension HomeViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         switch section {
         case 0:
-            return HomeSection.channel.mockData.count
+            return HomeSection.channel.getData.count
         case 1:
-            return HomeSection.keyword.mockData.count
+            return HomeSection.keyword.getData.count
         case 2:
-            return HomeSection.video.mockData.count
+            return HomeSection.video.getData.count
         default:
             return 0
         }
@@ -156,23 +156,29 @@ extension HomeViewController: UICollectionViewDataSource {
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: HomeChannelCVC.self), for: indexPath) as? HomeChannelCVC else {
                 return UICollectionViewCell()
             }
-            cell.configure(image: homeSource[0].mockData[indexPath.row], name: "지구닷")
+            let data = homeSource[indexPath.section].getData as! [channelDataType]
+            cell.configure(image: data[indexPath.row].image, name: data[indexPath.row].title)
             return cell
+            
         case 1:
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: HomeKeyWordCVC.self), for: indexPath) as? HomeKeyWordCVC else {
                 return UICollectionViewCell()
             }
-            
+            let data = homeSource[indexPath.section].getData as! [KeywordDataType]
+            cell.configure(title: data[indexPath.row].title)
             return cell
+            
         case 2:
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: HomeVideoCVC.self), for: indexPath) as? HomeVideoCVC else {
                 return UICollectionViewCell()
             }
+            let data = homeSource[indexPath.section].getData as! [VideoDataType]
+            
             cell.configure(
-                videoContentImage: homeSource[2].mockData[indexPath.row],
-                videoProfileImage: "homeChannelSample1",
-                videoTitleLabel: "videoTitleLabel",
-                videoSubTitleLabel: "videoSubTitleLabel"
+                videoContentImage: data[indexPath.row].videoImage,
+                videoProfileImage: data[indexPath.row].channelImage,
+                videoTitleLabel: data[indexPath.row].title,
+                videoSubTitleLabel: data[indexPath.row].subTitle
             )
             return cell
         default:

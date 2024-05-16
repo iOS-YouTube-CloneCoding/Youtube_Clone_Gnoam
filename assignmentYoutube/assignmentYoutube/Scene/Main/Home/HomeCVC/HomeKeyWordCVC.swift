@@ -20,19 +20,6 @@ class HomeKeyWordCVC: UICollectionViewCell {
         return button
     }()
     
-    let nextButton: UIButton = {
-        let button = AuthenticationButton()
-        button.isButtonEnable(state: false)
-        
-        button.setTitleWithStyle(
-            title: "다음",
-            size: 14,
-            weight: .medium
-        )
-        
-        return button
-    }()
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
         addView()
@@ -54,6 +41,10 @@ class HomeKeyWordCVC: UICollectionViewCell {
             keyWordButton.widthAnchor.constraint(equalToConstant: 48),
             keyWordButton.heightAnchor.constraint(equalToConstant: 32)
         ])
+    }
+    
+    func configure(title: String) {
+        keyWordButton.setTitle(title, for: .normal)
     }
 }
 
