@@ -48,9 +48,10 @@
 		CC9B90EE2BA59FF6004FA698 /* AuthenticationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9B90ED2BA59FF6004FA698 /* AuthenticationButton.swift */; };
 		CCAC2DC52BBFC9840063EAA0 /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAC2DC42BBFC9840063EAA0 /* UITextField+Extension.swift */; };
 		CCBD40CB2BF5C6A400D73167 /* HomeVideoInfoUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBD40CA2BF5C6A400D73167 /* HomeVideoInfoUIView.swift */; };
+		CCBD40CD2BF6E7C900D73167 /* UICollectionView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBD40CC2BF6E7C900D73167 /* UICollectionView+Extension.swift */; };
 		CCBE30DC2BDA0A230076DBDC /* YoutubeTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBE30DB2BDA0A230076DBDC /* YoutubeTabBar.swift */; };
 		CCCBAADA2BD0F84900D4EBEA /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCBAAD92BD0F84900D4EBEA /* Observable.swift */; };
-		CCEB1F9A2BF1A2F100411B15 /* HomeViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCEB1F992BF1A2F100411B15 /* HomeViewController+Extension.swift */; };
+		CCEB1F9A2BF1A2F100411B15 /* HomeSectionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCEB1F992BF1A2F100411B15 /* HomeSectionType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -97,9 +98,10 @@
 		CC9B90ED2BA59FF6004FA698 /* AuthenticationButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationButton.swift; sourceTree = "<group>"; };
 		CCAC2DC42BBFC9840063EAA0 /* UITextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
 		CCBD40CA2BF5C6A400D73167 /* HomeVideoInfoUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVideoInfoUIView.swift; sourceTree = "<group>"; };
+		CCBD40CC2BF6E7C900D73167 /* UICollectionView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extension.swift"; sourceTree = "<group>"; };
 		CCBE30DB2BDA0A230076DBDC /* YoutubeTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutubeTabBar.swift; sourceTree = "<group>"; };
 		CCCBAAD92BD0F84900D4EBEA /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
-		CCEB1F992BF1A2F100411B15 /* HomeViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeViewController+Extension.swift"; sourceTree = "<group>"; };
+		CCEB1F992BF1A2F100411B15 /* HomeSectionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSectionType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +136,7 @@
 				CCAC2DC42BBFC9840063EAA0 /* UITextField+Extension.swift */,
 				CC7926A62BC05C1C0002DDE7 /* UIButton+Extension.swift */,
 				CC6BB4EE2BE37516009919E4 /* UserDefault+Extension.swift */,
+				CCBD40CC2BF6E7C900D73167 /* UICollectionView+Extension.swift */,
 			);
 			path = Global;
 			sourceTree = "<group>";
@@ -162,7 +165,7 @@
 			children = (
 				CC6BB4EC2BE3574E009919E4 /* HomeCVC */,
 				CC907A1B2BA9783C004D58EA /* HomeViewController.swift */,
-				CCEB1F992BF1A2F100411B15 /* HomeViewController+Extension.swift */,
+				CCEB1F992BF1A2F100411B15 /* HomeSectionType.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -437,6 +440,7 @@
 				CC907A202BA9787E004D58EA /* AddViewController.swift in Sources */,
 				CC3391802BC8FE7400C68949 /* DoneAuthenticationUIView.swift in Sources */,
 				CC7926A72BC05C1C0002DDE7 /* UIButton+Extension.swift in Sources */,
+				CCBD40CD2BF6E7C900D73167 /* UICollectionView+Extension.swift in Sources */,
 				CC907A1E2BA9786D004D58EA /* ShortViewController.swift in Sources */,
 				CC972C572BCC9087007F3C9B /* SignupUIView.swift in Sources */,
 				CC3EA1E52BEB062C0030D242 /* HomeVideoCVC.swift in Sources */,
@@ -462,7 +466,7 @@
 				CC907A0F2BA7C797004D58EA /* SignupViewController.swift in Sources */,
 				CC41D53F2BA6CAAB00939197 /* UIView+Extension.swift in Sources */,
 				CC8BC55C2BA71B7E00848FE2 /* SiginUIView.swift in Sources */,
-				CCEB1F9A2BF1A2F100411B15 /* HomeViewController+Extension.swift in Sources */,
+				CCEB1F9A2BF1A2F100411B15 /* HomeSectionType.swift in Sources */,
 				CC907A242BA9F1C1004D58EA /* StorageViewController.swift in Sources */,
 				CC1358782BC2B28700EBC48E /* NSLayoutConstraint+Extension.swift in Sources */,
 				CC7B3DAB2BC67D4900BBD43A /* UIStackView+Extension.swift in Sources */,

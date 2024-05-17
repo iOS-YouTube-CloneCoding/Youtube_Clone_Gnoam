@@ -68,21 +68,17 @@ final class HomeViewController: BaseViewController {
             heightDimension: .fractionalHeight(1.0)
         )
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
-        item.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 10)
+        item.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 10, bottom: 0, trailing: -10)
         
-        // 그룹 사이즈를 비율로 설정하는. 코드
         let groupSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(0.19),
-//            heightDimension: .absolute(104)
             heightDimension: .fractionalHeight(0.17)
         )
-        
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
         
-        // Section
         let section = NSCollectionLayoutSection(group: group)
         section.orthogonalScrollingBehavior = .continuous
-        section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 16)
+        section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 16, bottom: 0, trailing: -16)
         
         return section
     }
@@ -93,20 +89,17 @@ final class HomeViewController: BaseViewController {
             heightDimension: .fractionalHeight(1.0)
         )
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
-        item.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 10)
+        item.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 10, bottom: 0, trailing: -10)
         
-        // 그룹 사이즈를 비율로 설정하는. 코드
         let groupSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(0.14),
             heightDimension: .fractionalHeight(0.05)
         )
-        
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
         
-        // Section
         let section = NSCollectionLayoutSection(group: group)
         section.orthogonalScrollingBehavior = .groupPaging
-        section.contentInsets = NSDirectionalEdgeInsets(top: 8, leading: 16, bottom: 0, trailing: 16)
+        section.contentInsets = NSDirectionalEdgeInsets(top: 8, leading: 16, bottom: 0, trailing: -16)
         
         return section
     }
@@ -117,20 +110,18 @@ final class HomeViewController: BaseViewController {
             heightDimension: .fractionalHeight(1.0)
         )
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
-        item.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 10)
+        item.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0)
         
-        // 그룹 사이즈를 비율로 설정하는. 코드
         let groupSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(1.0),
             heightDimension: .fractionalHeight(0.4)
         )
-        
         let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitems: [item])
         
-        // Section
         let section = NSCollectionLayoutSection(group: group)
-        section.orthogonalScrollingBehavior = .none
-        section.contentInsets = NSDirectionalEdgeInsets(top: 8, leading: 0, bottom: 0, trailing: -16)
+        
+        
+        section.contentInsets = NSDirectionalEdgeInsets(top: 8, leading: 0, bottom: 0, trailing: 0)
         
         return section
     }
@@ -151,12 +142,13 @@ extension HomeViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
         switch indexPath.section {
         case 0:
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: HomeChannelCVC.self), for: indexPath) as? HomeChannelCVC else {
                 return UICollectionViewCell()
             }
-            let data = homeSource[indexPath.section].getData as! [channelDataType]
+            let data = homeSource[indexPath.section].getData as! [HomeSection.channelDataType]
             cell.configure(image: data[indexPath.row].image, name: data[indexPath.row].title)
             return cell
             
@@ -164,7 +156,7 @@ extension HomeViewController: UICollectionViewDataSource {
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: HomeKeyWordCVC.self), for: indexPath) as? HomeKeyWordCVC else {
                 return UICollectionViewCell()
             }
-            let data = homeSource[indexPath.section].getData as! [KeywordDataType]
+            let data = homeSource[indexPath.section].getData as! [HomeSection.KeywordDataType]
             cell.configure(title: data[indexPath.row].title)
             return cell
             
@@ -172,7 +164,7 @@ extension HomeViewController: UICollectionViewDataSource {
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: HomeVideoCVC.self), for: indexPath) as? HomeVideoCVC else {
                 return UICollectionViewCell()
             }
-            let data = homeSource[indexPath.section].getData as! [VideoDataType]
+            let data = homeSource[indexPath.section].getData as! [HomeSection.VideoDataType]
             
             cell.configure(
                 videoContentImage: data[indexPath.row].videoImage,
@@ -182,12 +174,10 @@ extension HomeViewController: UICollectionViewDataSource {
             )
             return cell
         default:
-            
-            fatalError("unknown section")
+            return UICollectionViewCell()
         }
     }
     
-    // 섹션수를 설정하는 코드
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return homeSource.count
     }
