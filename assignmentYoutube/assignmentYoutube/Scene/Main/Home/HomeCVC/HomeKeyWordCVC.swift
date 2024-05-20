@@ -8,14 +8,18 @@
 import UIKit
 
 class HomeKeyWordCVC: UICollectionViewCell {
-    let keyWordButton: UIButton = {
+    private let keyWordButton: UIButton = {
         let button = AuthenticationButton()
         button.backgroundColor = .gray
         button.setTitleWithStyle(
-            title: "다음",
+            title: "안녕하세요 저는 노형우입니당",
             size: 14,
             weight: .medium
         )
+        var config = UIButton.Configuration.plain()
+        config.titlePadding = 11
+        button.configuration = config
+        button.sizeToFit()
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
@@ -36,15 +40,19 @@ class HomeKeyWordCVC: UICollectionViewCell {
     
     func setLayout() {
         NSLayoutConstraint.activate([
-//            keyWordButton.centerXAnchor.constraint(equalTo: self.contentView.centerXAnchor),
-//            keyWordButton.centerYAnchor.constraint(equalTo: self.contentView.centerYAnchor),
-            keyWordButton.widthAnchor.constraint(equalToConstant: 48),
-            keyWordButton.heightAnchor.constraint(equalToConstant: 32)
+            keyWordButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 9),
+            keyWordButton.topAnchor.constraint(equalTo: self.topAnchor, constant: 8),
+            keyWordButton.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -8),
+            keyWordButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -4.5),
         ])
     }
     
     func configure(title: String) {
         keyWordButton.setTitle(title, for: .normal)
+    }
+    
+    func getButtonSize() {
+        
     }
 }
 

@@ -28,7 +28,6 @@ final class HomeVideoCVC: UICollectionViewCell {
         
         let stackView = UIStackView(arrangedSubviews: [videoContentImage, videoInfoContainerView])
         stackView.axis = .vertical
-        stackView.spacing = -10
         stackView.distribution = .fill
         
         return stackView
@@ -47,13 +46,11 @@ final class HomeVideoCVC: UICollectionViewCell {
     func addView() {
         videoInfoContainerView.addSubviews()
         addSubview(videoItemStackView)
-        backgroundColor = .gray
     }
     
     func setLayout() {
         videoItemStackView.translatesAutoresizingMaskIntoConstraints = false
         videoInfoContainerView.setLayout()
-        
         videoContentImage.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 7/10).isActive = true
         
         NSLayoutConstraint.activate([

@@ -16,17 +16,22 @@ final class HomeChannelCVC: UICollectionViewCell {
     }()
     
     private let channelLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = .systemFont(ofSize: 20)
-        label.text = "hello"
+        let label = AuthenticationLabel()
+        
+        label.setTextWithStyle(
+            text: "channelName",
+            size: 12,
+            weight: .regualr
+        )
+        label.textColor = .gray606060
+        
         return label
     }()
     
     private lazy var subTitleItemStackView: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [channelImage, channelLabel])
         stackView.axis = .vertical
-        stackView.spacing = -10
+        stackView.spacing = 10
         stackView.alignment = .center
         stackView.distribution = .fill
         return stackView
@@ -48,6 +53,13 @@ final class HomeChannelCVC: UICollectionViewCell {
     
     func setLayout() {
         subTitleItemStackView.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            channelImage.topAnchor.constraint(equalTo: topAnchor, constant: 14),
+            channelImage.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.8),
+            channelImage.heightAnchor.constraint(equalTo: channelImage.widthAnchor),
+        ])
+        
         NSLayoutConstraint.activate([
             subTitleItemStackView.leadingAnchor.constraint(equalTo: leadingAnchor),
             subTitleItemStackView.topAnchor.constraint(equalTo: topAnchor),

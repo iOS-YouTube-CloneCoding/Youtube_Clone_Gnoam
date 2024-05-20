@@ -14,7 +14,7 @@ final class HomeViewController: BaseViewController {
         HomeSection.video
     ]
     
-    private lazy var headerCollectionView: UICollectionView = {
+    private lazy var homeCollectionView: UICollectionView = {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: self.getLayout())
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         return collectionView
@@ -33,22 +33,24 @@ final class HomeViewController: BaseViewController {
     }
     
     override func setLayout() {
-        view.addSubview(headerCollectionView)
+        view.addSubview(homeCollectionView)
         NSLayoutConstraint.activate([
-            headerCollectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            headerCollectionView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            headerCollectionView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
-            headerCollectionView.rightAnchor.constraint(equalTo: view.rightAnchor),
+            homeCollectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            homeCollectionView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            homeCollectionView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+            homeCollectionView.rightAnchor.constraint(equalTo: view.rightAnchor),
         ])
     }
     
     override func setStyle() {
-        headerCollectionView.register(HomeChannelCVC.self, forCellWithReuseIdentifier: String(describing: HomeChannelCVC.self))
-        headerCollectionView.register(HomeKeyWordCVC.self, forCellWithReuseIdentifier: String(describing: HomeKeyWordCVC.self))
-        headerCollectionView.register(HomeVideoCVC.self, forCellWithReuseIdentifier: String(describing: HomeVideoCVC.self))
-        headerCollectionView.dataSource = self
+        homeCollectionView.register(HomeChannelCVC.self, forCellWithReuseIdentifier: String(describing: HomeChannelCVC.self))
+        homeCollectionView.register(HomeKeyWordCVC.self, forCellWithReuseIdentifier: String(describing: HomeKeyWordCVC.self))
+        homeCollectionView.register(HomeVideoCVC.self, forCellWithReuseIdentifier: String(describing: HomeVideoCVC.self))
+        homeCollectionView.dataSource = self
     }
-    
+}
+
+extension HomeViewController {
     private func getLayout() -> UICollectionViewLayout {
         return UICollectionViewCompositionalLayout { sectionIndex, env -> NSCollectionLayoutSection? in
             switch self.homeSource[sectionIndex] {
@@ -62,13 +64,13 @@ final class HomeViewController: BaseViewController {
         }
     }
     
-    func getChannelSection() -> NSCollectionLayoutSection {
+    private func getChannelSection() -> NSCollectionLayoutSection {
         let itemSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(1.0),
             heightDimension: .fractionalHeight(1.0)
         )
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
-        item.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 10, bottom: 0, trailing: -10)
+        item.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0)
         
         let groupSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(0.19),
@@ -78,33 +80,33 @@ final class HomeViewController: BaseViewController {
         
         let section = NSCollectionLayoutSection(group: group)
         section.orthogonalScrollingBehavior = .continuous
-        section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 16, bottom: 0, trailing: -16)
+        section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0)
         
         return section
     }
     
-    func getKeywordSection() -> NSCollectionLayoutSection {
+    private func getKeywordSection() -> NSCollectionLayoutSection {
         let itemSize = NSCollectionLayoutSize(
-            widthDimension: .fractionalWidth(1.0),
+            widthDimension: .estimated(30),
             heightDimension: .fractionalHeight(1.0)
         )
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
-        item.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 10, bottom: 0, trailing: -10)
+        item.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 10)
         
         let groupSize = NSCollectionLayoutSize(
-            widthDimension: .fractionalWidth(0.14),
-            heightDimension: .fractionalHeight(0.05)
+            widthDimension: .estimated(20),
+            heightDimension: .fractionalHeight(0.06)
         )
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
         
         let section = NSCollectionLayoutSection(group: group)
         section.orthogonalScrollingBehavior = .groupPaging
-        section.contentInsets = NSDirectionalEdgeInsets(top: 8, leading: 16, bottom: 0, trailing: -16)
+        section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0)
         
         return section
     }
     
-    func getVideoSection() -> NSCollectionLayoutSection {
+    private func getVideoSection() -> NSCollectionLayoutSection {
         let itemSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(1.0),
             heightDimension: .fractionalHeight(1.0)
@@ -114,14 +116,14 @@ final class HomeViewController: BaseViewController {
         
         let groupSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(1.0),
-            heightDimension: .fractionalHeight(0.4)
+            heightDimension: .fractionalHeight(0.5)
         )
-        let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitems: [item])
         
+        let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitems: [item])
         let section = NSCollectionLayoutSection(group: group)
         
         
-        section.contentInsets = NSDirectionalEdgeInsets(top: 8, leading: 0, bottom: 0, trailing: 0)
+        section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0)
         
         return section
     }
