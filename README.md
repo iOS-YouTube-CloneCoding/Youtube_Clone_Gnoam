@@ -14,5 +14,5 @@
 [2차 과제 리드미](https://hail-authority-984.notion.site/2-Read-me-64b4ae447c564755bc72488ae9613b07?pvs=4)
 
 
-## STEP2
+## STEP3
 [3차 과제 리드미](https://hail-authority-984.notion.site/3-Read-me-3ae6bc8d722b4091b41914246964a8fb?pvs=4)
