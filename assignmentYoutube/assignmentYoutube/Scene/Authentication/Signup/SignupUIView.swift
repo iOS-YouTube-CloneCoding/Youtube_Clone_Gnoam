@@ -21,7 +21,7 @@ final class SignupUIView: UIView {
     }()
     
     let titleLabel: UILabel = {
-        var label = AuthenticationLabel()
+        let label = AuthenticationLabel()
         
         label.setTextWithStyle(
             text: "회원가입",
@@ -33,21 +33,21 @@ final class SignupUIView: UIView {
     }()
     
     let nameTextField: UITextField = {
-        var textField = AuthenticationTextField()
+        let textField = AuthenticationTextField()
         textField.tag = 0
         textField.placeholder = "이름을 입력해주세요."
         return textField
     }()
     
     let emailORPhoneTextField: UITextField = {
-        var textField = AuthenticationTextField()
+        let textField = AuthenticationTextField()
         textField.tag = 1
         textField.placeholder = "이메일 또는 휴대전화"
         return textField
     }()
     
     let passwordTextField: UITextField = {
-        var textField = AuthenticationTextField()
+        let textField = AuthenticationTextField()
         textField.isSecureEnable(state: true)
         textField.tag = 2
         textField.placeholder = "비밀번호 입력"
@@ -55,7 +55,7 @@ final class SignupUIView: UIView {
     }()
     
     let nextButton: UIButton = {
-        var button = AuthenticationButton()
+        let button = AuthenticationButton()
         button.isButtonEnable(state: false)
         
         button.setTitleWithStyle(
@@ -68,7 +68,7 @@ final class SignupUIView: UIView {
     }()
     
     let showPasswordLabel: UILabel = {
-        var label = AuthenticationLabel()
+        let label = AuthenticationLabel()
         label.numberOfLines = 2
         
         label.setTextWithStyle(
@@ -83,7 +83,7 @@ final class SignupUIView: UIView {
     }()
     
     let checkBoxButton: UIButton = {
-        var button = AuthenticationButton()
+        let button = AuthenticationButton()
         button.backgroundColor = .clear
         
         if let image = UIImage(named: "checkBoxSquare") {
@@ -108,10 +108,10 @@ final class SignupUIView: UIView {
         ])
         
         NSLayoutConstraint.activate([
-            googleImage.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 128),
+            googleImage.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 130),
             googleImage.topAnchor.constraint(equalTo: topAnchor, constant: 110),
-            googleImage.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -662),
-            googleImage.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -128)
+            googleImage.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+            googleImage.widthAnchor.constraint(equalTo: googleImage.heightAnchor, multiplier: 3.0)
         ])
         
         NSLayoutConstraint.activate([
@@ -138,15 +138,13 @@ final class SignupUIView: UIView {
             showPasswordLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 48),
             showPasswordLabel.topAnchor.constraint(equalTo: containerView.bottomAnchor, constant: 14),
             showPasswordLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -274),
-            showPasswordLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -252)
         ])
         
         NSLayoutConstraint.activate([
             nextButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 22),
-            nextButton.topAnchor.constraint(equalTo: topAnchor, constant: 567),
-            nextButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -203),
-            nextButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -22)
+            nextButton.topAnchor.constraint(equalTo: showPasswordLabel.bottomAnchor, constant: 29),
+            nextButton.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+            nextButton.widthAnchor.constraint(equalTo: nextButton.heightAnchor, multiplier: 7.8)
         ])
     }
 }
-

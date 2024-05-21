@@ -9,10 +9,20 @@ import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?
+    private let factory = ModuleFactory.resolve()
+    
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
+        var viewController: UIViewController
+        
+        if UserDefaults.isLoggedIn() {
+            viewController = factory.instantiateMainVC()
+        }
+        else {
+            viewController = factory.instantiateSigninVC()
+        }
+        
         window = UIWindow(windowScene: windowScene)
-        let viewController = SigninViewController()
         window?.rootViewController = UINavigationController(rootViewController: viewController)
         window?.makeKeyAndVisible()
     }
