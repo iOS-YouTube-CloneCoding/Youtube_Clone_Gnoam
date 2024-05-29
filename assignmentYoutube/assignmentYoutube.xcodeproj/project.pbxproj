@@ -44,7 +44,6 @@
 		CC9B90D72BA58863004FA698 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9B90D62BA58863004FA698 /* SceneDelegate.swift */; };
 		CC9B90D92BA58863004FA698 /* SigninViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9B90D82BA58863004FA698 /* SigninViewController.swift */; };
 		CC9B90DE2BA58865004FA698 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC9B90DD2BA58865004FA698 /* Assets.xcassets */; };
-		CC9B90E12BA58865004FA698 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC9B90DF2BA58865004FA698 /* LaunchScreen.storyboard */; };
 		CC9B90EE2BA59FF6004FA698 /* AuthenticationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9B90ED2BA59FF6004FA698 /* AuthenticationButton.swift */; };
 		CCAC2DC52BBFC9840063EAA0 /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAC2DC42BBFC9840063EAA0 /* UITextField+Extension.swift */; };
 		CCBD40CB2BF5C6A400D73167 /* HomeVideoInfoUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBD40CA2BF5C6A400D73167 /* HomeVideoInfoUIView.swift */; };
@@ -93,7 +92,6 @@
 		CC9B90D62BA58863004FA698 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		CC9B90D82BA58863004FA698 /* SigninViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninViewController.swift; sourceTree = "<group>"; };
 		CC9B90DD2BA58865004FA698 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		CC9B90E02BA58865004FA698 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CC9B90E22BA58865004FA698 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CC9B90ED2BA59FF6004FA698 /* AuthenticationButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationButton.swift; sourceTree = "<group>"; };
 		CCAC2DC42BBFC9840063EAA0 /* UITextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
@@ -236,6 +234,7 @@
 		CC8BC5642BA74D8000848FE2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				CC9B90DD2BA58865004FA698 /* Assets.xcassets */,
 				CC8BC5652BA74D9A00848FE2 /* Font */,
 			);
 			path = Resources;
@@ -293,15 +292,14 @@
 		CC9B90D32BA58863004FA698 /* assignmentYoutube */ = {
 			isa = PBXGroup;
 			children = (
-				CCBE30DD2BDA0B210076DBDC /* Module */,
+				CC9B90E22BA58865004FA698 /* Info.plist */,
 				CC8BC5642BA74D8000848FE2 /* Resources */,
+				CCBD40D22C06D57E00D73167 /* Networking */,
+				CCBE30DD2BDA0B210076DBDC /* Module */,
 				CC41D53D2BA6C4F900939197 /* Scene */,
 				CC41D53C2BA6C4DF00939197 /* App */,
 				CC41D5392BA6BFE000939197 /* Global */,
 				CC9B90EC2BA59FA1004FA698 /* UIComponent */,
-				CC9B90DD2BA58865004FA698 /* Assets.xcassets */,
-				CC9B90DF2BA58865004FA698 /* LaunchScreen.storyboard */,
-				CC9B90E22BA58865004FA698 /* Info.plist */,
 			);
 			path = assignmentYoutube;
 			sourceTree = "<group>";
@@ -350,6 +348,13 @@
 				CC33917F2BC8FE7400C68949 /* DoneAuthenticationUIView.swift */,
 			);
 			path = Done;
+			sourceTree = "<group>";
+		};
+		CCBD40D22C06D57E00D73167 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 		CCBE30DD2BDA0B210076DBDC /* Module */ = {
@@ -404,6 +409,9 @@
 				Base,
 			);
 			mainGroup = CC9B90C82BA58863004FA698;
+			packageReferences = (
+				CCC017C22C06FA02007010F4 /* XCRemoteSwiftPackageReference "Moya" */,
+			);
 			productRefGroup = CC9B90D22BA58863004FA698 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -418,7 +426,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CC9B90E12BA58865004FA698 /* LaunchScreen.storyboard in Resources */,
 				CC907A082BA756B5004D58EA /* Pretendard-Bold.otf in Resources */,
 				CC907A0A2BA756BB004D58EA /* Pretendard-Regular.otf in Resources */,
 				CC907A0B2BA756BD004D58EA /* Pretendard-SemiBold.otf in Resources */,
@@ -477,17 +484,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		CC9B90DF2BA58865004FA698 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				CC9B90E02BA58865004FA698 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		CC9B90E32BA58865004FA698 /* Debug */ = {
@@ -687,6 +683,17 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		CCC017C22C06FA02007010F4 /* XCRemoteSwiftPackageReference "Moya" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Moya/Moya";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 15.0.3;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
 	};
 	rootObject = CC9B90C92BA58863004FA698 /* Project object */;
 }
