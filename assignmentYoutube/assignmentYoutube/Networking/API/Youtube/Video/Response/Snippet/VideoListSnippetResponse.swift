@@ -13,7 +13,7 @@ import Foundation
 //   let list = try? JSONDecoder().decode(List.self, from: jsonData)
 
 // MARK: - List
-struct VideoListResponse: Codable {
+struct VideoListSnippetResponse: Codable {
     let kind, etag: String
     let items: [Item]
     let nextPageToken: String

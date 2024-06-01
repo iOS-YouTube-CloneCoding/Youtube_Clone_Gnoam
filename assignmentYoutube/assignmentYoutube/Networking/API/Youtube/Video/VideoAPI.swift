@@ -50,19 +50,35 @@ extension VideoAPI: TargetType {
         switch self {
         case .insert(_):
             return .requestPlain
-        case .list(let param):
-//            return .requestJSONEncodable(param)
-            let params = [
-                "part" : "snippet",
-                "chart" : "mostPopular",
-                "maxResults" : "1",
-                "key" : apiKey,
-            ]
-            return .requestParameters(parameters: params, encoding: URLEncoding.queryString)
+        case .list(_):
+            return .requestParameters(parameters: parameters, encoding: URLEncoding.queryString)
         case .delete(_):
             return .requestPlain
         case .update(_):
             return .requestPlain
+        }
+    }
+    
+    var parameters: [String: Any] {
+        switch self {
+        case .insert(_):
+            return [:]
+            
+        case .list(let param):
+            let params = [
+                "part" : param.part,
+                "chart" : param.chart,
+                "maxResults" : param.maxResults,
+                "key" : apiKey,
+            ] as [String : Any]
+            return params
+            
+        case .delete(_):
+            return [:]
+            
+        case .update(_):
+            return [:]
+            
         }
     }
     

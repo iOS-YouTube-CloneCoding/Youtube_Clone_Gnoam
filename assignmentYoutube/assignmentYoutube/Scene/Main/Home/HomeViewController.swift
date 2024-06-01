@@ -10,7 +10,8 @@ import Moya
 
 final class HomeViewController: BaseViewController {
     private let youtubeVideoProvider = MoyaProvider<VideoAPI>()
-    private var videoListResponse: VideoListResponse?
+    private var youtubeInfoRSP: VideoListSnippetResponse?
+    private var youtubeList: [SnippetUseCase] = []
     
     private var homeSource: [HomeSection] = [
         HomeSection.channel,
@@ -34,7 +35,14 @@ final class HomeViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        requestVideoList()
+        
+        requestVideoList{ [self] result in
+            youtubeList = result
+            
+            DispatchQueue.main.async {
+                self.homeCollectionView.reloadData()
+            }
+        }
     }
     
     override func setLayout() {
@@ -56,15 +64,27 @@ final class HomeViewController: BaseViewController {
 }
 
 extension HomeViewController {
-    func requestVideoList() {
-        let VideoListParam = VideoListRequest(part: "snippet", chart: "mostPopular", maxResults: 1)
+    func requestVideoList(complection: @escaping ([SnippetUseCase]) -> Void) {
+        let VideoListParam = VideoListRequest(part: "snippet", chart: "mostPopular", maxResults: 5)
         
         youtubeVideoProvider.request(.list(VideoListParam)) { response in
             switch response {
             case .success(let result): 
                 do {
-                    self.videoListResponse = try result.map(VideoListResponse.self)
-                    print(self.videoListResponse)
+                    self.youtubeInfoRSP = try result.map(VideoListSnippetResponse.self)
+                    guard let wrappedInfo = self.youtubeInfoRSP else {
+                        print("VideoListSnippetResponse null error")
+                        return
+                    }
+                    
+                    let youtubeUseCase: [SnippetUseCase] = wrappedInfo.items.map {
+                        return SnippetUseCase(
+                            thumbnailURL: $0.snippet.thumbnails.maxres.url,
+                            title: $0.snippet.title,
+                            description: $0.snippet.description
+                        )
+                    }
+                    complection(youtubeUseCase)
                 }
                 catch(let error) {
                     print(error.localizedDescription)
@@ -164,7 +184,7 @@ extension HomeViewController: UICollectionViewDataSource {
         case 1:
             return HomeSection.keyword.getData.count
         case 2:
-            return HomeSection.video.getData.count
+            return youtubeList.count
         default:
             return 0
         }
@@ -195,16 +215,49 @@ extension HomeViewController: UICollectionViewDataSource {
             }
             let data = homeSource[indexPath.section].getData as! [HomeSection.VideoDataType]
             
+            getImageWithURL(url: youtubeList[indexPath.row].thumbnailURL) { data in
+                guard let image = data else {
+                    print("image download error")
+                    return
+                }
+                cell.handleImageData(imageData: image)
+            }
+            
+            
             cell.configure(
-                videoContentImage: data[indexPath.row].videoImage,
+//                videoContentImage: data[indexPath.row].videoImage,
                 videoProfileImage: data[indexPath.row].channelImage,
-                videoTitleLabel: data[indexPath.row].title,
-                videoSubTitleLabel: data[indexPath.row].subTitle
+                videoTitleLabel: youtubeList[indexPath.row].title,
+                videoSubTitleLabel: youtubeList[indexPath.row].description
             )
             return cell
         default:
             return UICollectionViewCell()
         }
+    }
+    
+    func getImageWithURL(url: String, complection: @escaping (Data?) -> Void) {
+        guard let url = URL(string: url) else {
+            return
+        }
+        
+        let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
+            if let error = error {
+                print("Error: \(error.localizedDescription)")
+                return
+            }
+            
+            guard let imageData = data else {
+                print("No data received")
+                return
+            }
+            
+            // 이미지 데이터 처리
+            DispatchQueue.main.async {
+                complection(imageData)
+            }
+        }
+        task.resume()
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {

@@ -61,13 +61,24 @@ final class HomeVideoCVC: UICollectionViewCell {
         ])
     }
     
+    func handleImageData(imageData: Data) {
+//        self.videoContentImage.image = UIImage(named: )
+        if let image = UIImage(data: imageData) {
+            self.videoContentImage.image = image
+        } else {
+            print("Failed to create image from data")
+        }
+    }
+    
+    func handleImageData(_ imageData: Data) {
+        
+    }
+    
     func configure(
-        videoContentImage: String,
         videoProfileImage: String,
         videoTitleLabel: String,
         videoSubTitleLabel: String
     ) {
-        self.videoContentImage.image = UIImage(named: videoContentImage)
         videoInfoContainerView.configure(
             videoProfileImage: videoProfileImage,
             videoTitleLabel: videoTitleLabel,
