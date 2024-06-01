@@ -6,8 +6,12 @@
 //
 
 import UIKit
+import Moya
 
 final class HomeViewController: BaseViewController {
+    private let youtubeVideoProvider = MoyaProvider<VideoAPI>()
+    private var videoListResponse: VideoListResponse?
+    
     private var homeSource: [HomeSection] = [
         HomeSection.channel,
         HomeSection.keyword,
@@ -30,6 +34,7 @@ final class HomeViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        requestVideoList()
     }
     
     override func setLayout() {
@@ -47,6 +52,28 @@ final class HomeViewController: BaseViewController {
         homeCollectionView.register(HomeKeyWordCVC.self, forCellWithReuseIdentifier: String(describing: HomeKeyWordCVC.self))
         homeCollectionView.register(HomeVideoCVC.self, forCellWithReuseIdentifier: String(describing: HomeVideoCVC.self))
         homeCollectionView.dataSource = self
+    }
+}
+
+extension HomeViewController {
+    func requestVideoList() {
+        let VideoListParam = VideoListRequest(part: "snippet", chart: "mostPopular", maxResults: 1)
+        
+        youtubeVideoProvider.request(.list(VideoListParam)) { response in
+            switch response {
+            case .success(let result): 
+                do {
+                    self.videoListResponse = try result.map(VideoListResponse.self)
+                    print(self.videoListResponse)
+                }
+                catch(let error) {
+                    print(error.localizedDescription)
+                }
+                break
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
     }
 }
 
