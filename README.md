@@ -1,4 +1,4 @@
-# 📱 Youtube App(Clone)
+# 📱 Youtube App
 
 ## 목차
 
