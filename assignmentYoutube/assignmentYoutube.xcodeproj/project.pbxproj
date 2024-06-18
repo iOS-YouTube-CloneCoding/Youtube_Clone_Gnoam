@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CC0458C92C215BD600AC3621 /* HomePlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0458C82C215BD600AC3621 /* HomePlayerViewController.swift */; };
 		CC0A4CF02BEEEBDE001ECB31 /* HomeKeyWordCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0A4CEF2BEEEBDE001ECB31 /* HomeKeyWordCVC.swift */; };
 		CC1358782BC2B28700EBC48E /* NSLayoutConstraint+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1358772BC2B28700EBC48E /* NSLayoutConstraint+Extension.swift */; };
 		CC3391802BC8FE7400C68949 /* DoneAuthenticationUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC33917F2BC8FE7400C68949 /* DoneAuthenticationUIView.swift */; };
@@ -64,6 +65,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CC0458C82C215BD600AC3621 /* HomePlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePlayerViewController.swift; sourceTree = "<group>"; };
 		CC0A4CEF2BEEEBDE001ECB31 /* HomeKeyWordCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeKeyWordCVC.swift; sourceTree = "<group>"; };
 		CC1358772BC2B28700EBC48E /* NSLayoutConstraint+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSLayoutConstraint+Extension.swift"; sourceTree = "<group>"; };
 		CC33917F2BC8FE7400C68949 /* DoneAuthenticationUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoneAuthenticationUIView.swift; sourceTree = "<group>"; };
@@ -209,6 +211,7 @@
 			children = (
 				CC6BB4EC2BE3574E009919E4 /* HomeCVC */,
 				CC907A1B2BA9783C004D58EA /* HomeViewController.swift */,
+				CC0458C82C215BD600AC3621 /* HomePlayerViewController.swift */,
 				CCEB1F992BF1A2F100411B15 /* HomeSectionType.swift */,
 			);
 			path = Home;
@@ -529,6 +532,7 @@
 				CC3391802BC8FE7400C68949 /* DoneAuthenticationUIView.swift in Sources */,
 				CC7926A72BC05C1C0002DDE7 /* UIButton+Extension.swift in Sources */,
 				CCBD40CD2BF6E7C900D73167 /* UICollectionView+Extension.swift in Sources */,
+				CC0458C92C215BD600AC3621 /* HomePlayerViewController.swift in Sources */,
 				CC907A1E2BA9786D004D58EA /* ShortViewController.swift in Sources */,
 				CC972C572BCC9087007F3C9B /* SignupUIView.swift in Sources */,
 				CC3EA1E52BEB062C0030D242 /* HomeVideoCVC.swift in Sources */,

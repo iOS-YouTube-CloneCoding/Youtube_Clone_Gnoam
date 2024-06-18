@@ -9,7 +9,7 @@ import Foundation
 
 struct SnippetUseCase {
     let thumbnailURL: String
-    let channel: String
+    let id: String
     let title: String
     let description: String
 }

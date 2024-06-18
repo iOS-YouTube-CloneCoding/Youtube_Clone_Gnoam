@@ -12,6 +12,7 @@ final class HomeViewController: BaseViewController {
     private let youtubeVideoProvider = MoyaProvider<VideoAPI>()
     private var youtubeInfoRSP: VideoListSnippetResponse?
     private var youtubeList: [SnippetUseCase] = []
+    private let factory = ModuleFactory.resolve()
     
     private var homeSource: [HomeSection] = [
         HomeSection.channel,
@@ -39,6 +40,8 @@ final class HomeViewController: BaseViewController {
         requestVideoList{ [self] result in
             youtubeList = result
             
+            print(youtubeList[0].id)
+            
             DispatchQueue.main.async {
                 self.homeCollectionView.reloadData()
             }
@@ -60,18 +63,21 @@ final class HomeViewController: BaseViewController {
         homeCollectionView.register(HomeKeyWordCVC.self, forCellWithReuseIdentifier: String(describing: HomeKeyWordCVC.self))
         homeCollectionView.register(HomeVideoCVC.self, forCellWithReuseIdentifier: String(describing: HomeVideoCVC.self))
         homeCollectionView.dataSource = self
+        homeCollectionView.delegate = self
     }
 }
 
 extension HomeViewController {
     func requestVideoList(complection: @escaping ([SnippetUseCase]) -> Void) {
-        let VideoListParam = VideoListRequest(part: "snippet", chart: "mostPopular", maxResults: 5)
+        let VideoListParam = VideoListRequest(part: "snippet", chart: "mostPopular", maxResults: 6)
         
         youtubeVideoProvider.request(.list(VideoListParam)) { response in
             switch response {
-            case .success(let result): 
+            case .success(let result):
                 do {
+                    print(result)
                     self.youtubeInfoRSP = try result.map(VideoListSnippetResponse.self)
+                    
                     guard let wrappedInfo = self.youtubeInfoRSP else {
                         print("VideoListSnippetResponse null error")
                         return
@@ -80,8 +86,9 @@ extension HomeViewController {
                     let youtubeUseCase: [SnippetUseCase] = wrappedInfo.items.map {
                         return SnippetUseCase(
                             thumbnailURL: $0.snippet.thumbnails.maxres.url,
+                            id: $0.id,
                             title: $0.snippet.title,
-                            description: $0.snippet.description
+                            description: $0.snippet.publishedAt
                         )
                     }
                     complection(youtubeUseCase)
@@ -168,7 +175,6 @@ extension HomeViewController {
         
         let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitems: [item])
         let section = NSCollectionLayoutSection(group: group)
-        
         
         section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0)
         
@@ -262,6 +268,27 @@ extension HomeViewController: UICollectionViewDataSource {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return homeSource.count
+    }
+}
+
+extension HomeViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let section = indexPath.section
+        let item = indexPath.item
+        
+        switch section {
+        case 0:
+            print("touch0")
+        case 1:
+            print("touch1")
+        case 2:
+            print("touch2")
+            let viewController = self.factory.instantiateHomePlayerVC()
+            present(viewController, animated: true, completion: nil)
+            
+        default:
+            print("another")
+        }
     }
 }
 

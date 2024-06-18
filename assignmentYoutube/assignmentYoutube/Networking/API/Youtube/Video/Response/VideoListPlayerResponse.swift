@@ -36,3 +36,12 @@ import Foundation
 //struct PageInfo: Codable {
 //    let totalResults, resultsPerPage: Int
 //}
+
+
+
+
+
+
+
+
+
