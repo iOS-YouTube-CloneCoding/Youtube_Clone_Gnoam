@@ -7,6 +7,7 @@
 
 import UIKit
 import Moya
+import AVKit
 
 final class HomeViewController: BaseViewController {
     private let youtubeVideoProvider = MoyaProvider<VideoAPI>()
@@ -180,6 +181,17 @@ extension HomeViewController {
         
         return section
     }
+    
+    private func playVideo(url: NSURL){
+        let playerController = AVPlayerViewController() // 인스턴스 생성
+        let player = AVPlayer(url: url as URL) // URL로 초기화된 인스턴스 생성
+        playerController.player = player // 인스턴스 할당
+        
+        //비디오 실행
+        self.present(playerController, animated: true) {
+            player.play()
+        }
+    }
 }
 
 extension HomeViewController: UICollectionViewDataSource {
@@ -283,13 +295,20 @@ extension HomeViewController: UICollectionViewDelegate {
             print("touch1")
         case 2:
             print("touch2")
-            let viewController = self.factory.instantiateHomePlayerVC()
-            present(viewController, animated: true, completion: nil)
+//            let viewController = self.factory.instantiateHomePlayerVC()
+//            present(viewController, animated: true, completion: nil)
+                    
+            let url = NSURL(string: "https://www.youtube.com/embed/94RTrH2erPE")! //외부 링크 경로 저장
+//            let url = NSURL(string: "http://video.mrporter.com/videos/productPage/173037_detail.mp4")! //외부 링크 경로 저장
+            playVideo(url: url)
+            
             
         default:
             print("another")
         }
     }
+
+    
 }
 
 #Preview {
