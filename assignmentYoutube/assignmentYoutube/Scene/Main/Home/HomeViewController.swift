@@ -85,7 +85,7 @@ extension HomeViewController {
                     
                     let youtubeUseCase: [SnippetUseCase] = wrappedInfo.items.map {
                         return SnippetUseCase(
-                            thumbnailURL: $0.snippet.thumbnails.maxres.url,
+                            thumbnailURL: $0.snippet.thumbnails.maxres?.url ?? "nil",
                             id: $0.id,
                             title: $0.snippet.title,
                             description: $0.snippet.publishedAt
