@@ -241,7 +241,6 @@ extension HomeViewController: UICollectionViewDataSource {
                 cell.handleImageData(imageData: image)
             }
             
-            
             cell.configure(
 //                videoContentImage: data[indexPath.row].videoImage,
                 videoProfileImage: data[indexPath.row].channelImage,
@@ -295,14 +294,12 @@ extension HomeViewController: UICollectionViewDelegate {
             print("touch1")
         case 2:
             print("touch2")
-//            let viewController = self.factory.instantiateHomePlayerVC()
-//            present(viewController, animated: true, completion: nil)
-                    
-            let url = NSURL(string: "https://www.youtube.com/embed/94RTrH2erPE")! //외부 링크 경로 저장
-//            let url = NSURL(string: "http://video.mrporter.com/videos/productPage/173037_detail.mp4")! //외부 링크 경로 저장
-            playVideo(url: url)
+            print(item)
             
-            
+            let viewController = self.factory.instantiateHomePlayerVC(withVideoId: youtubeList[item].id)
+            viewController.modalPresentationStyle = UIModalPresentationStyle.fullScreen
+            present(viewController, animated: true, completion: nil)
+
         default:
             print("another")
         }

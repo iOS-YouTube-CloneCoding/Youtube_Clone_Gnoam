@@ -19,7 +19,7 @@ protocol ModuleFactoryProtocol {
     func instantiateStorageVC() -> StorageViewController
     
     // MARK: - TabBar
-    func instantiateHomePlayerVC() -> HomePlayerViewController
+    func instantiateHomePlayerVC(withVideoId: String) -> HomePlayerViewController
 }
 
 class ModuleFactory: ModuleFactoryProtocol {
@@ -68,8 +68,8 @@ extension ModuleFactory {
     }
     
     // MARK: - Youtube Video
-    func instantiateHomePlayerVC() -> HomePlayerViewController {
-        return HomePlayerViewController.init()
+    func instantiateHomePlayerVC(withVideoId: String) -> HomePlayerViewController {
+        return HomePlayerViewController.init(videoId: withVideoId)
     }
 }
 
