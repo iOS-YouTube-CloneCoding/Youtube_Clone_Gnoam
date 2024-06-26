@@ -21,21 +21,20 @@ class AuthenticationTextField: UITextField {
     
     private func setDefaultStyle() {
         self.borderStyle = .roundedRect
-        self.autocorrectionType = .no                               // 자동 수정
-        self.spellCheckingType = .no                                // 맞춤법 검사
-        self.autocapitalizationType = .none                         // 자동 대문자 활성화 여부
+        self.autocorrectionType = .no                               
+        self.spellCheckingType = .no
+        self.autocapitalizationType = .none
         
         self.addLeftPadding(14)
         
-        self.placeholder = "내용 입력"                                // 플레이스 홀더
-        self.clearButtonMode = .always                              // 입력 내용을 한번에 지우는 x버튼(오른쪽?)
-        self.clearsOnBeginEditing = false                           // 편집시 기존 텍스트 필드값 제거
-        self.font = .PretendardR(size: 15)                          // 레귤러 15
+        self.placeholder = "내용 입력"
+        self.clearButtonMode = .always
+        self.clearsOnBeginEditing = false
+        self.font = .PretendardR(size: 15)
         
-        // 키보드 관련
-        self.returnKeyType = .done                                  // 키보드 엔터키 타입
+        self.returnKeyType = .done
         self.keyboardType = UIKeyboardType.emailAddress
-        self.isSecureTextEntry = false                               // 일반적으로 보여지게
+        self.isSecureTextEntry = false
         self.translatesAutoresizingMaskIntoConstraints = false
     }
     
