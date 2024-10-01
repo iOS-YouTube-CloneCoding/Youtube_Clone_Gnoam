@@ -151,3 +151,7 @@ final class SiginUIView: UIView {
         ])
     }
 }
+
+#Preview {
+    SiginUIView()
+}
