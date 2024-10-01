@@ -21,7 +21,7 @@ final class SiginUIView: UIView {
     }()
     
     let titleLabel: UILabel = {
-        var label = AuthenticationLabel()
+        let label = AuthenticationLabel()
         
         label.setTextWithStyle(
             text: "로그인",
@@ -33,7 +33,7 @@ final class SiginUIView: UIView {
     }()
     
     let subTitleLabel: UILabel = {
-        var label = AuthenticationLabel()
+        let label = AuthenticationLabel()
         label.numberOfLines = 2
         
         label.setTextWithStyle(
@@ -48,28 +48,28 @@ final class SiginUIView: UIView {
     }()
     
     let nameTextField: UITextField = {
-        var textField = AuthenticationTextField()
+        let textField = AuthenticationTextField()
         textField.tag = 0
         textField.placeholder = "이름을 입력해주세요."
         return textField
     }()
     
     let emailORPhoneTextField: UITextField = {
-        var textField = AuthenticationTextField()
+        let textField = AuthenticationTextField()
         textField.tag = 1
         textField.placeholder = "이메일 또는 휴대전화"
         return textField
     }()
     
     let passwordTextField: UITextField = {
-        var textField = AuthenticationTextField()
+        let textField = AuthenticationTextField()
         textField.tag = 2
         textField.placeholder = "비밀번호 입력"
         return textField
     }()
     
     let nextButton: UIButton = {
-        var button = AuthenticationButton()
+        let button = AuthenticationButton()
         button.isButtonEnable(state: false)
         
         button.setTitleWithStyle(
@@ -82,7 +82,7 @@ final class SiginUIView: UIView {
     }()
     
     let addAuthenticationButton: UIButton = {
-        var button = AuthenticationButton()
+        let button = AuthenticationButton()
         button.backgroundColor = .clear
         
         button.setTitleWithStyle(
@@ -96,7 +96,7 @@ final class SiginUIView: UIView {
     }()
     
     let checkBox: UIButton = {
-        var button = AuthenticationButton()
+        let button = AuthenticationButton()
         return button
     }()
     
@@ -114,8 +114,8 @@ final class SiginUIView: UIView {
         NSLayoutConstraint.activate([
             googleImage.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 130),
             googleImage.topAnchor.constraint(equalTo: topAnchor, constant: 110),
-            googleImage.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -662),
-            googleImage.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -127)
+            googleImage.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+            googleImage.widthAnchor.constraint(equalTo: googleImage.heightAnchor, multiplier: 3.0)
         ])
         
         NSLayoutConstraint.activate([

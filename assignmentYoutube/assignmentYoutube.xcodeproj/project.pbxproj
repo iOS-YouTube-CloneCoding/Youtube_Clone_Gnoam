@@ -12,6 +12,7 @@
 		CC41D53B2BA6BFFB00939197 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC41D53A2BA6BFFB00939197 /* UIColor+Extension.swift */; };
 		CC41D53F2BA6CAAB00939197 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC41D53E2BA6CAAB00939197 /* UIView+Extension.swift */; };
 		CC41D5412BA6CD8000939197 /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC41D5402BA6CD8000939197 /* UIFont+Extension.swift */; };
+		CC6BB4EF2BE37516009919E4 /* UserDefault+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC6BB4EE2BE37516009919E4 /* UserDefault+Extension.swift */; };
 		CC7926A72BC05C1C0002DDE7 /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7926A62BC05C1C0002DDE7 /* UIButton+Extension.swift */; };
 		CC7926AA2BC063050002DDE7 /* TextFieldReturnDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7926A92BC063050002DDE7 /* TextFieldReturnDelegate.swift */; };
 		CC7B3DA92BC678BE00BBD43A /* YoutubeStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7B3DA82BC678BE00BBD43A /* YoutubeStackView.swift */; };
@@ -33,7 +34,7 @@
 		CC907A202BA9787E004D58EA /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC907A1F2BA9787E004D58EA /* AddViewController.swift */; };
 		CC907A222BA979AE004D58EA /* SubscribeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC907A212BA979AE004D58EA /* SubscribeViewController.swift */; };
 		CC907A242BA9F1C1004D58EA /* StorageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC907A232BA9F1C1004D58EA /* StorageViewController.swift */; };
-		CC972C552BCB4EE9007F3C9B /* ModuleFactoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC972C542BCB4EE9007F3C9B /* ModuleFactoryProtocol.swift */; };
+		CC972C552BCB4EE9007F3C9B /* ModuleFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC972C542BCB4EE9007F3C9B /* ModuleFactory.swift */; };
 		CC972C572BCC9087007F3C9B /* SignupUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC972C562BCC9087007F3C9B /* SignupUIView.swift */; };
 		CC9B90D52BA58863004FA698 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9B90D42BA58863004FA698 /* AppDelegate.swift */; };
 		CC9B90D72BA58863004FA698 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9B90D62BA58863004FA698 /* SceneDelegate.swift */; };
@@ -42,6 +43,7 @@
 		CC9B90E12BA58865004FA698 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC9B90DF2BA58865004FA698 /* LaunchScreen.storyboard */; };
 		CC9B90EE2BA59FF6004FA698 /* AuthenticationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9B90ED2BA59FF6004FA698 /* AuthenticationButton.swift */; };
 		CCAC2DC52BBFC9840063EAA0 /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAC2DC42BBFC9840063EAA0 /* UITextField+Extension.swift */; };
+		CCBE30DC2BDA0A230076DBDC /* YoutubeTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCBE30DB2BDA0A230076DBDC /* YoutubeTabBar.swift */; };
 		CCCBAADA2BD0F84900D4EBEA /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCBAAD92BD0F84900D4EBEA /* Observable.swift */; };
 /* End PBXBuildFile section */
 
@@ -51,6 +53,7 @@
 		CC41D53A2BA6BFFB00939197 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		CC41D53E2BA6CAAB00939197 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		CC41D5402BA6CD8000939197 /* UIFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
+		CC6BB4EE2BE37516009919E4 /* UserDefault+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefault+Extension.swift"; sourceTree = "<group>"; };
 		CC7926A62BC05C1C0002DDE7 /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
 		CC7926A92BC063050002DDE7 /* TextFieldReturnDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldReturnDelegate.swift; sourceTree = "<group>"; };
 		CC7B3DA82BC678BE00BBD43A /* YoutubeStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutubeStackView.swift; sourceTree = "<group>"; };
@@ -72,7 +75,7 @@
 		CC907A1F2BA9787E004D58EA /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 		CC907A212BA979AE004D58EA /* SubscribeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscribeViewController.swift; sourceTree = "<group>"; };
 		CC907A232BA9F1C1004D58EA /* StorageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageViewController.swift; sourceTree = "<group>"; };
-		CC972C542BCB4EE9007F3C9B /* ModuleFactoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleFactoryProtocol.swift; sourceTree = "<group>"; };
+		CC972C542BCB4EE9007F3C9B /* ModuleFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleFactory.swift; sourceTree = "<group>"; };
 		CC972C562BCC9087007F3C9B /* SignupUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupUIView.swift; sourceTree = "<group>"; };
 		CC9B90D12BA58863004FA698 /* assignmentYoutube.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = assignmentYoutube.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC9B90D42BA58863004FA698 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -83,6 +86,7 @@
 		CC9B90E22BA58865004FA698 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CC9B90ED2BA59FF6004FA698 /* AuthenticationButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationButton.swift; sourceTree = "<group>"; };
 		CCAC2DC42BBFC9840063EAA0 /* UITextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
+		CCBE30DB2BDA0A230076DBDC /* YoutubeTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutubeTabBar.swift; sourceTree = "<group>"; };
 		CCCBAAD92BD0F84900D4EBEA /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -109,6 +113,7 @@
 				CC8BC5622BA7223C00848FE2 /* CGFloat+Extension.swift */,
 				CCAC2DC42BBFC9840063EAA0 /* UITextField+Extension.swift */,
 				CC7926A62BC05C1C0002DDE7 /* UIButton+Extension.swift */,
+				CC6BB4EE2BE37516009919E4 /* UserDefault+Extension.swift */,
 			);
 			path = Global;
 			sourceTree = "<group>";
@@ -133,11 +138,67 @@
 			path = Scene;
 			sourceTree = "<group>";
 		};
+		CC6BB4E72BE35703009919E4 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				CC6BB4ED2BE35776009919E4 /* Body */,
+				CC6BB4EC2BE3574E009919E4 /* Header */,
+				CC907A1B2BA9783C004D58EA /* HomeViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		CC6BB4E82BE3570F009919E4 /* Short */ = {
+			isa = PBXGroup;
+			children = (
+				CC907A1D2BA9786D004D58EA /* ShortViewController.swift */,
+			);
+			path = Short;
+			sourceTree = "<group>";
+		};
+		CC6BB4E92BE35716009919E4 /* AddView */ = {
+			isa = PBXGroup;
+			children = (
+				CC907A1F2BA9787E004D58EA /* AddViewController.swift */,
+			);
+			path = AddView;
+			sourceTree = "<group>";
+		};
+		CC6BB4EA2BE3571E009919E4 /* Subscribe */ = {
+			isa = PBXGroup;
+			children = (
+				CC907A212BA979AE004D58EA /* SubscribeViewController.swift */,
+			);
+			path = Subscribe;
+			sourceTree = "<group>";
+		};
+		CC6BB4EB2BE35725009919E4 /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				CC907A232BA9F1C1004D58EA /* StorageViewController.swift */,
+			);
+			path = Storage;
+			sourceTree = "<group>";
+		};
+		CC6BB4EC2BE3574E009919E4 /* Header */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Header;
+			sourceTree = "<group>";
+		};
+		CC6BB4ED2BE35776009919E4 /* Body */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Body;
+			sourceTree = "<group>";
+		};
 		CC7926A82BC062440002DDE7 /* Protocol */ = {
 			isa = PBXGroup;
 			children = (
 				CC7926A92BC063050002DDE7 /* TextFieldReturnDelegate.swift */,
-				CC972C542BCB4EE9007F3C9B /* ModuleFactoryProtocol.swift */,
+				CC972C542BCB4EE9007F3C9B /* ModuleFactory.swift */,
 				CCCBAAD92BD0F84900D4EBEA /* Observable.swift */,
 			);
 			path = Protocol;
@@ -191,11 +252,11 @@
 		CC907A1A2BA977FB004D58EA /* TabBar */ = {
 			isa = PBXGroup;
 			children = (
-				CC907A1B2BA9783C004D58EA /* HomeViewController.swift */,
-				CC907A1D2BA9786D004D58EA /* ShortViewController.swift */,
-				CC907A1F2BA9787E004D58EA /* AddViewController.swift */,
-				CC907A212BA979AE004D58EA /* SubscribeViewController.swift */,
-				CC907A232BA9F1C1004D58EA /* StorageViewController.swift */,
+				CC6BB4EB2BE35725009919E4 /* Storage */,
+				CC6BB4EA2BE3571E009919E4 /* Subscribe */,
+				CC6BB4E92BE35716009919E4 /* AddView */,
+				CC6BB4E82BE3570F009919E4 /* Short */,
+				CC6BB4E72BE35703009919E4 /* Home */,
 			);
 			path = TabBar;
 			sourceTree = "<group>";
@@ -219,6 +280,7 @@
 		CC9B90D32BA58863004FA698 /* assignmentYoutube */ = {
 			isa = PBXGroup;
 			children = (
+				CCBE30DD2BDA0B210076DBDC /* Module */,
 				CC8BC5642BA74D8000848FE2 /* Resources */,
 				CC41D53D2BA6C4F900939197 /* Scene */,
 				CC41D53C2BA6C4DF00939197 /* App */,
@@ -275,6 +337,14 @@
 				CC33917F2BC8FE7400C68949 /* DoneAuthenticationUIView.swift */,
 			);
 			path = Done;
+			sourceTree = "<group>";
+		};
+		CCBE30DD2BDA0B210076DBDC /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				CCBE30DB2BDA0A230076DBDC /* YoutubeTabBar.swift */,
+			);
+			path = Module;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -353,6 +423,7 @@
 			files = (
 				CC907A122BA7C80D004D58EA /* BaseViewController.swift in Sources */,
 				CC907A0D2BA7BE85004D58EA /* AuthenticationTextField.swift in Sources */,
+				CC6BB4EF2BE37516009919E4 /* UserDefault+Extension.swift in Sources */,
 				CC907A202BA9787E004D58EA /* AddViewController.swift in Sources */,
 				CC3391802BC8FE7400C68949 /* DoneAuthenticationUIView.swift in Sources */,
 				CC7926A72BC05C1C0002DDE7 /* UIButton+Extension.swift in Sources */,
@@ -371,8 +442,9 @@
 				CC907A172BA84A82004D58EA /* MainViewController.swift in Sources */,
 				CC9B90D52BA58863004FA698 /* AppDelegate.swift in Sources */,
 				CC907A1C2BA9783C004D58EA /* HomeViewController.swift in Sources */,
-				CC972C552BCB4EE9007F3C9B /* ModuleFactoryProtocol.swift in Sources */,
+				CC972C552BCB4EE9007F3C9B /* ModuleFactory.swift in Sources */,
 				CC907A222BA979AE004D58EA /* SubscribeViewController.swift in Sources */,
+				CCBE30DC2BDA0A230076DBDC /* YoutubeTabBar.swift in Sources */,
 				CC907A0F2BA7C797004D58EA /* SignupViewController.swift in Sources */,
 				CC41D53F2BA6CAAB00939197 /* UIView+Extension.swift in Sources */,
 				CC8BC55C2BA71B7E00848FE2 /* SiginUIView.swift in Sources */,

@@ -10,11 +10,11 @@ import UIKit
 final class DoneAuthenticationViewController: BaseViewController {
     private var uiView: DoneAuthenticationUIView = DoneAuthenticationUIView()
     private let factory = ModuleFactory.resolve()
-    var finishAction: Observable<Void>?
+    var action: [Observable<Void>]!
     
-    init(observer: Observable<Void>) {
+    init(observer: [Observable<Void>]) {
         super.init(nibName: nil, bundle: nil)
-        finishAction = observer
+        action = observer
     }
     
     required init?(coder: NSCoder) {
@@ -39,24 +39,39 @@ final class DoneAuthenticationViewController: BaseViewController {
     }
     
     override func setStyle() {
-        setTapNextButton()
+        setTapCheckButton()
+        setTapOtherLoginButton()
     }
 }
 
 extension DoneAuthenticationViewController {
-    private func setTapNextButton() {
+    private func setTapCheckButton() {
         uiView.nextButton.addTarget(
             self,
-            action: #selector(setTapButton),
+            action: #selector(setTapCheck),
             for: .touchDown
         )
     }
     
-    @objc func setTapButton() {
+    private func setTapOtherLoginButton() {
+        uiView.addAuthenticationButton.addTarget(
+            self,
+            action: #selector(setTapOtherLogin),
+            for: .touchDown
+        )
+    }
+    
+    @objc func setTapCheck() {
         self.dismiss(animated: true)
-        if let doneLogin = finishAction {
-            doneLogin.value = ()
+        UserDefaults.setLoggedIn()
+        action[0].value = ()
+    }
+    
+    @objc func setTapOtherLogin() {
+        self.dismiss(animated: true)
+        if action.count < 2 {
+            return
         }
+        action[1].value = ()
     }
 }
-

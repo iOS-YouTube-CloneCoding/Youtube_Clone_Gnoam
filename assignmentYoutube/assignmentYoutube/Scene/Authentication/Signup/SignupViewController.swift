@@ -11,7 +11,8 @@ final class SignupViewController: BaseViewController {
     private var uiView: SignupUIView = SignupUIView()
     private var textFields: [UITextField]?
     private let factory = ModuleFactory.resolve()
-    var finishAction: Observable<Void>?
+    private var finishAction: Observable<Void> = Observable(())
+    private var moveSigninAction: Observable<Void> = Observable(())
     
     var tgCheckBoxState: Bool = false
     
@@ -84,9 +85,9 @@ extension SignupViewController {
     }
     
     @objc func setTapButton() {
-        
-//        let doneViewController = self.factory.instantiateSignupCompleteVC()
-//        present(doneViewController, animated: true, completion: nil)
+        doneLogin()
+        let viewController = self.factory.instantiateSignupCompleteVC(observer: [finishAction, moveSigninAction])
+        present(viewController, animated: true, completion: nil)
     }
     
     @objc func setTapCheckButton() {
@@ -104,6 +105,18 @@ extension SignupViewController {
 }
 
 extension SignupViewController: TextFieldReturnDelegate {
+    private func doneLogin() {
+        finishAction.subscribe { [self] in
+            let mainViewController = self.factory.instantiateMainVC()
+            navigationController?.pushViewController(mainViewController, animated: true)
+        }
+        
+        moveSigninAction.subscribe { [self] in
+            let signinViewController = self.factory.instantiateSigninVC()
+            navigationController?.pushViewController(signinViewController, animated: true)
+        }
+    }
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         let nextIndex = textField.tag + 1
         

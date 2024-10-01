@@ -12,6 +12,7 @@ final class SigninViewController: BaseViewController {
     private var textFields: [UITextField]?
     private let factory = ModuleFactory.resolve()
     private var finishAction: Observable<Void> = Observable(())
+    private var moveSignupAction: Observable<Void> = Observable(())
     
     init() {
         super.init(nibName: nil, bundle: nil)
@@ -53,7 +54,8 @@ extension SigninViewController {
     private func doneLogin() {
         finishAction.subscribe { [self] in
             let mainViewController = self.factory.instantiateMainVC()
-            navigationController?.pushViewController(mainViewController, animated: true)
+            mainViewController.modalPresentationStyle = .fullScreen
+            self.present(mainViewController, animated: true, completion: nil)
         }
     }
     
@@ -79,7 +81,7 @@ extension SigninViewController {
     
     @objc func setTapButton() {
         doneLogin()
-        let viewController = self.factory.instantiateSignupCompleteVC(observer: finishAction)
+        let viewController = self.factory.instantiateSignupCompleteVC(observer: [finishAction])
         present(viewController, animated: true, completion: nil)
     }
     
@@ -112,5 +114,3 @@ extension SigninViewController: TextFieldReturnDelegate {
         return true
     }
 }
-
-
